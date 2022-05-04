@@ -7,93 +7,175 @@ const Header = ({ siteTitle }) => {
   const [isNavOpen, setIsNavOpen] = useState(false)
 
   return (
-    <header
-      style={{
-        margin: `0 auto`,
-        padding: `var(--space-4) var(--size-gutter)`,
-        display: `flex`,
-        alignItems: `center`,
-        justifyContent: `space-between`,
-      }}
-    >
-      <div className="flex items-center justify-between bg-pink-500 py-8">
-        <a href="/">AGS SUPPORT</a>
-        <nav>
-          <section className="MOBILE-MENU flex lg:hidden">
-            <div
-              className="HAMBURGER-ICON space-y-2"
-              onClick={() => setIsNavOpen(prev => !prev)}
-            >
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            </div>
-
-            <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-              <div
-                className="CROSS-ICON absolute top-0 right-0 px-8 py-8"
-                onClick={() => setIsNavOpen(false)}
+    <nav class="py-8 bg-indigo-500">
+      <div class="container px-4 mx-auto">
+        <div class="flex justify-between items-center">
+          <a class="text-gray-600 text-2xl leading-none" href="#">
+            <img
+              class="h-8"
+              src="AGS-Support-Logo-Web.png"
+              alt=""
+              width="auto"
+            />
+          </a>
+          <div class="lg:hidden">
+            <button class="block navbar-burger text-indigo-50 hover:text-indigo-200 focus:outline-none">
+              <svg
+                class="h-4 w-4"
+                fill="currentColor "
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  className="h-8 w-8 text-gray-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </div>
-              <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-                <li className="my-8 uppercase">
-                  <a href="/about">About</a>
-                </li>
-                <li className="my-8 uppercase">
-                  <a href="/portfolio">Portfolio</a>
-                </li>
-                <li className="my-8 uppercase">
-                  <a href="/contact">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </section>
-
-          <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+                <title>Mobile menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+              </svg>
+            </button>
+          </div>
+          <ul class="hidden lg:flex ml-auto mr-10 items-center w-auto space-x-12">
             <li>
-              <a href="/about">About</a>
+              <a
+                class="text-sm text-indigo-50 hover:text-indigo-200 font-medium"
+                href="#"
+              >
+                About
+              </a>
             </li>
             <li>
-              <a href="/portfolio">Portfolio</a>
+              <a
+                class="text-sm text-indigo-50 hover:text-indigo-200 font-medium"
+                href="#"
+              >
+                Services
+              </a>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <a
+                class="text-sm text-indigo-50 hover:text-indigo-200 font-medium"
+                href="#"
+              >
+                Testimonials
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-sm text-indigo-50 hover:text-indigo-200 font-medium"
+                href="#"
+              >
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-sm text-indigo-50 hover:text-indigo-200 font-medium"
+                href="#"
+              >
+                Contact
+              </a>
             </li>
           </ul>
-        </nav>
-        <style>{`
-      .hideMenuNav {
-        display: none;
-      }
-      .showMenuNav {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: white;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-      }
-    `}</style>
+          <a
+            class="hidden lg:block px-5 py-3 text-sm text-center font-semibold text-white hover:text-indigo-500 hover:bg-white border border-white rounded transition duration-200"
+            href="#"
+          >
+            Free Consultation
+          </a>
+        </div>
       </div>
-    </header>
+      <div class="hidden navbar-menu fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50">
+        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+        <nav class="relative flex flex-col py-6 px-6 w-full h-full bg-white border-r overflow-y-auto">
+          <div class="flex items-center mb-12">
+            <a class="mr-auto text-2xl font-semibold leading-none" href="#">
+              <img
+                class="h-8"
+                src="plain-assets/logos/plain-indigo.svg"
+                alt=""
+                width="auto"
+              />
+            </a>
+            <button class="navbar-close">
+              <svg
+                class="h-6 w-6 cursor-pointer hover:text-indigo-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div>
+            <ul>
+              <li class="mb-1">
+                <a
+                  class="block p-4 text-sm font-semibold hover:bg-indigo-50 hover:text-indigo-500 rounded"
+                  href="#"
+                >
+                  About
+                </a>
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block p-4 text-sm font-semibold hover:bg-indigo-50 hover:text-indigo-500 rounded"
+                  href="#"
+                >
+                  Services
+                </a>
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block p-4 text-sm font-semibold hover:bg-indigo-50 hover:text-indigo-500 rounded"
+                  href="#"
+                >
+                  Testimonials
+                </a>
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block p-4 text-sm font-semibold hover:bg-indigo-50 hover:text-indigo-500 rounded"
+                  href="#"
+                >
+                  FAQ
+                </a>
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block p-4 text-sm font-semibold hover:bg-indigo-50 hover:text-indigo-500 rounded"
+                  href="#"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <div class="pt-6">
+              <a
+                class="block px-5 py-3 mb-3 text-sm text-center bg-indigo-500 hover:bg-indigo-600 text-white font-semibold border border-indigo-500 hover:border-indigo-600 rounded transition duration-200"
+                href="#"
+              >
+                Free Consultation
+              </a>
+              <a
+                class="block px-5 py-3 text-sm text-center font-semibold text-indigo-500 hover:text-white hover:bg-indigo-500 border border-indigo-500 hover:border-indigo-600 rounded transition duration-200"
+                href="#"
+              >
+                Sign up
+              </a>
+            </div>
+            <p class="mt-6 mb-4 text-sm text-center text-gray-500">
+              <span>© 2022 All rights reserved.</span>
+            </p>
+          </div>
+        </nav>
+      </div>
+    </nav>
   )
 }
 
