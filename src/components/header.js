@@ -34,7 +34,7 @@ const Header = ({ siteTitle }) => {
           <ul class="hidden lg:flex ml-auto mr-10 items-center w-auto space-x-12">
             <li>
               <a
-                class="text-sm text-indigo-50 hover:text-indigo-200 font-medium"
+                class="text-md text-indigo-50 hover:text-indigo-200 font-medium"
                 href="#"
               >
                 About
@@ -42,7 +42,7 @@ const Header = ({ siteTitle }) => {
             </li>
             <li>
               <a
-                class="text-sm text-indigo-50 hover:text-indigo-200 font-medium"
+                class="text-md text-indigo-50 hover:text-indigo-200 font-medium"
                 href="#"
               >
                 Services
@@ -50,7 +50,7 @@ const Header = ({ siteTitle }) => {
             </li>
             <li>
               <a
-                class="text-sm text-indigo-50 hover:text-indigo-200 font-medium"
+                class="text-md text-indigo-50 hover:text-indigo-200 font-medium"
                 href="#"
               >
                 Testimonials
@@ -58,7 +58,7 @@ const Header = ({ siteTitle }) => {
             </li>
             <li>
               <a
-                class="text-sm text-indigo-50 hover:text-indigo-200 font-medium"
+                class="text-md text-indigo-50 hover:text-indigo-200 font-medium"
                 href="#"
               >
                 FAQ
@@ -66,7 +66,7 @@ const Header = ({ siteTitle }) => {
             </li>
             <li>
               <a
-                class="text-sm text-indigo-50 hover:text-indigo-200 font-medium"
+                class="text-md text-indigo-50 hover:text-indigo-200 font-medium"
                 href="#"
               >
                 Contact
