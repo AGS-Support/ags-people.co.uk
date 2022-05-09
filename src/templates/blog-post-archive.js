@@ -37,7 +37,7 @@ const BlogIndex = ({
               Lorem ipsum dolor sit amet consectutar domor at elis
             </h2>
             <p class="text-base leading-relaxed lg:text-xl lg:leading-relaxed text-gray-500">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Test Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Pellentesque massa nibh, pulvinar vitae aliquet nec, accumsan
               aliquet orci.
             </p>
