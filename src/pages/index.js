@@ -98,11 +98,11 @@ const IndexPage = ({ data }) => {
           <h3 className="text-4xl py-3 mb-6 text-primary">
             What clients say...
           </h3>
-          <div className="grid grid-cols-3  md:grid-cols-3 gap-24">
-            <div className="border-solid border-2 border-gray-300 p-8 bg-white">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-1 lg:gap-24 md:gap-12 sm:gap-0">
+            <div className="border-solid border-2 border-gray-300 p-8 bg-white mb-26 shadow-md">
               <div className="grid grid-cols-2  md:grid-cols-2 gap-4 pb-6">
-                <h5 className="text-lg">Housing Manager YMCA</h5>
-                <h5 className="text-primary text-xl text-right">*****</h5>
+                <h5 className="text-lg font-bold">Housing Manager YMCA</h5>
+                <h5 className="text-primary text-xl text-right">⭐⭐⭐⭐⭐</h5>
               </div>
               <p>
                 “Our YMCA is a Supported housing project with 73 bed spaces. 22
@@ -114,15 +114,10 @@ const IndexPage = ({ data }) => {
                 shifts at short notice.”
               </p>
             </div>
-            <div className="border-solid border-2 border-gray-300 p-8 bg-white">
-              <div className="grid grid-cols-2  md:grid-cols-2 gap-4 pb-6">
-                <h5 className="text-lg">Housing Manager YMCA</h5>
-                <h5
-                  className="text-primary text-xl text-right"
-                  style={{ color: "goldenrod" }}
-                >
-                  *****
-                </h5>
+            <div className="border-solid border-2 border-gray-300 p-8 bg-white shadow-md">
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-4 pb-6">
+                <h5 className="text-lg font-bold">Housing Manager YMCA</h5>
+                <h5 className="text-primary text-xl text-right">⭐⭐⭐⭐⭐</h5>
               </div>
               <p>
                 “Our YMCA is a Supported housing project with 73 bed spaces. 22
@@ -134,10 +129,10 @@ const IndexPage = ({ data }) => {
                 shifts at short notice.”
               </p>
             </div>
-            <div className="border-solid border-2 border-gray-300 p-8 bg-white">
+            <div className="border-solid border-2 border-gray-300 p-8 bg-white shadow-md">
               <div className="grid grid-cols-2  md:grid-cols-2 gap-4 pb-6">
-                <h5 className="text-lg">Housing Manager YMCA</h5>
-                <h5 className="text-primary text-xl text-right">*****</h5>
+                <h5 className="text-lg font-bold">Housing Manager YMCA</h5>
+                <h5 className="text-primary text-xl text-right">⭐⭐⭐⭐⭐</h5>
               </div>
               <p>
                 “Our YMCA is a Supported housing project with 73 bed spaces. 22
