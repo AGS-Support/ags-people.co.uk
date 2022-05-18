@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => {
-  const [isNavOpen, setIsNavOpen] = useState(false)
   const menu = [
     { name: "About", link: "/about" },
     { name: "Services", link: "/services" },
@@ -30,11 +29,13 @@ const Header = ({ siteTitle }) => {
         </div>
 
         <div class="nav-links">
-          <a href="#">Who we are</a>
-          <a href="#">What we do</a>
-          <a href="#">FAQs</a>
-          <a href="#">Case studies</a>
-          <a href="#">Contact us</a>
+          {menu.map((item, index) => {
+            return (
+              <Link key={`desktop-menu-item-${index}`} to={item.link}>
+                {item.name}
+              </Link>
+            )
+          })}
         </div>
       </div>
     </div>

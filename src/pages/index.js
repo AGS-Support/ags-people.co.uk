@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => {
             </div>
 
             <div class="video">
-              <img src="https://www.roadtovr.com/wp-content/uploads/2015/03/youtube-logo2.jpg" />
+              <img src="https://agsheadless.tempurl.host/wp-content/uploads/2022/05/video-poster-play.png" />
             </div>
           </div>
         </div>
