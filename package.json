@@ -7,6 +7,7 @@
   "dependencies": {
     "gatsby": "^4.13.0",
     "gatsby-plugin-gatsby-cloud": "^4.13.0",
+    "gatsby-plugin-google-fonts-v2": "^1.0.0",
     "gatsby-plugin-image": "^2.13.0",
     "gatsby-plugin-manifest": "^4.13.0",
     "gatsby-plugin-offline": "^5.13.0",
@@ -22,6 +23,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.5",
     "gatsby-plugin-postcss": "^5.13.0",
     "postcss": "^8.4.12",

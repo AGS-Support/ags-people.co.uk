@@ -1,3 +1,332 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Red Hat Display", sans-serif;
+  }
+}
+
+/*@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap");*/
+
+:root {
+  --font-base: "Red Hat Display", sans-serif;
+  --colour-lightest: #ffffff;
+  --colour-brand: #003d7a;
+  --colour-brand-tint: #ebeff4;
+  --colour-accent: #fe9d0b;
+
+  --space-base: 0.48rem;
+  --space-small: 0.16rem;
+  --space-large: 1rem;
+  --space-extra: 2.6rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: 16px;
+  color: var(--colour-brand);
+}
+
+a {
+  color: var(--colour-brand);
+}
+
+p {
+  margin-bottom: 1.4rem;
+  line-height: 1.4rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  margin-bottom: 2.2rem;
+  line-height: 2.6rem;
+}
+
+p.bump {
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+/* UTILITIES */
+
+.margin-reset {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* HOMEPAGE */
+
+.banner .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-bottom: 32px;
+}
+
+.banner .headline,
+.banner .video {
+  padding: var(--space-extra) 0 var(--space-base);
+}
+
+.banner .video {
+  margin-bottom: calc(var(--space-extra) * -1);
+  z-index: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .banner .content {
+    flex-wrap: nowrap;
+    column-gap: 64px;
+  }
+  .banner .headline {
+    min-width: 380px;
+  }
+}
+
+/* BUTTON */
+
+.button {
+  border-radius: var(--space-base);
+  font-weight: 700;
+  display: inline-block;
+  padding: var(--space-large) var(--space-extra);
+  text-decoration: none;
+}
+.button.button--large {
+  font-size: 1.2rem;
+}
+.button.button--primary {
+  background: var(--colour-accent);
+  color: var(--colour-lightest);
+}
+
+/* SECTIONS */
+
+section.section-tint {
+  background: var(--colour-brand-tint);
+}
+
+/* STRUCTURE */
+
+.full-width {
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.ags-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.content {
+  max-width: 980px;
+  margin: 0 auto 0 auto;
+  padding-top: calc(var(--space-extra) * 1.4);
+  padding-bottom: var(--space-extra);
+}
+
+/* QUICK LINKS */
+
+section.quick-links {
+  background: var(--colour-brand);
+  padding: var(--space-large) 0 var(--space-extra);
+  margin-top: 0 !important;
+}
+
+.quick-links .content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.quick-links h2,
+.quick-links a {
+  color: var(--colour-lightest);
+}
+
+/* ANGLED BORDER */
+
+.angle-border {
+  position: relative;
+}
+
+.angle-border-top:before {
+  content: "";
+  display: block;
+  height: 64px;
+  width: 100%;
+  overflow: hidden;
+  transform: skew(0deg, -1.4deg);
+  position: absolute;
+  z-index: -1;
+  top: -32px;
+}
+
+.angle-border-bottom:after {
+  content: "";
+  display: block;
+  height: 64px;
+  width: 100%;
+  overflow: hidden;
+  transform: skew(0deg, -1.4deg);
+  position: absolute;
+  z-index: -1;
+  bottom: -32px;
+}
+
+.angle-border-top.angle-border-brand:before {
+  background: var(--colour-brand);
+  border-color: var(--colour-accent);
+  border-top-width: 4px;
+  border-style: solid;
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+
+.angle-border-top.angle-border-tint:before,
+.angle-border-bottom.angle-border-tint:after {
+  background: var(--colour-brand-tint);
+}
+
+section.angle-border-top {
+  margin-top: 32px;
+}
+section.angle-border-bottom {
+  margin-bottom: 32px;
+}
+
+/* LISTS */
+
+ul.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+}
+ul.list-inline li {
+}
+
+/* NAVIGATION */
+
+.navbar {
+  display: flex;
+  padding: var(--space-large) 0;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 1000px) {
+  .navbar {
+    font-size: 1.4rem;
+    padding: var(--space-extra) 0;
+  }
+}
+
+.navbar .nav-btn {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+}
+.navbar .nav-btn label {
+  display: inline-block;
+  padding: 16px;
+}
+.navbar .nav-btn label span {
+  display: block;
+  height: 8px;
+  width: 32px;
+  border-top: 3px solid var(--colour-brand);
+}
+.navbar .nav-links {
+  position: absolute;
+  display: block;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  transition: all 0.3s;
+  overflow-y: hidden;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+}
+.navbar .nav-links a {
+  display: block;
+  text-decoration: none;
+  padding: var(--space-large);
+  border-bottom: 1px solid #ccc;
+}
+.navbar #nav-check {
+  display: none;
+}
+
+/* when nav toggle button not checked */
+.navbar #nav-check:not(:checked) ~ .nav-links {
+  height: 0px;
+}
+
+/* when nav toggle button is checked */
+.navbar #nav-check:checked ~ .nav-links {
+  height: calc(100vh);
+  overflow-y: auto;
+  padding-top: var(--space-extra);
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar #nav-check,
+  .navbar .nav-btn {
+    display: none;
+  }
+  .navbar .nav-links,
+  .navbar #nav-check:not(:checked) ~ .nav-links {
+    height: auto;
+    width: auto;
+    position: inherit;
+    text-align: left;
+    display: flex;
+    column-gap: 24px;
+    padding-top: initial;
+  }
+  .navbar .nav-links a {
+    display: inline-flex;
+    padding: initial;
+    border: initial;
+  }
+}
