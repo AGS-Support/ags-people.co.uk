@@ -32,9 +32,7 @@ const IndexPage = ({ data }) => {
               </a>
             </div>
 
-            <div class="video">
-              <img src="https://agsheadless.tempurl.host/wp-content/uploads/2022/05/video-poster-play.png" />
-            </div>
+            <div class="video"></div>
           </div>
         </div>
       </section>
