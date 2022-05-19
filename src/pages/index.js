@@ -1,15 +1,28 @@
-import * as React from "react"
+import React, { useState } from "react"
+import FsLightbox from "fslightbox-react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Quicklinks from "../components/Quicklinks"
+import GLightbox from "glightbox"
 import * as styles from "../components/index.module.css"
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 const IndexPage = ({ data }) => {
+  const videoProps = {
+    controls: true,
+    playsInline: true,
+    preload: "metadata",
+    autoPlay: true,
+    src:
+      "https://player.vimeo.com/progressive_redirect/playback/707708231/rendition/1080p/file.mp4?loc=external&signature=c59541f967fbf3a9c41741426957784b41426aeb5b7c17b2200b3aea47063d9d" +
+      "#t=0.001",
+    style: { minHeight: "50vh" },
+  }
+
   const content = data.wpPage.homepage
   const leftServiceImage = getImage(
     content.services.leftService.image?.localFile
@@ -17,6 +30,7 @@ const IndexPage = ({ data }) => {
   const rightServiceImage = getImage(
     content.services.rightService.image?.localFile
   )
+  const [toggler, setToggler] = useState(false)
   return (
     <Layout>
       <Seo title="Home" />
@@ -32,7 +46,18 @@ const IndexPage = ({ data }) => {
               </a>
             </div>
 
-            <div class="video"></div>
+            <div class="video">
+              <img
+                src="https://agsheadless.tempurl.host/wp-content/uploads/2022/05/video-poster-play.png"
+                onClick={() => setToggler(!toggler)}
+              />
+            </div>
+
+            <FsLightbox
+              toggler={toggler}
+              sources={[<video {...videoProps} />]}
+              type="video"
+            />
           </div>
         </div>
       </section>
@@ -215,6 +240,17 @@ export const query = graphql`
               }
             }
           }
+        }
+      }
+    }
+    allWpTestimonial(
+      filter: { testimonials: { showOnHomepage: { eq: true } } }
+    ) {
+      nodes {
+        title
+        content
+        testimonials {
+          showOnHomepage
         }
       }
     }
