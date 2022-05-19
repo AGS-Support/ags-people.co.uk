@@ -8,7 +8,7 @@
   }
 }
 
-/*@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap");*/
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap");
 
 :root {
   --font-base: "Red Hat Display", sans-serif;
@@ -40,21 +40,22 @@ a {
 }
 
 p {
+  font-size: 1rem;
   margin-bottom: 1.4rem;
-  line-height: 1.4rem;
+  line-height: 1.2rem;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-weight: 700;
   margin-bottom: 2.2rem;
   line-height: 2.6rem;
 }
 
 p.bump {
   font-size: 1.2rem;
+  line-height: 1.5rem;
 }
 
 h1 {
@@ -87,27 +88,49 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 0;
   padding-bottom: 32px;
+  padding-top: 0;
+  align-items: stretch;
 }
 
-.banner .headline,
-.banner .video {
-  padding: var(--space-extra) 0 var(--space-base);
+.banner .headline {
+  padding: var(--space-extra) 0 var(--space-large);
+  flex-grow: 1;
 }
 
 .banner .video {
-  margin-bottom: calc(var(--space-extra) * -1);
   z-index: 1;
+  display: flex;
+  align-items: end;
+  flex-grow: 3;
+  margin-bottom: calc(var(--space-large) * -1);
 }
 
 @media only screen and (min-width: 768px) {
   .banner .content {
     flex-wrap: nowrap;
-    column-gap: 64px;
+    column-gap: 3rem;
   }
   .banner .headline {
-    min-width: 380px;
+    max-width: 460px;
+  }
+  .banner .headline h1 {
+    font-size: 3vw;
+    line-height: 3.25vw;
+  }
+  § .banner .video {
+    min-width: 430px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .banner .headline p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+  .banner .headline h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -141,19 +164,19 @@ section.section-tint {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
 .ags-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
 .content {
-  max-width: 980px;
+  max-width: 1200px;
   margin: 0 auto 0 auto;
   padding-top: calc(var(--space-extra) * 1.4);
   padding-bottom: var(--space-extra);
@@ -186,25 +209,25 @@ section.quick-links {
 .angle-border-top:before {
   content: "";
   display: block;
-  height: 64px;
+  height: 72px;
   width: 100%;
   overflow: hidden;
-  transform: skew(0deg, -1.4deg);
+  transform: skew(0deg, -2.2deg);
   position: absolute;
   z-index: -1;
-  top: -32px;
+  top: -36px;
 }
 
 .angle-border-bottom:after {
   content: "";
   display: block;
-  height: 64px;
+  height: 72px;
   width: 100%;
   overflow: hidden;
-  transform: skew(0deg, -1.4deg);
+  transform: skew(0deg, -2.2deg);
   position: absolute;
   z-index: -1;
-  bottom: -32px;
+  bottom: -36px;
 }
 
 .angle-border-top.angle-border-brand:before {

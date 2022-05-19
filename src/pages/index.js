@@ -73,7 +73,7 @@ const IndexPage = ({ data }) => {
       <section>
         <div class="container">
           <div class="content">
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-24">
               <div id="left-service">
                 <GatsbyImage image={leftServiceImage} alt="Left Service" />
                 <div className="">
@@ -121,7 +121,7 @@ const IndexPage = ({ data }) => {
           </div>
           <div class="content">
             <h2>What clients say...</h2>
-            <div className="grid lg:grid-cols-2 md:grid-cols-2  sm:grid-cols-1 lg:gap-8 md:gap-12 sm:gap-0">
+            <div className="grid lg:grid-cols-3 md:grid-cols-3  sm:grid-cols-1 lg:gap-8 md:gap-12 sm:gap-0">
               <div className="border-solid border-2 border-gray-300 p-8 bg-white mb-26 shadow-md">
                 <div className="grid grid-cols-2  md:grid-cols-2 gap-4 pb-6">
                   <h5 className="text-lg font-bold">Housing Manager YMCA</h5>
