@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
     src:
       "https://player.vimeo.com/progressive_redirect/playback/707708231/rendition/1080p/file.mp4?loc=external&signature=c59541f967fbf3a9c41741426957784b41426aeb5b7c17b2200b3aea47063d9d" +
       "#t=0.001",
-    style: { minHeight: "50vh" },
+    style: { minWidth: "75vw" },
   }
 
   const content = data.wpPage.homepage
@@ -46,8 +46,9 @@ const IndexPage = ({ data }) => {
               </a>
             </div>
 
-            <div class="video">
+            <div className="video" style={{ position: "relative" }}>
               <img
+                style={{ cursor: "pointer" }}
                 src="https://agsheadless.tempurl.host/wp-content/uploads/2022/05/video-poster-play.png"
                 onClick={() => setToggler(!toggler)}
               />
@@ -73,8 +74,8 @@ const IndexPage = ({ data }) => {
       <section>
         <div class="container">
           <div class="content">
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-24">
-              <div id="left-service">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24">
+              <div id="left-service" className="mb-10 md:mb-0">
                 <GatsbyImage image={leftServiceImage} alt="Left Service" />
 
                 <h2 className="margin-reset" style={{ marginTop: "2.2rem" }}>

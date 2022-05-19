@@ -47,6 +47,7 @@ h1,
 h2,
 h3,
 h4 {
+  font-weight: 700;
   margin-bottom: 2.2rem;
   line-height: 2.6rem;
 }
@@ -102,6 +103,10 @@ img {
   align-items: end;
   flex-grow: 3;
   margin-bottom: calc(var(--space-large) * -1);
+}
+
+.banner .video img:hover {
+  opacity: 0.5;
 }
 
 @media only screen and (min-width: 768px) {
@@ -349,5 +354,31 @@ ul.list-inline li {
     display: inline-flex;
     padding: initial;
     border: initial;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .angle-border-top:before {
+    content: "";
+    display: block;
+    height: 72px;
+    width: 100%;
+    overflow: hidden;
+    transform: skew(0deg, -1.6deg);
+    position: absolute;
+    z-index: -1;
+    top: -36px;
+  }
+
+  .angle-border-bottom:after {
+    content: "";
+    display: block;
+    height: 72px;
+    width: 100%;
+    overflow: hidden;
+    transform: skew(0deg, -1.6deg);
+    position: absolute;
+    z-index: -1;
+    bottom: -36px;
   }
 }
