@@ -76,36 +76,38 @@ const IndexPage = ({ data }) => {
             <div className="grid grid-cols-2 md:grid-cols-2 gap-24">
               <div id="left-service">
                 <GatsbyImage image={leftServiceImage} alt="Left Service" />
-                <div className="">
-                  <h2 className="margin-reset">
-                    {content.services.leftService.title}
-                  </h2>
-                  <p>{parse(content.services.leftService.content)}</p>
-                  <div className="py-3">
-                    <Link
-                      to={content.services.leftService.buttonUrl}
-                      className="text-brand bg-tint hover:bg-tint/80 text-white font-bold py-4 px-4 rounded"
-                    >
-                      {content.services.leftService.buttonText}
-                    </Link>
-                  </div>
+
+                <h2 className="margin-reset" style={{ marginTop: "2.2rem" }}>
+                  {content.services.leftService.title}
+                </h2>
+                <p className="mt-8 text-slate-500">
+                  {parse(content.services.leftService.content)}
+                </p>
+                <div className="py-3">
+                  <Link
+                    to={content.services.leftService.buttonUrl}
+                    className="text-brand bg-tint hover:bg-tint/80 text-white font-bold py-4 px-4 rounded"
+                  >
+                    {content.services.leftService.buttonText}
+                  </Link>
                 </div>
               </div>
               <div id="right-service">
                 <GatsbyImage image={rightServiceImage} alt="Right Service" />
-                <div className="">
-                  <h2 className="margin-reset">
-                    {content.services.rightService.title}
-                  </h2>
-                  <p>{parse(content.services.rightService.content)}</p>
-                  <div className="py-3">
-                    <Link
-                      to={content.services.rightService.buttonUrl}
-                      className="text-brand bg-tint hover:bg-tint/80 text-white font-bold py-4 px-4 rounded"
-                    >
-                      {content.services.rightService.buttonText}
-                    </Link>
-                  </div>
+
+                <h2 className="margin-reset" style={{ marginTop: "2.2rem" }}>
+                  {content.services.rightService.title}
+                </h2>
+                <p className="mt-8 text-slate-500">
+                  {parse(content.services.rightService.content)}
+                </p>
+                <div className="py-3">
+                  <Link
+                    to={content.services.rightService.buttonUrl}
+                    className="text-brand bg-tint hover:bg-tint/80 text-white font-bold py-4 px-4 rounded"
+                  >
+                    {content.services.rightService.buttonText}
+                  </Link>
                 </div>
               </div>
             </div>
