@@ -47,7 +47,6 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 700;
   margin-bottom: 2.2rem;
   line-height: 2.6rem;
 }
@@ -97,7 +96,7 @@ img {
   flex-grow: 1;
 }
 
-.banner .video {
+.banner .video-container {
   z-index: 1;
   display: flex;
   align-items: end;
@@ -105,8 +104,32 @@ img {
   margin-bottom: calc(var(--space-large) * -1);
 }
 
-.banner .video img:hover {
-  opacity: 0.5;
+.video {
+  position: relative;
+}
+
+.video:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.video .video-icon-play {
+  position: absolute;
+  opacity: 0.6;
+  width: 180px;
+  height: 180px;
+  left: calc(50% - 90px);
+  top: calc(50% - 90px);
+  transition: all 0.6s ease-in-out;
+}
+
+.video .video-icon-play img {
+  width: 100%;
+}
+
+.video:hover .video-icon-play {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 @media only screen and (min-width: 768px) {
@@ -121,7 +144,7 @@ img {
     font-size: 3vw;
     line-height: 3.25vw;
   }
-  § .banner .video {
+  § .banner .video-container {
     min-width: 430px;
   }
 }
@@ -165,14 +188,7 @@ section.section-tint {
 .full-width {
   width: 100%;
 }
-
 .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-.ags-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 16px;

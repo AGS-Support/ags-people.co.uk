@@ -24,6 +24,7 @@ const IndexPage = ({ data }) => {
   }
 
   const content = data.wpPage.homepage
+  const videoPoster = getImage(content.hero.video.poster?.localFile)
   const leftServiceImage = getImage(
     content.services.leftService.image?.localFile
   )
@@ -45,13 +46,17 @@ const IndexPage = ({ data }) => {
                 {content.hero.button.text}
               </a>
             </div>
-
-            <div className="video" style={{ position: "relative" }}>
-              <img
-                style={{ cursor: "pointer" }}
-                src="https://agsheadless.tempurl.host/wp-content/uploads/2022/05/video-poster-play.png"
-                onClick={() => setToggler(!toggler)}
-              />
+            <div class="video-container">
+              <div class="video">
+                <div class="video-icon-play" style={{ zIndex: "2" }}>
+                  <img src="https://icon-library.com/images/play-icon-white-png/play-icon-white-png-4.jpg" />
+                </div>
+                <GatsbyImage
+                  image={videoPoster}
+                  alt="video"
+                  onClick={() => setToggler(!toggler)}
+                />
+              </div>
             </div>
 
             <FsLightbox
@@ -187,6 +192,16 @@ export const query = graphql`
           headline
           subHeading
           video {
+            poster {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+            }
             vimeoUrl
           }
           button {

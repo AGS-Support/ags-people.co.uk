@@ -148,7 +148,7 @@ const Footer = () => {
         </div>
         <div class="border-t pt-8">
           <p class="lg:text-center text-sm text-gray-500">
-            All rights reserved. © Plain Inc.
+            All rights reserved. © AGS Support
           </p>
         </div>
       </div>
