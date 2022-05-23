@@ -1,14 +1,14 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import Seo from "../components/SEO"
+import SEO from "../components/SEO"
 import Testimonials from "../components/Home/Testimonials"
 
 const TestominialPage = ({ data }) => {
   const testimonials = data.allWpTestimonial.nodes
   return (
     <Layout>
-      <Seo title="Home" />
+      <SEO title="Home" />
       <section className="banner">
         <div className="container">
           <div class="content">

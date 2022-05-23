@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+import SEO from "../components/SEO"
 
 const Post = ({ data: { previous, next, post } }) => {
   const featuredImage = {
@@ -12,7 +12,8 @@ const Post = ({ data: { previous, next, post } }) => {
     alt: post.featuredImage?.node?.alt || ``,
   }
   return (
-    <>
+    <Layout>
+      <SEO title="Post" />
       {featuredImage?.data && (
         <GatsbyImage
           image={featuredImage.data}
@@ -48,7 +49,7 @@ const Post = ({ data: { previous, next, post } }) => {
           </li>
         </ul>
       </nav>
-    </>
+    </Layout>
   )
 }
 export default Post

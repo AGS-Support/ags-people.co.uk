@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+import SEO from "../components/SEO"
 
 const BlogIndex = ({
   data,
@@ -14,7 +14,7 @@ const BlogIndex = ({
   if (!posts.length) {
     return (
       <Layout isHomePage>
-        <Seo title="All posts" />
+        <SEO title="All posts" />
 
         <p>
           No blog posts found. Add posts to your WordPress site and they'll
@@ -26,7 +26,7 @@ const BlogIndex = ({
 
   return (
     <Layout isHomePage>
-      <Seo title="All posts" />
+      <SEO title="All posts" />
       <section class="py-20">
         <div class="container px-4 mx-auto">
           <div class="max-w-xl lg:max-w-2xl mx-auto mb-16 text-center">
