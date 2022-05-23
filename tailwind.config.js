@@ -8,6 +8,8 @@ module.exports = {
         secondary: "#FE9D0B",
         accent: "#FE9D0B",
         tint: "#EBEFF4",
+        para: "#2D1115",
+        dark: "#111111",
       },
     },
   },

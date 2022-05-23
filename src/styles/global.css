@@ -96,6 +96,10 @@ img {
   flex-grow: 1;
 }
 
+.video-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
 .banner .video-container {
   z-index: 1;
   display: flex;
@@ -190,6 +194,12 @@ section.section-tint {
 }
 .container {
   max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.inner-container {
+  max-width: 652px;
   margin: 0 auto;
   padding: 0 16px;
 }

@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => {
   const menu = [
     { name: "About", link: "/about" },
     { name: "Services", link: "/services" },
-    { name: "Testominials", link: "/testominials" },
+    { name: "Testimonials", link: "/testimonials" },
     { name: "FAQ", link: "/faq" },
     { name: "Blog", link: "/blog" },
     { name: "Contact", link: "/contact" },
@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => {
     <div className="container">
       <div class="navbar">
         <div class="nav-logo">
-          <a href="#">AGS Support</a>
+          <a href="/">AGS Support</a>
         </div>
 
         <input type="checkbox" id="nav-check" />
