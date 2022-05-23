@@ -3,8 +3,8 @@ import parse from "html-react-parser"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
-import SEO from "../components/SEO"
+import Layout from "../components/Layout"
+import Seo from "../components/SEO"
 
 const Post = ({ data: { previous, next, post } }) => {
   const featuredImage = {
@@ -13,7 +13,7 @@ const Post = ({ data: { previous, next, post } }) => {
   }
   return (
     <Layout>
-      <SEO title="Post" />
+      <Seo title="Post" />
       {featuredImage?.data && (
         <GatsbyImage
           image={featuredImage.data}

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/SEO"
 import Banner from "../components/Home/Banner"
 import Quicklinks from "../components/Home/Quicklinks"
 import Service from "../components/Home/Service"
@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <Seo title="Home" />
       <Banner {...content.hero} />
       <Quicklinks {...content.hero.quicksLinks} />
 
