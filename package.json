@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@headlessui/react": "^1.6.2",
+    "@heroicons/react": "^1.0.6",
     "fslightbox-react": "^1.6.2-2",
     "gatsby": "^4.13.0",
     "gatsby-plugin-gatsby-cloud": "^4.13.0",
