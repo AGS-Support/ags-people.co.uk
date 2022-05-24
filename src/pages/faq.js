@@ -1,16 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Accordion from "../components/Accordion"
-import { Disclosure, Transition } from "@headlessui/react"
-import { ChevronUpIcon } from "@heroicons/react/solid"
-import { ChevronRightIcon } from "@heroicons/react/solid"
-import { PlusIcon } from "@heroicons/react/solid"
-import { XIcon } from "@heroicons/react/solid"
+
 const FaqPage = ({ data }) => {
-  console.log("faq", data.wpPage.faqs.faqs)
   const faqs = data.wpPage.faqs.faqs
   return (
     <Layout>
