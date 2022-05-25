@@ -10,6 +10,7 @@ module.exports = {
         tint: "#EBEFF4",
         para: "#2D1115",
         dark: "#111111",
+        yellow: "#F8CE01",
       },
     },
   },

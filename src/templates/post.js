@@ -14,41 +14,48 @@ const Post = ({ data: { previous, next, post } }) => {
   return (
     <Layout>
       <Seo title="Post" />
-      {featuredImage?.data && (
-        <GatsbyImage
-          image={featuredImage.data}
-          alt={featuredImage.alt}
-          style={{ marginBottom: 50 }}
-        />
-      )}
-      <div>{parse(post.content)}</div>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.uri} rel="prev">
-                ← {parse(previous.title)}
-              </Link>
+      <section>
+        <div className="inner-container">
+          <div className="content">
+            <h1>{parse(post.title)}</h1>
+            {featuredImage?.data && (
+              <GatsbyImage
+                image={featuredImage.data}
+                alt={featuredImage.alt}
+                style={{ marginBottom: 50 }}
+              />
             )}
-          </li>
+            <div className="text-para">{parse(post.content)}</div>
+            <nav className="blog-post-nav">
+              <ul
+                style={{
+                  display: `flex`,
+                  flexWrap: `wrap`,
+                  justifyContent: `space-between`,
+                  listStyle: `none`,
+                  padding: 0,
+                }}
+              >
+                <li>
+                  {previous && (
+                    <Link to={previous.uri} rel="prev">
+                      ← {parse(previous.title)}
+                    </Link>
+                  )}
+                </li>
 
-          <li>
-            {next && (
-              <Link to={next.uri} rel="next">
-                {parse(next.title)} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+                <li>
+                  {next && (
+                    <Link to={next.uri} rel="next">
+                      {parse(next.title)} →
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }

@@ -17,7 +17,7 @@ const Service = ({ title, content, image, buttonUrl, buttonText }) => {
       <div className="py-3">
         <Link
           to={buttonUrl}
-          className="text-brand bg-tint hover:bg-tint/80 text-white font-bold py-4 px-4 rounded"
+          className="text-brand bg-tint hover:bg-tint/80 text-white font-bold p-4 rounded"
         >
           {buttonText}
         </Link>

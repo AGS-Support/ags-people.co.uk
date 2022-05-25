@@ -16,7 +16,10 @@ const Header = ({ siteTitle }) => {
     <div className="container">
       <div class="navbar">
         <div class="nav-logo">
-          <a href="/">AGS Support</a>
+          <a href="/">
+            <span className="font-bold">AGS</span>
+            <span className="font-normal">SUPPORT</span>
+          </a>
         </div>
 
         <input type="checkbox" id="nav-check" />

@@ -333,6 +333,7 @@ ul.list-inline li {
   text-align: center;
   width: 100%;
   background-color: white;
+  background-color: transparent;
   transition: all 0.3s;
   overflow-y: hidden;
   top: 0px;

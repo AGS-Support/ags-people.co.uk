@@ -1,5 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
+import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
@@ -7,6 +8,7 @@ import Banner from "../components/Home/Banner"
 import Quicklinks from "../components/Home/QuickLinks"
 import Service from "../components/Home/Service"
 import Testimonials from "../components/Home/Testimonials"
+import { CheckCircleIcon } from "@heroicons/react/solid"
 
 const IndexPage = ({ data }) => {
   const content = data.wpPage.homepage
@@ -32,7 +34,7 @@ const IndexPage = ({ data }) => {
       <section class="section-tint angle-border angle-border-top angle-border-bottom angle-border-tint">
         <div class="container">
           <div class="content">
-            <h2>{content.customerLogos.headline}</h2>
+            <h2 className="text-center">{content.customerLogos.headline}</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-12">
               {content.customerLogos.logos.map((logo, index) => {
                 var logo = getImage(logo.localFile)
@@ -41,9 +43,71 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
           <div class="content">
-            <h2>Clients We’ve Helped to Thrive</h2>
+            <h2 className="text-center">Clients We’ve Helped to Thrive</h2>
             <div className="grid lg:grid-cols-3 md:grid-cols-3  sm:grid-cols-1 lg:gap-8 md:gap-12 sm:gap-0">
               <Testimonials testimonials={testimonials} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="inner-container">
+          <div class="content">
+            <h2 className="text-center">
+              {content.whatMakesAgsSpecial.headline}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-12 sm:gap-0">
+              {content.whatMakesAgsSpecial.feature.map((feature, index) => {
+                console.log("feature", feature)
+                return (
+                  <p>
+                    <CheckCircleIcon
+                      style={{
+                        width: "24px",
+                        height: "24px",
+                        color: "green",
+                        display: "inline",
+                        marginRight: "8px",
+                      }}
+                    />
+                    {feature.featureText}
+                  </p>
+                )
+              })}
+              {content.whatMakesAgsSpecial.buttons.map((button, index) => {
+                return (
+                  <Link
+                    to={button.url}
+                    className={`
+                    button  text-center
+                    ${
+                      index == 0
+                        ? "text-white bg-primary"
+                        : "text-white bg-secondary"
+                    } `}
+                  >
+                    {button.text}
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-tint angle-border angle-border-top angle-border-bottom angle-border-tint">
+        <div class="inner-container">
+          <div class="content">
+            <h2 className="text-center">{content.longFormCta.headline}</h2>
+            <p className="text-center text-dark">
+              {parse(content.longFormCta.content)}
+            </p>
+            <div className="text-center text-bold">
+              <Link to={content.longFormCta.linkUrl} className="underline">
+                {content.longFormCta.linkText}
+              </Link>
+              →
             </div>
           </div>
         </div>

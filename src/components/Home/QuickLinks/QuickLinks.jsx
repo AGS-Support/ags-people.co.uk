@@ -20,6 +20,14 @@ const Quicklinks = ({ headline, links }) => {
               )
             })}
           </ul>
+          <div className="text-right">
+            <Link
+              to="#0"
+              className="bg-secondary text-white font-bold p-4 rounded"
+            >
+              Call Us Now
+            </Link>
+          </div>
         </div>
       </div>
     </section>
