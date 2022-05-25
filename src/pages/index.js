@@ -56,79 +56,11 @@ export default IndexPage
 export const query = graphql`
   query HomePageQuery {
     wpPage(isFrontPage: { eq: true }) {
-      homepage {
-        hero {
-          headline
-          subHeading
-          video {
-            vimeoUrl
-            poster {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                  )
-                }
-              }
-            }
-          }
-          button {
-            text
-            url
-          }
-          quicksLinks {
-            headline
-            links {
-              name
-              url
-            }
-          }
-        }
-
-        services {
-          leftService {
-            title
-            content
-            buttonText
-            buttonUrl
-            image {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                  )
-                }
-              }
-            }
-          }
-          rightService {
-            title
-            content
-            buttonText
-            buttonUrl
-            image {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-          }
-        }
-
-        customerLogos {
-          headline
-          logos {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-        }
-      }
+      ...heroFields
+      ...serviceFields
+      ...whatMakesAgsSpecialFields
+      ...customerLogoFields
+      ...longFormCtaFields
     }
     allWpTestimonial(
       filter: { testimonials: { showOnHomepage: { eq: true } } }
