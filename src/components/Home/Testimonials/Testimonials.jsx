@@ -7,7 +7,7 @@ const Testimonials = ({ testimonials }) => {
     <>
       {testimonials.map((testimonial, index) => {
         return (
-          <div className="border-solid border-2 border-gray-300 p-8 bg-white mb-26 shadow-md mb-6 md:mb-0">
+          <div className="p-8 bg-white mb-26 shadow-md mb-6 md:mb-0">
             <div className="grid grid-cols-2  md:grid-cols-2 gap-4 pb-6">
               <div className="text-lg font-bold text-black">
                 {testimonial.title}
