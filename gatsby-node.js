@@ -12,6 +12,14 @@ const chunk = require(`lodash/chunk`)
  * See https://www.gatsbyjs.com/docs/node-apis/#createPages for more info.
  */
 exports.createPages = async gatsbyUtilities => {
+  const { actions, reporter } = gatsbyUtilities
+  const { createRedirect } = actions
+
+  createRedirect({
+    fromPath: "/night-support",
+    toPath: "/services/night-support/",
+    isPermanent: true,
+  })
   // Query our posts from the GraphQL server
   const posts = await getPosts(gatsbyUtilities)
 

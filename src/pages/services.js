@@ -10,7 +10,8 @@ import Section from "../components/Section"
 const ServicesPage = ({ data }) => {
   const services = data.allWpService.nodes
   const pageData = data.wpPage.servicePage
-  const cta = data.wpPage.servicePage.cta
+  const cta = pageData.cta
+  const whoWeWorkWith = pageData.whoWeWorkWith
   return (
     <Layout>
       <Seo title="Home" />
@@ -42,9 +43,19 @@ const ServicesPage = ({ data }) => {
         <div className="container">
           <div class="content text-center">
             <h2>Who We Work With</h2>
-            <h3>Housing Associations</h3>
-            <h3>Charities for the Homeless</h3>
-            <h3>Local Council Authorities</h3>
+            {whoWeWorkWith.map((sector, index) => {
+              return (
+                <>
+                  <h3>{sector.title}</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+                    {sector.logos.map((logo, index) => {
+                      var logo = getImage(logo.localFile)
+                      return <GatsbyImage image={logo} />
+                    })}
+                  </div>
+                </>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -106,11 +117,20 @@ export const query = graphql`
             externalUrl
           }
         }
-      }
-      whoWeAre {
-        fieldGroupName
-        headline
-        intro
+        whoWeWorkWith {
+          title
+          logos {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  height: 50
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -10,17 +10,17 @@ const PostSummary = ({ post }) => {
 
   return (
     <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-      <div className="p-4 bg-tint rounded-lg">
-        <div className="relative h-40 mb-6">
+      <div className="bg-tint pb-8">
+        <div className="relative h-60 mb-6">
           {featuredImage?.data && (
             <GatsbyImage
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover "
               image={featuredImage.data}
               alt={featuredImage.alt}
             />
           )}
         </div>
-        <div className="p-0">
+        <div className="p-4">
           <span className="inline-block text-xs font-bold text-dark">
             {post.date}
           </span>
