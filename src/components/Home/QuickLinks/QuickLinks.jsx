@@ -1,20 +1,23 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { useQuickLinks } from "../../../hooks/use-quicklinks"
 const Quicklinks = ({ headline, links }) => {
+  const services = useQuickLinks()
+  console.log("quick link nodes", services)
   return (
     <section class="quick-links angle-border angle-border-top angle-border-brand">
       <div class="container">
         <div class="content">
           <h2 class="margin-reset">{headline}</h2>
           <ul className="list-reset list-inline">
-            {links.map(link => {
+            {services.map(service => {
               return (
-                <li key={link.id}>
+                <li key={service.slug}>
                   <Link
-                    to={link.url}
+                    to={`services/${service.slug}`}
                     className="text-white underline font-normal"
                   >
-                    {link.name}
+                    {service.services.title}
                   </Link>
                 </li>
               )

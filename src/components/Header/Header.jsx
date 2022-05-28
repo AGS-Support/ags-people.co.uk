@@ -14,8 +14,8 @@ const Header = ({ siteTitle }) => {
   ]
   return (
     <div className="container">
-      <div class="navbar">
-        <div class="nav-logo">
+      <div className="navbar">
+        <div className="nav-logo">
           <a href="/">
             <span className="font-bold">AGS</span>
             <span className="font-normal">SUPPORT</span>
@@ -23,15 +23,15 @@ const Header = ({ siteTitle }) => {
         </div>
 
         <input type="checkbox" id="nav-check" />
-        <div class="nav-btn">
-          <label for="nav-check">
+        <div className="nav-btn">
+          <label htmlFor="nav-check">
             <span></span>
             <span></span>
             <span></span>
           </label>
         </div>
 
-        <div class="nav-links">
+        <div className="nav-links bg-white md:bg-transparent">
           {menu.map((item, index) => {
             return (
               <Link key={`desktop-menu-item-${index}`} to={item.link}>

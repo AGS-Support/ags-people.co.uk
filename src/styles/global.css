@@ -273,6 +273,11 @@ section.quick-links {
   background: var(--colour-brand-tint);
 }
 
+.angle-border-top.angle-border-primary:before,
+.angle-border-bottom.angle-border-primary:after {
+  background: var(--colour-brand);
+}
+
 section.angle-border-top {
   margin-top: 32px;
 }
@@ -332,8 +337,7 @@ ul.list-inline li {
   display: block;
   text-align: center;
   width: 100%;
-  background-color: white;
-  background-color: transparent;
+
   transition: all 0.3s;
   overflow-y: hidden;
   top: 0px;

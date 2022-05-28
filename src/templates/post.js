@@ -5,6 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+import Categories from "../components/Blog/Categories"
 
 const Post = ({ data: { previous, next, post } }) => {
   const featuredImage = {
@@ -17,7 +18,15 @@ const Post = ({ data: { previous, next, post } }) => {
       <section>
         <div className="inner-container">
           <div className="content">
+            <Link to="/blog" rel="prev">
+              ← Blog Home
+            </Link>
+
             <h1>{parse(post.title)}</h1>
+            <p>
+              Posted: {post.date}
+              <Categories categories={post.categories.nodes} />
+            </p>
             {featuredImage?.data && (
               <GatsbyImage
                 image={featuredImage.data}
@@ -26,32 +35,37 @@ const Post = ({ data: { previous, next, post } }) => {
               />
             )}
             <div className="text-para">{parse(post.content)}</div>
-            <nav className="blog-post-nav">
-              <ul
-                style={{
-                  display: `flex`,
-                  flexWrap: `wrap`,
-                  justifyContent: `space-between`,
-                  listStyle: `none`,
-                  padding: 0,
-                }}
-              >
-                <li>
-                  {previous && (
-                    <Link to={previous.uri} rel="prev">
-                      ← {parse(previous.title)}
-                    </Link>
-                  )}
-                </li>
+            <nav
+              className="blog-post-nav mt-16"
+              style={{ display: "flex", justifyContent: "space-between" }}
+            >
+              {previous ? (
+                <div style={{ maxWidth: "48%" }}>
+                  <Link to={previous.uri} rel="prev">
+                    <p className="text-dark margin-reset text-left">Previous</p>
+                    <div style={{ display: "inline-flex" }}>
+                      <span>←&nbsp;&nbsp;</span>
+                      <span>{parse(previous.title)}</span>
+                    </div>
+                  </Link>
+                </div>
+              ) : (
+                <div style={{ maxWidth: "48%" }}>
+                  <div style={{ display: "inline-flex" }}></div>
+                </div>
+              )}
 
-                <li>
-                  {next && (
-                    <Link to={next.uri} rel="next">
-                      {parse(next.title)} →
-                    </Link>
-                  )}
-                </li>
-              </ul>
+              {next && (
+                <div className="text-right" style={{ maxWidth: "48%" }}>
+                  <Link to={next.uri} rel="prev">
+                    <p className="text-dark margin-reset text-right">Next</p>
+                    <div style={{ display: "inline-flex" }}>
+                      <span>{parse(next.title)}</span>
+                      <span>&nbsp;&nbsp;→</span>
+                    </div>
+                  </Link>
+                </div>
+              )}
             </nav>
           </div>
         </div>
@@ -85,6 +99,12 @@ export const pageQuery = graphql`
               )
             }
           }
+        }
+      }
+      categories {
+        nodes {
+          slug
+          name
         }
       }
     }
