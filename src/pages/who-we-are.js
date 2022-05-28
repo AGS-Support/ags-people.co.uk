@@ -6,7 +6,7 @@ import Seo from "../components/SEO"
 import parse from "html-react-parser"
 
 const WhoWeArePage = ({ data }) => {
-  const content = data.allWpPage.nodes[0].whoWeAre
+  const content = data.wpPage.whoWeAre
   const teamMembers = data.allWpTeamMember.nodes
   const bannnerImage = getImage(content.image?.localFile)
 
@@ -39,21 +39,14 @@ export default WhoWeArePage
 
 export const query = graphql`
   query WhoWeAreQuery {
-    allWpPage(
-      filter: { tags: { nodes: { elemMatch: { name: { eq: "who-we-are" } } } } }
-    ) {
-      nodes {
-        whoWeAre {
-          headline
-          intro
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
+    wpPage(tags: { nodes: { elemMatch: { slug: { eq: "who-we-are" } } } }) {
+      whoWeAre {
+        headline
+        intro
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
