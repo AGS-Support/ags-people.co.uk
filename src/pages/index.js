@@ -21,8 +21,8 @@ const IndexPage = ({ data }) => {
       <Quicklinks {...content.hero.quicksLinks} />
 
       <section>
-        <div class="container">
-          <div class="content">
+        <div className="container">
+          <div className="content">
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24">
               <Service {...content.services.leftService} />
               <Service {...content.services.rightService} />
@@ -31,16 +31,16 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
 
-      <section class="section-tint angle-border angle-border-top angle-border-bottom angle-border-tint">
-        <div class="container">
-          <div class="content">
+      <section className="section-tint angle-border angle-border-top angle-border-bottom angle-border-tint">
+        <div className="container">
+          <div className="content">
             <h2 className="text-center">{content.customerLogos.headline}</h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12">
+            <div className="grid grid-cols-5  gap-8 brands mb-10 ">
               {content.customerLogos.logos.map((logo, index) => {
                 var logo = getImage(logo.localFile)
                 return (
-                  <div class="brands__item">
+                  <div className="brands__item">
                     <a href="#">
                       <GatsbyImage image={logo} />
                     </a>
@@ -49,7 +49,7 @@ const IndexPage = ({ data }) => {
               })}
             </div>
           </div>
-          <div class="content">
+          <div className="content">
             <h2 className="text-center">Clients We’ve Helped to Thrive</h2>
             <div className="grid lg:grid-cols-3 md:grid-cols-3  sm:grid-cols-1 lg:gap-8 md:gap-12 sm:gap-0">
               <Testimonials testimonials={testimonials} />
@@ -59,12 +59,12 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section>
-        <div class="inner-container">
-          <div class="content">
+        <div className="inner-container">
+          <div className="content">
             <h2 className="text-center">
               {content.whatMakesAgsSpecial.headline}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-12 sm:gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0">
               {content.whatMakesAgsSpecial.feature.map((feature, index) => {
                 console.log("feature", feature)
                 return (
@@ -103,9 +103,9 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
 
-      <section class="section-tint angle-border angle-border-top angle-border-bottom angle-border-tint">
-        <div class="inner-container">
-          <div class="content">
+      <section className="section-tint angle-border angle-border-top angle-border-bottom angle-border-tint">
+        <div className="inner-container">
+          <div className="content">
             <h2 className="text-center">{content.longFormCta.headline}</h2>
             <p className="text-center text-dark">
               {parse(content.longFormCta.content)}
