@@ -1,16 +1,28 @@
 import React from "react"
 import parse from "html-react-parser"
+import Masonry from "react-masonry-css"
 import { StarIcon } from "@heroicons/react/solid"
 
 const Testimonials = ({ testimonials }) => {
+  const breakpointColumnsObj = {
+    default: 3,
+
+    1000: 2,
+    720: 1,
+  }
+
   return (
-    <>
+    <Masonry
+      breakpointCols={breakpointColumnsObj}
+      className="my-masonry-grid"
+      columnClassName="my-masonry-grid_column"
+    >
       {testimonials.map((testimonial, index) => {
         return (
-          <div className="p-8 bg-white mb-26 shadow-md mb-6 md:mb-0">
+          <div className="p-8 bg-white mb-26 shadow-md mb-6 mb-10">
             <div className="grid grid-cols-2  md:grid-cols-2 gap-4 pb-6">
               <div className="text-lg font-bold text-black">
-                {testimonial.title}
+                {testimonial.testimonials.title}
               </div>
               <div className="flex justify-end">
                 <StarIcon className="h-5 w-5 text-yellow" />
@@ -20,11 +32,13 @@ const Testimonials = ({ testimonials }) => {
                 <StarIcon className="h-5 w-5 text-yellow" />
               </div>
             </div>
-            <p className="text-para">{parse(testimonial.content)}</p>
+            <p className="text-para">
+              {parse(testimonial.testimonials.content)}
+            </p>
           </div>
         )
       })}
-    </>
+    </Masonry>
   )
 }
 export default Testimonials

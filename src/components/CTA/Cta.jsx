@@ -14,7 +14,7 @@ const Cta = ({ background, headline, content, button }) => {
       <div class="inner-container">
         <div class="content">
           <h2
-            className={`text-center text-${
+            className={`text-center font-bold text-${
               background === "Dark" ? "white" : "primary"
             }`}
           >

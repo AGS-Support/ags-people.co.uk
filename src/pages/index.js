@@ -13,6 +13,7 @@ import { CheckCircleIcon } from "@heroicons/react/solid"
 const IndexPage = ({ data }) => {
   const content = data.wpPage.homepage
   const testimonials = data.allWpTestimonial.nodes
+  console.log("testimonials", testimonials)
 
   return (
     <Layout>
@@ -51,9 +52,7 @@ const IndexPage = ({ data }) => {
           </div>
           <div className="content">
             <h2 className="text-center">Clients We’ve Helped to Thrive</h2>
-            <div className="grid lg:grid-cols-3 md:grid-cols-3  sm:grid-cols-1 lg:gap-8 md:gap-12 sm:gap-0">
-              <Testimonials testimonials={testimonials} />
-            </div>
+            <Testimonials testimonials={testimonials} />
           </div>
         </div>
       </section>
@@ -137,9 +136,10 @@ export const query = graphql`
       filter: { testimonials: { showOnHomepage: { eq: true } } }
     ) {
       nodes {
-        title
-        content
         testimonials {
+          title
+          subTitle
+          content
           showOnHomepage
         }
       }

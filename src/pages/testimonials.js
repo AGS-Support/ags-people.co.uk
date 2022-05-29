@@ -6,15 +6,14 @@ import Testimonials from "../components/Home/Testimonials"
 
 const TestominialPage = ({ data }) => {
   const testimonials = data.allWpTestimonial.nodes
+
   return (
     <Layout>
       <Seo title="Home" />
       <section className="banner">
         <div className="container">
           <div class="content">
-            <div className="grid lg:grid-cols-3 md:grid-cols-3  sm:grid-cols-1 lg:gap-8 md:gap-12 sm:gap-0">
-              <Testimonials testimonials={testimonials} />
-            </div>
+            <Testimonials testimonials={testimonials} />
           </div>
         </div>
       </section>
@@ -27,9 +26,10 @@ export const query = graphql`
   query TestimonialPageQuery {
     allWpTestimonial {
       nodes {
-        title
-        content
         testimonials {
+          title
+          subTitle
+          content
           showOnHomepage
         }
       }
