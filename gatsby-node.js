@@ -12,14 +12,6 @@ const chunk = require(`lodash/chunk`)
  * See https://www.gatsbyjs.com/docs/node-apis/#createPages for more info.
  */
 exports.createPages = async gatsbyUtilities => {
-  const { actions, reporter } = gatsbyUtilities
-  const { createRedirect } = actions
-
-  createRedirect({
-    fromPath: "/night-support",
-    toPath: "/services/night-support/",
-    isPermanent: true,
-  })
   // Query our posts from the GraphQL server
   const posts = await getPosts(gatsbyUtilities)
 
@@ -33,6 +25,36 @@ exports.createPages = async gatsbyUtilities => {
 
   // And a paginated archive
   await createBlogPostArchive({ posts, gatsbyUtilities })
+
+  /* SEO redirects from old site */
+  const { actions, reporter } = gatsbyUtilities
+  const { createRedirect } = actions
+
+  createRedirect({
+    fromPath: "/night-support",
+    toPath: "/services/night-support/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/concierge-service",
+    toPath: "/services/concierge-service/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/mobile-concierge-service/",
+    toPath: "/services/night-support/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/bank-workers",
+    toPath: "/services/bank-workers/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/covid-hotel-staffing",
+    toPath: "/services/bespoke-staffing-solutions/",
+    isPermanent: true,
+  })
 }
 
 /**

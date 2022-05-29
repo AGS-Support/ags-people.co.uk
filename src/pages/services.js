@@ -46,11 +46,17 @@ const ServicesPage = ({ data }) => {
             {whoWeWorkWith.map((sector, index) => {
               return (
                 <>
-                  <h3>{sector.title}</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+                  <h3 className="text-center margin-reset">{sector.title}</h3>
+                  <div className="grid grid-cols-5  gap-8 brands mb-10 ">
                     {sector.logos.map((logo, index) => {
                       var logo = getImage(logo.localFile)
-                      return <GatsbyImage image={logo} />
+                      return (
+                        <div class="brands__item">
+                          <a href="#">
+                            <GatsbyImage image={logo} />
+                          </a>
+                        </div>
+                      )
                     })}
                   </div>
                 </>
@@ -59,6 +65,7 @@ const ServicesPage = ({ data }) => {
           </div>
         </div>
       </section>
+
       <Cta {...cta} />
     </Layout>
   )

@@ -35,10 +35,17 @@ const IndexPage = ({ data }) => {
         <div class="container">
           <div class="content">
             <h2 className="text-center">{content.customerLogos.headline}</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-12">
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12">
               {content.customerLogos.logos.map((logo, index) => {
                 var logo = getImage(logo.localFile)
-                return <GatsbyImage image={logo} />
+                return (
+                  <div class="brands__item">
+                    <a href="#">
+                      <GatsbyImage image={logo} />
+                    </a>
+                  </div>
+                )
               })}
             </div>
           </div>
