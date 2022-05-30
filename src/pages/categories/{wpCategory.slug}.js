@@ -14,8 +14,8 @@ const Category = ({ data }) => {
       <Seo title="Home" />
       <section>
         <div class="container">
-          <div class="content">
-            <h1 className="text-center margin-reset">{category.name}</h1>
+          <div class="content title">
+            <h1 className="text-center">Category > {category.name}</h1>
             <div class="flex flex-wrap -mx-4 mb-12">
               {posts.map(post => {
                 return <PostSummary post={post} />

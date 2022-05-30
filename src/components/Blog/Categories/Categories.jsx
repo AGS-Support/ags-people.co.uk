@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import { HashtagIcon } from "@heroicons/react/solid"
 const PostCategories = ({ categories }) => {
   return (
     <>
@@ -12,11 +12,20 @@ const PostCategories = ({ categories }) => {
           return (
             <span>
               &nbsp; in{" "}
-              <Link to={`categories/${category.slug}`}>{category.name}</Link>
+              <Link to={`/categories/${category.slug}`} className="underline">
+                {category.name}
+              </Link>
             </span>
           )
         }
-        return <Link to={`categories/${category.slug}`}>{category.name}</Link>
+        return (
+          <>
+            {",  "}
+            <Link to={`/categories/${category.slug}`} className="underline">
+              {category.name}
+            </Link>
+          </>
+        )
       })}
     </>
   )
