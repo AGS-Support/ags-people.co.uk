@@ -5,12 +5,13 @@ import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => {
   const menu = [
-    { name: "Who We Are", link: "/who-we-are" },
+    { name: "About", link: "/who-we-are" },
     { name: "Services", link: "/services" },
-    { name: "Testimonials", link: "/testimonials" },
+
     { name: "Team", link: "/who-we-are" },
-    { name: "Stories", link: "/customer-stories" },
+    { name: "Customer Stories", link: "/customer-stories" },
     { name: "FAQ", link: "/faq" },
+    { name: "Testimonials", link: "/testimonials" },
     { name: "Blog", link: "/blog" },
     { name: "Contact", link: "/contact-us" },
   ]
