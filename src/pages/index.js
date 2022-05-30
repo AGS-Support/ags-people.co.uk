@@ -63,7 +63,7 @@ const IndexPage = ({ data }) => {
             <h2 className="text-center">
               {content.whatMakesAgsSpecial.headline}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0 pl-[8%]">
               {content.whatMakesAgsSpecial.feature.map((feature, index) => {
                 console.log("feature", feature)
                 return (
@@ -72,7 +72,7 @@ const IndexPage = ({ data }) => {
                       style={{
                         width: "24px",
                         height: "24px",
-                        color: "green",
+                        color: "#6AC259",
                         display: "inline",
                         marginRight: "8px",
                       }}
@@ -81,6 +81,8 @@ const IndexPage = ({ data }) => {
                   </p>
                 )
               })}
+            </div>
+            <div className="mx-auto mt-10 text-center">
               {content.whatMakesAgsSpecial.buttons.map((button, index) => {
                 return (
                   <Link
@@ -89,9 +91,10 @@ const IndexPage = ({ data }) => {
                     button  text-center
                     ${
                       index == 0
-                        ? "text-white bg-primary"
-                        : "text-white bg-secondary"
+                        ? "text-white bg-primary border-2 border-primary mr-10 min-w-[250px]"
+                        : "text-primary bg-white border-2 border-primary min-w-[250px]"
                     } `}
+                    style={{ paddingTop: "10px", paddingBottom: "10px" }}
                   >
                     {button.text}
                   </Link>
