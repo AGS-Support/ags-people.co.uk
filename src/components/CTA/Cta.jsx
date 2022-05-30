@@ -32,7 +32,7 @@ const Cta = ({ background, headline, content, button }) => {
             <div className="text-center mt-16">
               <a
                 href={`${process.env.GATSBY_CALENDLY_URL}`}
-                className="bg-secondary mx-auto  text-white font-bold p-4 rounded"
+                className="button text-center text-white bg-secondary border-2 border-secondary"
               >
                 {button.text}
               </a>

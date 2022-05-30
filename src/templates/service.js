@@ -22,9 +22,11 @@ const Service = ({ data }) => {
             <div className="grid grid-cols-1 md:grid-cols-2  gap-12">
               <div>
                 <p className="text-dark">{parse(service.content)}</p>
+
                 <Link
-                  to="#0"
-                  className="bg-primary  text-white font-bold p-4 rounded"
+                  to="/contact-us"
+                  className="button  text-center text-white bg-secondary border-2 border-secondary"
+                  style={{ paddingTop: "10px", paddingBottom: "10px" }}
                 >
                   Call Us Now
                 </Link>
