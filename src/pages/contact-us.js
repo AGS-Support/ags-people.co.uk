@@ -6,7 +6,7 @@ import {
 } from "react-google-recaptcha-v3"
 import ContactForm from "../components/ContactForm"
 import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import Seo from "../components/SEO"
 const ContactUs = ({ data }) => {
   return (
     <Layout>
