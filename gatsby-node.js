@@ -64,6 +64,11 @@ exports.createPages = async gatsbyUtilities => {
     toPath: "/services/bespoke-staffing-solutions/",
     isPermanent: true,
   })
+  createRedirect({
+    fromPath: "/about-us",
+    toPath: "/services/",
+    isPermanent: true,
+  })
 }
 
 /**
