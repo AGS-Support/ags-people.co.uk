@@ -14,7 +14,7 @@ const Service = ({ data }) => {
   const next = data.next
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title={service.title} />
       <section>
         <div class="container">
           <div class="content">

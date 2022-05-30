@@ -14,7 +14,7 @@ const Post = ({ data: { previous, next, post } }) => {
   }
   return (
     <Layout>
-      <Seo title="Post" />
+      <Seo title={post.title} />
       <section>
         <div className="inner-container">
           <div className="content">

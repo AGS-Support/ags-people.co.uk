@@ -11,7 +11,7 @@ const FaqPage = ({ data }) => {
     <Layout>
       <Seo title="FAQ" />
       <div className="inner-container">
-        <div className="content">
+        <div className="content title">
           <h1 className="text-center">Frequently Asked Questions</h1>
           <section>
             {faqs.map((faq, index) => {

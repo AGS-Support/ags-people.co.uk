@@ -216,6 +216,10 @@ section.section-tint {
   padding-bottom: var(--space-extra);
 }
 
+.content.title {
+  padding-top: 0px;
+}
+
 /* QUICK LINKS */
 
 section.quick-links {
@@ -292,14 +296,6 @@ section.angle-border-bottom {
 
 /* LISTS */
 
-ul.list-reset {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 16px;
-}
 ul.list-inline li {
 }
 
@@ -390,6 +386,15 @@ ul.list-inline li {
     display: inline-flex;
     padding: initial;
     border: initial;
+  }
+
+  ul.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
   }
 }
 

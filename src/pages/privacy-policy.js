@@ -14,7 +14,7 @@ const PrivacyPolicyPage = ({ data }) => {
       <Seo title="Privacy Policy" />
       <section>
         <div className="inner-container">
-          <div className="content">
+          <div className="content title">
             <h1 className="text-center">Privacy Policy</h1>
             <div className="text-dark">{parse(privacyPolicyPage.content)}</div>
             <Accordion items={cookies} />

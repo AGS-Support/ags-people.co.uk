@@ -13,7 +13,7 @@ const ContactUs = ({ data }) => {
       <Seo title="Contact Us" />
       <section>
         <div className="inner-container">
-          <div className="content">
+          <div className="content title">
             <GoogleReCaptchaProvider
               reCaptchaKey={process.env.GATSBY_CAPTCHA_V3_key}
             >

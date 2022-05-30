@@ -5,9 +5,7 @@ import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => {
   const menu = [
-    { name: "About", link: "/who-we-are" },
     { name: "Services", link: "/services" },
-
     { name: "Team", link: "/who-we-are" },
     { name: "Customer Stories", link: "/customer-stories" },
     { name: "FAQ", link: "/faq" },

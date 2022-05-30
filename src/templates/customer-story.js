@@ -18,7 +18,7 @@ const CustomerStory = ({ data }) => {
       <Seo title="Customer Story" />
       <section>
         <div class="container">
-          <div class="content">
+          <div class="content title">
             <h1 className="text-center margin-reset">Customer Story</h1>
             <div className="mx-auto text-center my-3">
               <GatsbyImage image={logo} className="max-w-[200px]" />

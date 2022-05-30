@@ -14,11 +14,11 @@ const ServicesPage = ({ data }) => {
   const whoWeWorkWith = pageData.whoWeWorkWith
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="Services" />
       <section className="">
         <div className="inner-container">
-          <div class="content text-center">
-            <h1>{pageData.title}</h1>
+          <div className="content title">
+            <h1 className="text-center">{pageData.title}</h1>
             <p>{parse(pageData.content)}</p>
           </div>
         </div>
@@ -41,7 +41,7 @@ const ServicesPage = ({ data }) => {
       </Section>
       <section>
         <div className="container">
-          <div class="content text-center">
+          <div className="content text-center">
             <h2>Who We Work With</h2>
             {whoWeWorkWith.map((sector, index) => {
               return (
@@ -51,7 +51,7 @@ const ServicesPage = ({ data }) => {
                     {sector.logos.map((logo, index) => {
                       var logo = getImage(logo.localFile)
                       return (
-                        <div class="brands__item">
+                        <div className="brands__item">
                           <a href="#">
                             <GatsbyImage image={logo} />
                           </a>

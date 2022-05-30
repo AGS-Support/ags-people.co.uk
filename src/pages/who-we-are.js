@@ -15,7 +15,7 @@ const WhoWeArePage = ({ data }) => {
       <Seo title="Who We Are" />
       <section>
         <div class="container">
-          <div class="content">
+          <div class="content title">
             <h1 className="text-center">{content.headline}</h1>
             <p
               className="text-para text-center"

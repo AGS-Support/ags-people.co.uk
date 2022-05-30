@@ -30,7 +30,7 @@ const BlogIndex = ({
       <Seo title="All posts" />
       <section>
         <div className="container">
-          <div className="content">
+          <div className="content title">
             <h1 className="text-center">Blog</h1>
 
             <div className="flex flex-wrap -mx-4 mb-12">

@@ -10,7 +10,7 @@ const Banner = ({ headline, subHeading, button, video }) => {
           <div className="headline">
             <h1>{parse(headline)}</h1>
             <p className="bump">{parse(subHeading)}</p>
-            <div className="mt-12">
+            <div className="mt-12 mb-6">
               <Link
                 to="#0"
                 className="bg-primary  text-white font-bold p-4 rounded"
