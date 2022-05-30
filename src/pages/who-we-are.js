@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import parse from "html-react-parser"
-
+import Section from "../components/Section"
 const WhoWeArePage = ({ data }) => {
   const content = data.wpPage.whoWeAre
   const teamMembers = data.allWpTeamMember.nodes
@@ -23,14 +23,56 @@ const WhoWeArePage = ({ data }) => {
             >
               {parse(content.intro)}
             </p>
-            <GatsbyImage image={bannnerImage} className="max-w-full" />
-            {teamMembers.map(teamMember => {
-              console.log("teammember", teamMember)
-              return <li key={teamMember.id}>{teamMember.theTeam.name}</li>
-            })}
+            <GatsbyImage image={bannnerImage} className="max-w-full mb-10" />
           </div>
         </div>
       </section>
+      {teamMembers.map((teamMember, index) => {
+        const profileImage = getImage(teamMember.theTeam.profilePic?.localFile)
+        console.log("profileImage", teamMember.profilePic?.localFile)
+        if (index === 0) {
+          return (
+            <Section background="light">
+              <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0">
+                <div className="text-center">
+                  <GatsbyImage image={profileImage} />
+                </div>
+                <div key={teamMember.id}>
+                  <h1>{teamMember.theTeam.name}</h1>
+                  <h2>{teamMember.theTeam.role}</h2>
+                  {teamMember.theTeam.profile && (
+                    <p className="text-dark">
+                      {parse(teamMember.theTeam.profile)}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </Section>
+          )
+        }
+        return (
+          <section>
+            <div class="container">
+              <div class="content">
+                <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0">
+                  <div className="text-center">
+                    <GatsbyImage image={profileImage} />
+                  </div>
+                  <div key={teamMember.id}>
+                    <h1>{teamMember.theTeam.name}</h1>
+                    <h2>{teamMember.theTeam.role}</h2>
+                    {teamMember.theTeam.profile && (
+                      <p className="text-dark">
+                        {parse(teamMember.theTeam.profile)}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )
+      })}
     </Layout>
   )
 }
@@ -60,7 +102,16 @@ export const query = graphql`
           profile
           role
           profilePic {
-            id
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 300
+                  height: 200
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
           }
         }
       }

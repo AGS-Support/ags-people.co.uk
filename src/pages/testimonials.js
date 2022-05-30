@@ -10,9 +10,10 @@ const TestominialPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Home" />
-      <section className="banner">
+      <section>
         <div className="container">
           <div class="content">
+            <h1 className="text-center">Testimonials</h1>
             <Testimonials testimonials={testimonials} />
           </div>
         </div>

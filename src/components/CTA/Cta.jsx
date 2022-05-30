@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import parse from "html-react-parser"
 
 const Cta = ({ background, headline, content, button }) => {
+  console.log("calendly link", process.env.GATSBY_CALENDLY_URL)
   return (
     <section
       class={`bg-${
@@ -29,12 +30,12 @@ const Cta = ({ background, headline, content, button }) => {
           </p>
           {button.link === "Calendly" ? (
             <div className="text-center mt-16">
-              <Link
-                to="#0"
+              <a
+                href={`${process.env.GATSBY_CALENDLY_URL}`}
                 className="bg-secondary mx-auto  text-white font-bold p-4 rounded"
               >
                 {button.text}
-              </Link>
+              </a>
             </div>
           ) : null}
 

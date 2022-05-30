@@ -8,9 +8,11 @@ const Header = ({ siteTitle }) => {
     { name: "About", link: "/about" },
     { name: "Services", link: "/services" },
     { name: "Testimonials", link: "/testimonials" },
+    { name: "Team", link: "/who-we-are" },
+    { name: "Stories", link: "/customer-stories" },
     { name: "FAQ", link: "/faq" },
     { name: "Blog", link: "/blog" },
-    { name: "Contact", link: "/contact" },
+    { name: "Contact", link: "/contact-us" },
   ]
   return (
     <div className="container">

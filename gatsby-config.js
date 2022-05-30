@@ -1,9 +1,12 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     title: `AGS Support`,
     description: `Supported housing`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: process.env.WPGRAPHQL_URL,
   },
   plugins: [
     "gatsby-plugin-gatsby-cloud",

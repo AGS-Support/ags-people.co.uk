@@ -6,6 +6,7 @@ import Accordion from "../components/Accordion"
 
 const FaqPage = ({ data }) => {
   const faqs = data.wpPage.faqs.faqs
+
   return (
     <Layout>
       <Seo title="FAQ" />
@@ -15,6 +16,7 @@ const FaqPage = ({ data }) => {
           <section>
             {faqs.map((faq, index) => {
               const theFaq = faq.faq
+              console.log(theFaq.questions)
               return (
                 <>
                   <h2 className={`${index > 0 ? "mt-8" : ""} text-center`}>
