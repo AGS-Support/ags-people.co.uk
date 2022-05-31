@@ -58,7 +58,7 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section>
-        <div className="inner-container">
+        <div className="container">
           <div className="content">
             <h2 className="text-center">
               {content.whatMakesAgsSpecial.headline}
@@ -82,7 +82,7 @@ const IndexPage = ({ data }) => {
                 )
               })}
             </div>
-            <div className="mx-auto mt-10 text-center">
+            <div className="mx-auto mt-10 text-center flex justify-center">
               {content.whatMakesAgsSpecial.buttons.map((button, index) => {
                 return (
                   <Link

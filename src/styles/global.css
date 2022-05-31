@@ -113,6 +113,10 @@ img {
   margin-bottom: calc(var(--space-large) * -1);
 }
 
+.banner .video-container {
+  margin-bottom: calc(var(--space-large) * 3);
+}
+
 .video {
   position: relative;
 }
@@ -152,6 +156,9 @@ img {
   .banner .headline h1 {
     font-size: 3vw;
     line-height: 3.25vw;
+  }
+  .banner .video-container {
+    margin-bottom: calc(var(--space-large) * -2);
   }
   § .banner .video-container {
     min-width: 430px;

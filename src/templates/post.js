@@ -35,15 +35,12 @@ const Post = ({ data: { previous, next, post } }) => {
               />
             )}
             <div className="text-para">{parse(post.content)}</div>
-            <nav
-              className="blog-post-nav mt-16"
-              style={{ display: "flex", justifyContent: "space-between" }}
-            >
+            <nav className="blog-post-nav mt-16 flex justify-between">
               {previous ? (
                 <div style={{ maxWidth: "48%" }}>
                   <Link to={previous.uri} rel="prev">
                     <p className="text-dark margin-reset text-left">Previous</p>
-                    <div style={{ display: "inline-flex" }}>
+                    <div className="inline-flex">
                       <span>←&nbsp;&nbsp;</span>
                       <span>{parse(previous.title)}</span>
                     </div>
@@ -51,7 +48,7 @@ const Post = ({ data: { previous, next, post } }) => {
                 </div>
               ) : (
                 <div style={{ maxWidth: "48%" }}>
-                  <div style={{ display: "inline-flex" }}></div>
+                  <div className="inline-flex"></div>
                 </div>
               )}
 
@@ -59,7 +56,7 @@ const Post = ({ data: { previous, next, post } }) => {
                 <div className="text-right" style={{ maxWidth: "48%" }}>
                   <Link to={next.uri} rel="prev">
                     <p className="text-dark margin-reset text-right">Next</p>
-                    <div style={{ display: "inline-flex" }}>
+                    <div className="inline-flex">
                       <span>{parse(next.title)}</span>
                       <span>&nbsp;&nbsp;→</span>
                     </div>
