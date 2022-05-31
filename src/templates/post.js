@@ -23,7 +23,9 @@ const Post = ({ data: { previous, next, post } }) => {
             </Link>
 
             <h1>{parse(post.title)}</h1>
-            <p className="text-para bump">{parse(post.posts.summary)}</p>
+            {post.posts.summary && (
+              <p className="text-para bump">{parse(post.posts.summary)}</p>
+            )}
             <p>
               Posted: {post.date}
               <Categories categories={post.categories.nodes} />
