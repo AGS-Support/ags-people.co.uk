@@ -185,6 +185,14 @@ img {
   padding: var(--space-large) var(--space-extra);
   text-decoration: none;
 }
+.button-full {
+  border-radius: var(--space-base);
+  font-weight: 700;
+  display: block;
+  padding: var(--space-large) var(--space-extra);
+  text-decoration: none;
+}
+
 .button.button--large {
   font-size: 1.2rem;
 }

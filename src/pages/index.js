@@ -110,17 +110,17 @@ const IndexPage = ({ data }) => {
                 })}
               </div>
             </div>
-            <div className="mx-auto mt-10 text-center md:flex md:justify-center">
+            <div className="mx-auto mt-10 text-center block  md:flex md:justify-center">
               {content.whatMakesAgsSpecial.buttons.map((button, index) => {
                 return (
                   <Link
                     to={button.url}
                     className={`
-                    button  text-center w-full md:w-[250px]  mb-5 md:mb-0
+                    button-full text-center w-[100%] md:w-[250px]  mb-5 md:mb-0
                     ${
                       index == 0
-                        ? "text-white bg-primary border-2 border-primary mr-10 min-w-[250px]"
-                        : "text-primary bg-white border-2 border-primary min-w-[250px]"
+                        ? "text-white bg-primary border-2 border-primary mr-10 "
+                        : "text-primary bg-white border-2 border-primary"
                     } `}
                     style={{ paddingTop: "10px", paddingBottom: "10px" }}
                   >

@@ -24,7 +24,7 @@ const Quicklinks = ({ headline, links }) => {
                 )
               })}
             </ul>
-            <div className="mt-10 lg:mt-0">
+            <div className="mb-10 md:mb-0 mt-10 lg:mt-0">
               <Link
                 to="#0"
                 className="bg-secondary text-white font-bold p-4 rounded border-2 border-secondary"
