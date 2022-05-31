@@ -10,7 +10,7 @@ export const customerLogoFields = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                height: 50
+                height: 75
                 placeholder: BLURRED
                 formats: [AUTO, WEBP, AVIF]
               )

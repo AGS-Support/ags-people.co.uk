@@ -49,7 +49,7 @@ const Cta = ({ background, headline, content, button }) => {
                 to={button.internalUrl.uri}
                 className={`text-${
                   background === "Dark" ? "white" : "primary"
-                }`}
+                } font-bold uppercase underline`}
               >
                 {button.text}
               </Link>

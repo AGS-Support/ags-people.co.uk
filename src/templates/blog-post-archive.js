@@ -79,6 +79,9 @@ export const pageQuery = graphql`
         date(formatString: "DD MMMM , YYYY")
         title
         excerpt
+        posts {
+          summary
+        }
         featuredImage {
           node {
             localFile {

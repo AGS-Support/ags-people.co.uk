@@ -37,11 +37,15 @@ const IndexPage = ({ data }) => {
           <div className="content">
             <h2 className="text-center">{content.customerLogos.headline}</h2>
 
-            <div className="grid grid-cols-5  gap-8 brands mb-10 ">
+            <div className="grid grid-cols-3 md:grid-cols-5  gap-8 brands mb-10 ">
               {content.customerLogos.logos.map((logo, index) => {
                 var logo = getImage(logo.localFile)
                 return (
-                  <div className="brands__item">
+                  <div
+                    className={`brands__item ${
+                      index > 8 ? "hidden md:inline" : "visible"
+                    }`}
+                  >
                     <a href="#">
                       <GatsbyImage image={logo} />
                     </a>
@@ -65,7 +69,6 @@ const IndexPage = ({ data }) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0 pl-[8%]">
               {content.whatMakesAgsSpecial.feature.map((feature, index) => {
-                console.log("feature", feature)
                 return (
                   <p>
                     <CheckCircleIcon
@@ -82,13 +85,13 @@ const IndexPage = ({ data }) => {
                 )
               })}
             </div>
-            <div className="mx-auto mt-10 text-center flex justify-center">
+            <div className="mx-auto mt-10 text-center md:flex md:justify-center">
               {content.whatMakesAgsSpecial.buttons.map((button, index) => {
                 return (
                   <Link
                     to={button.url}
                     className={`
-                    button  text-center
+                    button  text-center w-full md:w-[250px]  mb-5 md:mb-0
                     ${
                       index == 0
                         ? "text-white bg-primary border-2 border-primary mr-10 min-w-[250px]"
@@ -113,7 +116,10 @@ const IndexPage = ({ data }) => {
               {parse(content.longFormCta.content)}
             </p>
             <div className="text-center text-bold">
-              <Link to={content.longFormCta.linkUrl} className="underline">
+              <Link
+                to={content.longFormCta.linkUrl}
+                className="text-primary font-bold uppercase underline"
+              >
                 {content.longFormCta.linkText}
               </Link>
               →

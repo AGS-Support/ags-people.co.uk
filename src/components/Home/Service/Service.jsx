@@ -10,16 +10,14 @@ const Service = ({ title, content, image, buttonUrl, buttonText }) => {
     <div id="left-service" className="mb-10 md:mb-0">
       <GatsbyImage image={serviceImage} alt="Service Image" />
 
-      <h2 className="margin-reset" style={{ marginTop: "2.2rem" }}>
-        {title}
-      </h2>
-      <p className="mt-8 text-dark">{parse(content)}</p>
-      <div className="py-3">
+      <h2 className="mt-3 mb-0">{title}</h2>
+      <p className="mt-2 text-dark">{parse(content)}</p>
+      <div>
         <Link
           to={buttonUrl}
-          className="text-brand bg-tint hover:bg-tint/80 text-white font-bold p-4 rounded"
+          className="text-primary font-bold uppercase underline"
         >
-          {buttonText}
+          {buttonText} →
         </Link>
       </div>
     </div>

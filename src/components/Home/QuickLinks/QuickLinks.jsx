@@ -27,9 +27,15 @@ const Quicklinks = ({ headline, links }) => {
             <div className="mt-10 lg:mt-0">
               <Link
                 to="#0"
-                className="bg-secondary text-white font-bold p-4 rounded"
+                className="bg-secondary text-white font-bold p-4 rounded border-2 border-secondary"
               >
                 Call Us Now
+              </Link>
+              <Link
+                to="#0"
+                className="bg-primary text-white border-2 border-white font-bold p-4 rounded ml-5"
+              >
+                Book A Free Call
               </Link>
             </div>
           </div>

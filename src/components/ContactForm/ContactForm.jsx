@@ -17,45 +17,45 @@ const ContactUs = ({ data }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label>Name*</label>
+        <label className="font-bold">Name*</label>
         <input
           required={true}
           id="name"
           name="name"
-          className="w-full py-3 pl-3 mb-4 border rounded"
+          className="w-full py-3 pl-3 mb-4 border border-primary rounded"
           type="text"
           placeholder="Name"
         />
         <ValidationError prefix="Name" field="name" errors={state.errors} />
-        <label>Email*</label>
+        <label className="font-bold">Email*</label>
         <input
           required={true}
           id="email"
           name="email"
-          className="w-full py-3 pl-3 mb-4 border rounded"
+          className="w-full py-3 pl-3 mb-4 border border-primary rounded"
           type="email"
           placeholder="Email"
         />
 
         <ValidationError prefix="Email" field="email" errors={state.errors} />
-        <label>Mobile</label>
+        <label className="font-bold">Mobile</label>
         <input
           required={false}
           id="mobile"
           name="mobile"
-          className="w-full py-3 pl-3 mb-4 border rounded"
+          className="w-full py-3 pl-3 mb-4 border border-primary rounded"
           type="text"
-          placeholder="Mobile:"
+          placeholder="Mobile"
         />
         <ValidationError prefix="Mobile" field="mobile" errors={state.errors} />
-        <label>Message</label>
+        <label className="font-bold">Message</label>
 
         <textarea
           required={true}
           rows="20"
           id="message"
           name="message"
-          className="mb-4 w-full p-3 border rounded resize-none"
+          className="mb-4 w-full p-3 border border-primary rounded resize-none"
           placeholder="Your Message..."
         ></textarea>
         <ValidationError

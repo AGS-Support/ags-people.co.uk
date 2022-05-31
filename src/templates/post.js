@@ -23,17 +23,30 @@ const Post = ({ data: { previous, next, post } }) => {
             </Link>
 
             <h1>{parse(post.title)}</h1>
+            <p className="text-para bump">{parse(post.posts.summary)}</p>
             <p>
               Posted: {post.date}
               <Categories categories={post.categories.nodes} />
             </p>
-            {featuredImage?.data && (
-              <GatsbyImage
-                image={featuredImage.data}
-                alt={featuredImage.alt}
-                style={{ marginBottom: 50 }}
-              />
-            )}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="image-container">
+          {featuredImage?.data && (
+            <GatsbyImage
+              image={featuredImage.data}
+              alt={featuredImage.alt}
+              style={{ marginBottom: 50 }}
+            />
+          )}
+        </div>
+      </section>
+
+      <section>
+        <div className="inner-container">
+          <div className="content title">
             <div className="text-para">{parse(post.content)}</div>
             <nav className="blog-post-nav mt-16 flex justify-between">
               {previous ? (
@@ -80,9 +93,12 @@ export const pageQuery = graphql`
   ) {
     post: wpPost(id: { eq: $id }) {
       id
-      excerpt
-      content
       title
+      excerpt
+      posts {
+        summary
+      }
+      content
       date(formatString: "MMMM DD, YYYY")
       featuredImage {
         node {

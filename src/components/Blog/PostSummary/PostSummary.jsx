@@ -33,31 +33,12 @@ const PostSummary = ({ post }) => {
             itemProp="description"
             className="mb-4 text-lg text-dark leading-loose"
           >
-            {parse(post.excerpt)}
+            {post.posts?.summary
+              ? parse(post.posts?.summary)
+              : parse(post.excerpt)}
           </p>
-
-          <Link
-            to={post.uri}
-            itemProp="url"
-            className="flex items-center text-lg font-bold text-primary hover:text-indigo-700"
-          >
-            <span>Read more</span>
-            <span>
-              <svg
-                className="ml-1 w-5 h-4"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                ></path>
-              </svg>
-            </span>
+          <Link to={post.uri} className="text-primary font-bold">
+            Read More →
           </Link>
         </div>
       </div>

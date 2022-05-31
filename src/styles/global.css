@@ -216,6 +216,12 @@ section.section-tint {
   padding: 0 16px;
 }
 
+.image-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 .content {
   max-width: 1200px;
   margin: 0 auto 0 auto;
@@ -467,4 +473,21 @@ ul.list-inline li {
 .my-masonry-grid_column {
   padding-left: 30px; /* gutter size */
   background-clip: padding-box;
+}
+
+/* Text Case */
+.case-none {
+  text-transform: none;
+}
+.case-upper {
+  text-transform: uppercase;
+}
+.case-lower {
+  text-transform: lowercase;
+}
+.case-proper {
+  text-transform: capitalize;
+}
+.case-sentence::first-letter {
+  text-transform: uppercase;
 }

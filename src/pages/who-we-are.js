@@ -37,7 +37,10 @@ const WhoWeArePage = ({ data }) => {
                 <div className="text-center">
                   <GatsbyImage image={profileImage} />
                 </div>
-                <div key={teamMember.id}>
+                <div
+                  className="border border-2 border-primary"
+                  key={teamMember.id}
+                >
                   <h1>{teamMember.theTeam.name}</h1>
                   <h2>{teamMember.theTeam.role}</h2>
                   {teamMember.theTeam.profile && (
@@ -55,12 +58,16 @@ const WhoWeArePage = ({ data }) => {
             <div class="container">
               <div class="content">
                 <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0">
-                  <div className="text-center">
+                  <div
+                    className={`order-${
+                      index % 2 == 0 ? "first" : "last"
+                    } text-center`}
+                  >
                     <GatsbyImage image={profileImage} />
                   </div>
                   <div key={teamMember.id}>
-                    <h1>{teamMember.theTeam.name}</h1>
-                    <h2>{teamMember.theTeam.role}</h2>
+                    <h1 className="margin-reset">{teamMember.theTeam.name}</h1>
+                    <h2 className="margin-reset">{teamMember.theTeam.role}</h2>
                     {teamMember.theTeam.profile && (
                       <p className="text-dark">
                         {parse(teamMember.theTeam.profile)}
