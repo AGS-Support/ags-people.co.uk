@@ -34,26 +34,30 @@ const ContactUs = ({ data }) => {
                   <ContactForm />
                 </div>
                 <div>
-                  <h2 className="mb-3">Contact Details</h2>
-                  <p>
-                    Tel:{" "}
-                    <a
-                      className="underline"
-                      href={`tel:${pageData.telephoneNumber}`}
-                    >
-                      {pageData.telephoneNumber}
-                    </a>
-                  </p>
-                  <p>
-                    Email:{" "}
-                    <a
-                      className="underline"
-                      href={`mailto:${pageData.emailAddress}`}
-                    >
-                      {pageData.emailAddress}
-                    </a>
-                  </p>
-                  <h2 className="margin-reset">Offices</h2>
+                  <div className="text-center md:text-left">
+                    <h2 className="mb-3 ">Contact Us</h2>
+                    <p>
+                      Tel:{" "}
+                      <a
+                        className="underline"
+                        href={`tel:${pageData.telephoneNumber}`}
+                      >
+                        {pageData.telephoneNumber}
+                      </a>
+                    </p>
+                    <p>
+                      Email:{" "}
+                      <a
+                        className="underline"
+                        href={`mailto:${pageData.emailAddress}`}
+                      >
+                        {pageData.emailAddress}
+                      </a>
+                    </p>
+                  </div>
+                  <h2 className="margin-reset text-center md:text-left hidden">
+                    Offices
+                  </h2>
                   <Accordion items={offices} />
                 </div>
               </div>

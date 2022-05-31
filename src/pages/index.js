@@ -13,7 +13,11 @@ import { CheckCircleIcon } from "@heroicons/react/solid"
 const IndexPage = ({ data }) => {
   const content = data.wpPage.homepage
   const testimonials = data.allWpTestimonial.nodes
-  console.log("testimonials", testimonials)
+  const featureList = content.whatMakesAgsSpecial.feature
+
+  const half = Math.ceil(featureList.length / 2)
+  const featuresFirstHalf = featureList.splice(0, half)
+  const featuresSecondHalf = featureList.splice(-half)
 
   return (
     <Layout>
@@ -67,23 +71,44 @@ const IndexPage = ({ data }) => {
             <h2 className="text-center">
               {content.whatMakesAgsSpecial.headline}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0 pl-[8%]">
-              {content.whatMakesAgsSpecial.feature.map((feature, index) => {
-                return (
-                  <p>
-                    <CheckCircleIcon
-                      style={{
-                        width: "24px",
-                        height: "24px",
-                        color: "#6AC259",
-                        display: "inline",
-                        marginRight: "8px",
-                      }}
-                    />
-                    {feature.featureText}
-                  </p>
-                )
-              })}
+
+            <div className="block md:flex md:justify-between inner-container">
+              <div>
+                {featuresFirstHalf.map((feature, index) => {
+                  return (
+                    <p>
+                      <CheckCircleIcon
+                        style={{
+                          width: "24px",
+                          height: "24px",
+                          color: "#6AC259",
+                          display: "inline",
+                          marginRight: "8px",
+                        }}
+                      />
+                      {feature.featureText}
+                    </p>
+                  )
+                })}
+              </div>
+              <div>
+                {featuresSecondHalf.map((feature, index) => {
+                  return (
+                    <p>
+                      <CheckCircleIcon
+                        style={{
+                          width: "24px",
+                          height: "24px",
+                          color: "#6AC259",
+                          display: "inline",
+                          marginRight: "8px",
+                        }}
+                      />
+                      {feature.featureText}
+                    </p>
+                  )
+                })}
+              </div>
             </div>
             <div className="mx-auto mt-10 text-center md:flex md:justify-center">
               {content.whatMakesAgsSpecial.buttons.map((button, index) => {
