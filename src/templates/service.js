@@ -10,6 +10,7 @@ const Service = ({ data }) => {
   console.log("data", data)
   const service = data.wpService.services
   const serviceImage = getImage(service.image?.localFile)
+  const callToAction = service.callToAction
   const previous = data.previous
   const next = data.next
   return (
@@ -51,7 +52,7 @@ const Service = ({ data }) => {
         </div>
       </Section>
       <div style={{ height: "5px" }}></div>
-      <Cta {...service.cta} />
+      <Cta {...callToAction} />
       <section>
         <div class="container">
           <div className="content">
@@ -112,25 +113,24 @@ export const query = graphql`
             }
           }
         }
-        serviceFeatures {
-          headline
-          content
-        }
-        cta {
+        callToAction {
           background
           headline
           content
           button {
             text
             link
+            externalUrl
             internalUrl {
               ... on WpPage {
-                id
                 uri
               }
             }
-            externalUrl
           }
+        }
+        serviceFeatures {
+          headline
+          content
         }
       }
     }

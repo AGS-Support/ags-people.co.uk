@@ -12,8 +12,9 @@ const ServicesPage = ({ data }) => {
   console.log("data", data)
   const services = data.allWpService.nodes
   const pageData = data.wpPage.servicePage
-  const cta = data.wpPage.ctaComponent
-  console.log("pageData", pageData)
+  const cta = pageData.servicesCallToAction
+  console.log("cta", cta)
+
   const whoWeWorkWith = pageData.whoWeWorkWith
   return (
     <Layout>
@@ -46,7 +47,7 @@ const ServicesPage = ({ data }) => {
         <div className="container">
           <div className="content text-center">
             <h2>Who We Work With</h2>
-            <Partners partners={whoWeWorkWith} />
+            <Partners />
           </div>
         </div>
       </section>
@@ -82,43 +83,25 @@ export const query = graphql`
             headline
             content
           }
-          cta {
-            headline
-            content
-          }
         }
       }
     }
 
     wpPage(tags: { nodes: { elemMatch: { slug: { eq: "services" } } } }) {
-      ctaComponent {
-        background
-        headline
-        content
-        button {
-          link
-          text
-          internalUrl {
-            ... on WpPage {
-              uri
-            }
-          }
-          externalUrl
-        }
-      }
       servicePage {
         title
         content
-        whoWeWorkWith {
-          title
-          logos {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  height: 50
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
+        servicesCallToAction {
+          background
+          headline
+          content
+          button {
+            text
+            link
+            externalUrl
+            internalUrl {
+              ... on WpPage {
+                uri
               }
             }
           }

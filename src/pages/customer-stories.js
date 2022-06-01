@@ -10,10 +10,9 @@ import Partners from "../components/Partners"
 
 const CustomerStoriesPage = ({ data }) => {
   const stories = data.allWpCustomerStory.nodes
-  const pageData = data.wpPage.servicePage
-  const cta = data.wpPage.ctaComponent
+  const pageData = data.wpPage.customerStoriesPage
+  const callToAction = pageData.callToAction
 
-  const whoWeWorkWith = pageData.whoWeWorkWith
   return (
     <Layout>
       <Seo title="Customer Stories" />
@@ -21,7 +20,7 @@ const CustomerStoriesPage = ({ data }) => {
         <div className="inner-container">
           <div className="content title">
             <h1 className="text-center">{pageData.title}</h1>
-            <p>{parse(pageData.content)}</p>
+            {pageData.content && <p>{parse(pageData.content)}</p>}
           </div>
         </div>
       </section>
@@ -51,12 +50,12 @@ const CustomerStoriesPage = ({ data }) => {
         <div className="container">
           <div className="content text-center">
             <h2>Who We Work With</h2>
-            <Partners partners={whoWeWorkWith} />
+            <Partners />
           </div>
         </div>
       </section>
 
-      <Cta {...cta} />
+      <Cta {...callToAction} />
     </Layout>
   )
 }
@@ -84,35 +83,23 @@ export const query = graphql`
       }
     }
 
-    wpPage(tags: { nodes: { elemMatch: { slug: { eq: "services" } } } }) {
-      ctaComponent {
-        background
-        headline
-        content
-        button {
-          link
-          text
-          internalUrl {
-            ... on WpPage {
-              uri
-            }
-          }
-          externalUrl
-        }
-      }
-      servicePage {
+    wpPage(
+      tags: { nodes: { elemMatch: { slug: { eq: "customer-stories" } } } }
+    ) {
+      customerStoriesPage {
         title
         content
-
-        whoWeWorkWith {
-          title
-          logos {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
+        callToAction {
+          background
+          headline
+          content
+          button {
+            text
+            link
+            externalUrl
+            internalUrl {
+              ... on WpPage {
+                uri
               }
             }
           }

@@ -2,20 +2,19 @@ import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useClients } from "../../hooks/use-clients"
 
-const Partners = ({ partners, cols, colsDesktop }) => {
+const Partners = ({ cols, colsDesktop }) => {
   const clients = useClients()
-  console.log("partners", partners)
-  console.log("clients", clients)
   return (
     <>
       {clients.map((client, index) => {
+        const clientDetails = client.clients
         return (
           <>
-            <h3 className="text-center margin-reset">{client.clients.title}</h3>
+            <h3 className="text-center margin-reset">{clientDetails.title}</h3>
             <div
               className={`grid grid-cols-${cols} md:grid-cols-${colsDesktop}  gap-8 brands mb-10`}
             >
-              {client.clients.logos.map((logo, index) => {
+              {clientDetails.logos.map((logo, index) => {
                 var logoImage = getImage(logo.localFile)
                 return (
                   <div className="brands__item">
