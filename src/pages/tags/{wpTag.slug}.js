@@ -1,7 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import parse from "html-react-parser"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../../components/Layout"
 import Seo from "../../components/SEO"
 import PostSummary from "../../components/Blog/PostSummary"
@@ -18,13 +16,6 @@ const Tag = ({ data }) => {
             <h1 className="text-center margin-reset">{tag.name}</h1>
             <div class="flex flex-wrap -mx-4 mb-12">
               {posts.map(post => {
-                const title = post.title
-                const featuredImage = {
-                  data: post.featuredImage?.node?.localFile?.childImageSharp
-                    ?.gatsbyImageData,
-                  alt: post.featuredImage?.node?.alt || ``,
-                }
-
                 return <PostSummary post={post} />
               })}
             </div>

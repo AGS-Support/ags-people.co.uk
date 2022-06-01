@@ -43,16 +43,16 @@ const IndexPage = ({ data }) => {
 
             <div className="grid grid-cols-3 md:grid-cols-5  gap-8 brands mb-10 ">
               {content.customerLogos.logos.map((logo, index) => {
-                var logo = getImage(logo.localFile)
+                var logoImage = getImage(logo.localFile)
                 return (
                   <div
                     className={`brands__item ${
                       index > 8 ? "hidden md:inline" : "visible"
                     }`}
                   >
-                    <a href="#">
-                      <GatsbyImage image={logo} />
-                    </a>
+                    <span>
+                      <GatsbyImage image={logoImage} />
+                    </span>
                   </div>
                 )
               })}
@@ -118,7 +118,7 @@ const IndexPage = ({ data }) => {
                     className={`
                     button-full text-center w-[100%] md:w-[250px]  mb-5 md:mb-0
                     ${
-                      index == 0
+                      index === 0
                         ? "text-white bg-primary border-2 border-primary mr-10 "
                         : "text-primary bg-white border-2 border-primary"
                     } `}

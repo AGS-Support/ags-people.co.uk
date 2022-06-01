@@ -3,7 +3,10 @@ import { Link } from "gatsby"
 import parse from "html-react-parser"
 
 const Cta = ({ background, headline, content, button }) => {
-  console.log("calendly link", process.env.GATSBY_CALENDLY_URL)
+  console.log("background", background)
+  console.log("headline", headline)
+  console.log("content", content)
+  console.log("button", button)
   return (
     <section
       class={`bg-${
@@ -26,9 +29,9 @@ const Cta = ({ background, headline, content, button }) => {
               background === "Dark" ? "white" : "dark"
             }`}
           >
-            {parse(content)}
+            {content && parse(content)}
           </p>
-          {button.link === "Calendly" ? (
+          {button?.link === "Calendly" ? (
             <div className="text-center mt-16">
               <a
                 href={`${process.env.GATSBY_CALENDLY_URL}`}
@@ -39,7 +42,7 @@ const Cta = ({ background, headline, content, button }) => {
             </div>
           ) : null}
 
-          {button.link === "Internal Page" ? (
+          {button?.link === "Internal Page" ? (
             <div
               className={`text-center text-bold text-${
                 background === "Dark" ? "white" : "primary"
@@ -56,7 +59,7 @@ const Cta = ({ background, headline, content, button }) => {
               →
             </div>
           ) : null}
-          {button.link === "External URL" ? (
+          {button?.link === "External URL" ? (
             <div className="text-center text-bold text-white">
               <a
                 href={button.externalUrl}

@@ -60,7 +60,7 @@ const WhoWeArePage = ({ data }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0">
                   <div
                     className={`order-${
-                      index % 2 == 0 ? "first" : "last"
+                      index % 2 === 0 ? "first" : "last"
                     } text-center`}
                   >
                     <GatsbyImage image={profileImage} />

@@ -1,7 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import parse from "html-react-parser"
-import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import PostSummary from "../components/Blog/PostSummary"
@@ -35,13 +33,6 @@ const BlogIndex = ({
 
             <div className="flex flex-wrap -mx-4 mb-12">
               {posts.map(post => {
-                const title = post.title
-                const featuredImage = {
-                  data: post.featuredImage?.node?.localFile?.childImageSharp
-                    ?.gatsbyImageData,
-                  alt: post.featuredImage?.node?.alt || ``,
-                }
-
                 return <PostSummary post={post} />
               })}
             </div>

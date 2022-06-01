@@ -6,7 +6,7 @@ import playIcon from "../../../assets/images/play-white.jpeg"
 const Video = ({ vimeoUrl, poster }) => {
   const [toggler, setToggler] = useState(false)
   if (!vimeoUrl || !poster) {
-    return null
+    return <></>
   }
   const videoPoster = getImage(poster?.localFile)
   const videoProps = {
@@ -21,7 +21,11 @@ const Video = ({ vimeoUrl, poster }) => {
     <div className="video-container">
       <div className="video">
         <div className="video-icon-play" style={{ zIndex: "2" }}>
-          <img src={playIcon} onClick={() => setToggler(!toggler)} />
+          <img
+            alt="Play Video"
+            src={playIcon}
+            onClick={() => setToggler(!toggler)}
+          />
         </div>
         <GatsbyImage
           image={videoPoster}

@@ -6,11 +6,14 @@ import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Cta from "../components/CTA"
 import Section from "../components/Section"
+import Partners from "../components/Partners"
 
 const ServicesPage = ({ data }) => {
+  console.log("data", data)
   const services = data.allWpService.nodes
   const pageData = data.wpPage.servicePage
-  const cta = pageData.cta
+  const cta = data.wpPage.ctaComponent
+  console.log("pageData", pageData)
   const whoWeWorkWith = pageData.whoWeWorkWith
   return (
     <Layout>
@@ -43,25 +46,7 @@ const ServicesPage = ({ data }) => {
         <div className="container">
           <div className="content text-center">
             <h2>Who We Work With</h2>
-            {whoWeWorkWith.map((sector, index) => {
-              return (
-                <>
-                  <h3 className="text-center margin-reset">{sector.title}</h3>
-                  <div className="grid grid-cols-5  gap-8 brands mb-10 ">
-                    {sector.logos.map((logo, index) => {
-                      var logo = getImage(logo.localFile)
-                      return (
-                        <div className="brands__item">
-                          <a href="#">
-                            <GatsbyImage image={logo} />
-                          </a>
-                        </div>
-                      )
-                    })}
-                  </div>
-                </>
-              )
-            })}
+            <Partners partners={whoWeWorkWith} />
           </div>
         </div>
       </section>
@@ -106,24 +91,24 @@ export const query = graphql`
     }
 
     wpPage(tags: { nodes: { elemMatch: { slug: { eq: "services" } } } }) {
+      ctaComponent {
+        background
+        headline
+        content
+        button {
+          link
+          text
+          internalUrl {
+            ... on WpPage {
+              uri
+            }
+          }
+          externalUrl
+        }
+      }
       servicePage {
         title
         content
-        cta {
-          background
-          headline
-          content
-          button {
-            link
-            text
-            internalUrl {
-              ... on WpPage {
-                uri
-              }
-            }
-            externalUrl
-          }
-        }
         whoWeWorkWith {
           title
           logos {

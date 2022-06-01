@@ -457,13 +457,13 @@ ul.list-inline li {
   display: block;
   /* Make sure max-width is added */
   max-width: 100%;
-  width: 430px;
-
-  object-fit: contain;
+  width: 330px;
+  height: 70px;
+  object-fit: contain !important;
   mix-blend-mode: multiply;
 }
 
-.brands__item a {
+.brands__item span {
   display: flex;
   justify-content: center;
   align-items: center;

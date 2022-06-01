@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import FsLightbox from "fslightbox-react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -9,7 +8,6 @@ import Video from "../components/Home/Banner/Video"
 const CustomerStory = ({ data }) => {
   const story = data.wpCustomerStory.customerStories
   const logo = getImage(story.logo?.localFile)
-  const poster = getImage(story.video.poster?.localFile)
   const previous = data.previous
   const next = data.next
 

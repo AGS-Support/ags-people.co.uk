@@ -26,13 +26,16 @@ const Footer = () => {
             </p>
             <p className="mt-5 mb-6 max-w-xs text-gray-500 leading-loose">
               © {new Date().getFullYear()} &middot; Built with 💖 by{" "}
-              <a href="https://indieridge.com">Indie Ridge</a>
+              <a href="https://indieridge.com" target="_blank" rel="noreferrer">
+                Indie Ridge
+              </a>
             </p>
             <div>
               <a
                 className="inline-block h-6 mr-8"
                 href="https://www.linkedin.com/company/agssupport"
                 target="_blank"
+                rel="noreferrer"
               >
                 <Svg src={LinkedInLogo} fill="#0A66C2" {...svgProps} />
               </a>
@@ -40,6 +43,7 @@ const Footer = () => {
                 className="inline-block h-6 mr-8"
                 href="https://www.facebook.com/AGSSupportFacilities/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <Svg src={facebookLogo} fill="#1877F2" {...svgProps} />
               </a>

@@ -1,6 +1,6 @@
 import React from "react"
 import parse from "html-react-parser"
-import { Disclosure, Transition } from "@headlessui/react"
+import { Disclosure } from "@headlessui/react"
 import { PlusIcon } from "@heroicons/react/solid"
 import { XIcon } from "@heroicons/react/solid"
 
@@ -20,6 +20,7 @@ const Accordion = ({ items }) => {
                     <PlusIcon className="h-5 w-5 text-black" />
                   )}
                 </Disclosure.Button>
+
                 <Disclosure.Panel className="p-4 text-md text-dark bg-tint">
                   {parse(item.answer)}
                 </Disclosure.Panel>

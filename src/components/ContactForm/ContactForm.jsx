@@ -1,9 +1,6 @@
 import React from "react"
 import { useForm, ValidationError } from "@formspree/react"
-import {
-  GoogleReCaptchaProvider,
-  useGoogleReCaptcha,
-} from "react-google-recaptcha-v3"
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
 const ContactUs = ({ data }) => {
   const { executeRecaptcha } = useGoogleReCaptcha()

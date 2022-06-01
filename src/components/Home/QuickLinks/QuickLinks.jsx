@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { useQuickLinks } from "../../../hooks/use-quicklinks"
 const Quicklinks = ({ headline, links }) => {
   const services = useQuickLinks()
-  console.log("quick link nodes", services)
+
   return (
     <section className="quick-links angle-border angle-border-top angle-border-brand">
       <div className="container">
