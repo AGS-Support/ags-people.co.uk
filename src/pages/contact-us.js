@@ -81,7 +81,7 @@ export const pageQuery = graphql`
       }
     }
 
-    allWpOffice(sort: { fields: menuOrder, order: ASC }) {
+    allWpOffice {
       nodes {
         offices {
           question: title
