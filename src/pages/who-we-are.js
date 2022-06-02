@@ -32,42 +32,15 @@ const WhoWeArePage = ({ data }) => {
         console.log("profileImage", teamMember.profilePic?.localFile)
         if (index === 0) {
           return (
-            <Section background="light">
-              <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0">
-                <div className="text-center">
-                  <GatsbyImage image={profileImage} />
-                </div>
-                <div
-                  className="border border-2 border-primary"
-                  key={teamMember.id}
-                >
-                  <h1>{teamMember.theTeam.name}</h1>
-                  <h2>{teamMember.theTeam.role}</h2>
-                  {teamMember.theTeam.profile && (
-                    <p className="text-dark">
-                      {parse(teamMember.theTeam.profile)}
-                    </p>
-                  )}
-                </div>
-              </div>
-            </Section>
-          )
-        }
-        return (
-          <section>
-            <div class="container">
-              <div class="content">
-                <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-8 md:gap-2 sm:gap-0">
-                  <div
-                    className={`order-${
-                      index % 2 === 0 ? "first" : "last"
-                    } text-center`}
-                  >
+            <>
+              <Section background="tint">
+                <div className="grid grid-cols-1 md:grid-cols-3  lg:gap-8 md:gap-2 sm:gap-0">
+                  <div>
                     <GatsbyImage image={profileImage} />
                   </div>
-                  <div key={teamMember.id}>
-                    <h1 className="margin-reset">{teamMember.theTeam.name}</h1>
-                    <h2 className="margin-reset">{teamMember.theTeam.role}</h2>
+                  <div className="col-span-2" key={teamMember.id}>
+                    <h1>{teamMember.theTeam.name}</h1>
+                    <h2>{teamMember.theTeam.role}</h2>
                     {teamMember.theTeam.profile && (
                       <p className="text-dark">
                         {parse(teamMember.theTeam.profile)}
@@ -75,9 +48,41 @@ const WhoWeArePage = ({ data }) => {
                     )}
                   </div>
                 </div>
+              </Section>
+              <div className="mt-10">&nbsp;</div>
+            </>
+          )
+        }
+        return (
+          <>
+            <Section background={`${index % 2 === 0 ? "tint" : "white"}`}>
+              <div class="container">
+                <div class="content">
+                  <div className="grid grid-cols-1 md:grid-cols-3  gap-0 md:gap-8">
+                    <div
+                      className={`order-${index % 2 === 0 ? "first" : "last"} `}
+                    >
+                      <GatsbyImage image={profileImage} />
+                    </div>
+                    <div className="col-span-2" key={teamMember.id}>
+                      <h1 className="margin-reset">
+                        {teamMember.theTeam.name}
+                      </h1>
+                      <h2 className="margin-reset">
+                        {teamMember.theTeam.role}
+                      </h2>
+                      {teamMember.theTeam.profile && (
+                        <p className="text-dark">
+                          {parse(teamMember.theTeam.profile)}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </section>
+            </Section>
+            <div className="mt-10">&nbsp;</div>
+          </>
         )
       })}
     </Layout>
@@ -113,7 +118,7 @@ export const query = graphql`
               childImageSharp {
                 gatsbyImageData(
                   width: 300
-                  height: 200
+                  height: 300
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                 )

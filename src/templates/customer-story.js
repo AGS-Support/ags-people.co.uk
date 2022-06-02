@@ -4,7 +4,7 @@ import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
-import Video from "../components/Home/Banner/Video"
+import Video from "../components/Video"
 const CustomerStory = ({ data }) => {
   const story = data.wpCustomerStory.customerStories
   const logo = getImage(story.logo?.localFile)
@@ -19,8 +19,9 @@ const CustomerStory = ({ data }) => {
           <div class="content title">
             <h1 className="text-center margin-reset">Customer Story</h1>
             <div className="mx-auto text-center my-3">
-              <GatsbyImage image={logo} className="max-w-[200px]" />
+              <GatsbyImage image={logo} className="max-w-[200px] logo" />
             </div>
+            {!story.video.vimeoUrl && <div className="mt-20"></div>}
             <div className="mt-6">
               <Video {...story.video} />
             </div>

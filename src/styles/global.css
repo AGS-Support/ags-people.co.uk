@@ -470,6 +470,10 @@ ul.list-inline li {
   height: 100%;
 }
 
+.logo {
+  mix-blend-mode: multiply;
+}
+
 /* Testimonials */
 .my-masonry-grid {
   display: -webkit-box; /* Not needed if autoprefixing */

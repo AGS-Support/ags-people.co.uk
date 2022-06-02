@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import FsLightbox from "fslightbox-react"
-import playIcon from "../../../assets/images/play-white.jpeg"
+import playIcon from "../../assets/images/play-white.jpeg"
 
 const Video = ({ vimeoUrl, poster }) => {
   const [toggler, setToggler] = useState(false)

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import parse from "html-react-parser"
-import Video from "./Video.jsx"
+import Video from "../../Video"
 const Banner = ({ headline, subHeading, button, video }) => {
   return (
     <section className="banner">
