@@ -19,19 +19,7 @@ module.exports = {
         url: `https://agsheadless.tempurl.host/graphql`,
       },
     },
-    /*
-    {
-      resolve: `gatsby-plugin-google-fonts-v2`,
-      options: {
-        fonts: [
-          {
-            family: "Red Hat Display",
-            weights: ["400", "700"],
-          },
-        ],
-      },
-    },
-    */
+
     {
       resolve: "gatsby-plugin-webfonts",
       options: {
