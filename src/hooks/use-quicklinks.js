@@ -4,7 +4,7 @@ export const useQuickLinks = () => {
   const { allWpService } = useStaticQuery(
     graphql`
       query QuickLinks {
-        allWpService {
+        allWpService(sort: { fields: menuOrder, order: ASC }) {
           nodes {
             slug
             services {

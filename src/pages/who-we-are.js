@@ -107,7 +107,7 @@ export const query = graphql`
       }
     }
 
-    allWpTeamMember {
+    allWpTeamMember(sort: { fields: menuOrder, order: ASC }) {
       nodes {
         theTeam {
           name

@@ -63,7 +63,7 @@ export default CustomerStoriesPage
 
 export const query = graphql`
   query StoriesPageQuery {
-    allWpCustomerStory {
+    allWpCustomerStory(sort: { fields: menuOrder, order: ASC }) {
       nodes {
         uri
         customerStories {

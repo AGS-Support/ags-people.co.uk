@@ -60,7 +60,7 @@ export default ServicesPage
 
 export const query = graphql`
   query ServicesPageQuery {
-    allWpService {
+    allWpService(sort: { fields: menuOrder, order: ASC }) {
       nodes {
         slug
         services {

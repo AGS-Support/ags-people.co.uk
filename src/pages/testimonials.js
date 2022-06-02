@@ -25,7 +25,7 @@ export default TestominialPage
 
 export const query = graphql`
   query TestimonialPageQuery {
-    allWpTestimonial {
+    allWpTestimonial(sort: { fields: menuOrder, order: ASC }) {
       nodes {
         testimonials {
           title

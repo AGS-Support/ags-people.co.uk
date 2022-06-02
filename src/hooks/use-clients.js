@@ -4,7 +4,7 @@ export const useClients = () => {
   const { allWpClient } = useStaticQuery(
     graphql`
       query Clients {
-        allWpClient {
+        allWpClient(sort: { fields: menuOrder, order: ASC }) {
           nodes {
             clients {
               title
