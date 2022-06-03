@@ -4,6 +4,7 @@ import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+import PageHeading from "../components/molecules/PageHeading"
 import Cta from "../components/CTA"
 import Section from "../components/Section"
 import Partners from "../components/Partners"
@@ -19,14 +20,12 @@ const ServicesPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Services" />
-      <section className="">
-        <div className="inner-container">
-          <div className="content title">
-            <h1 className="text-center">{pageData.title}</h1>
-            <p>{parse(pageData.content)}</p>
-          </div>
-        </div>
-      </section>
+
+      <PageHeading
+        title={pageData.title}
+        intro={pageData.content}
+        className="text-center pb-4"
+      />
       <Section background="light">
         {services.map((services, index) => {
           const service = services.services

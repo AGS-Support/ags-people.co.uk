@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+import PageHeading from "../components/molecules/PageHeading"
 import PostSummary from "../components/Blog/PostSummary"
 
 const BlogIndex = ({
@@ -26,16 +27,13 @@ const BlogIndex = ({
   return (
     <Layout isHomePage>
       <Seo title="All posts" />
+      <PageHeading title="Blog" />
       <section>
         <div className="container">
-          <div className="content title">
-            <h1 className="text-center">Blog</h1>
-
-            <div className="flex flex-wrap -mx-4 mb-12">
-              {posts.map(post => {
-                return <PostSummary post={post} />
-              })}
-            </div>
+          <div className="flex flex-wrap -mx-4 mb-12">
+            {posts.map(post => {
+              return <PostSummary post={post} />
+            })}
           </div>
         </div>
       </section>

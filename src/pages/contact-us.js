@@ -5,6 +5,7 @@ import parse from "html-react-parser"
 import ContactForm from "../components/ContactForm"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+import PageHeading from "../components/molecules/PageHeading"
 import Accordion from "../components/Accordion"
 const ContactUs = ({ data }) => {
   const pageData = data.wpPage.contactUs
@@ -19,16 +20,13 @@ const ContactUs = ({ data }) => {
   return (
     <Layout>
       <Seo title="Contact Us" />
+      <PageHeading title={pageData.headline} intro={pageData.intro} />
       <section>
         <div className="container">
           <div className="content title">
             <GoogleReCaptchaProvider
               reCaptchaKey={process.env.GATSBY_CAPTCHA_V3_key}
             >
-              <div className="inner-container">
-                <h1 className="text-center">{pageData.headline}</h1>
-                <p className="text-dark text-center">{parse(pageData.intro)}</p>
-              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24">
                 <div className="order-last md:order-first mt-10 md:mt-0">
                   <ContactForm />

@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import parse from "html-react-parser"
+import PageHeading from "../components/molecules/PageHeading"
 import Section from "../components/Section"
 const WhoWeArePage = ({ data }) => {
   const content = data.wpPage.whoWeAre
@@ -13,6 +14,18 @@ const WhoWeArePage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Who We Are" />
+      <PageHeading
+        title={content.headline}
+        intro={content.intro}
+        className="text-center mb-0"
+      />
+      <section className="mt-0 pt-0">
+        <div class="container">
+          <div class="content title">
+            <GatsbyImage image={bannnerImage} className="max-w-full mb-10" />
+          </div>
+        </div>
+      </section>
       <section>
         <div class="container">
           <div class="content title">
@@ -23,6 +36,7 @@ const WhoWeArePage = ({ data }) => {
             >
               {parse(content.intro)}
             </p>
+
             <GatsbyImage image={bannnerImage} className="max-w-full mb-10" />
           </div>
         </div>

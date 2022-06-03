@@ -4,6 +4,7 @@ import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+import PageHeading from "../components/molecules/PageHeading"
 import Video from "../components/Video"
 const CustomerStory = ({ data }) => {
   const story = data.wpCustomerStory.customerStories
@@ -14,10 +15,10 @@ const CustomerStory = ({ data }) => {
   return (
     <Layout>
       <Seo title="Customer Story" />
+      <PageHeading title="Customer Story" />
       <section>
         <div class="container">
           <div class="content title">
-            <h1 className="text-center margin-reset">Customer Story</h1>
             <div className="mx-auto text-center my-3">
               <GatsbyImage image={logo} className="max-w-[200px] logo" />
             </div>

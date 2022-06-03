@@ -3,19 +3,17 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Testimonials from "../components/Home/Testimonials"
-
+import PageHeading from "../components/molecules/PageHeading"
 const TestominialPage = ({ data }) => {
   const testimonials = data.allWpTestimonial.nodes
 
   return (
     <Layout>
       <Seo title="Testimonials" />
+      <PageHeading title="Testimonials" />
       <section>
         <div className="container">
-          <div class="content title">
-            <h1 className="text-center">Testimonials</h1>
-            <Testimonials testimonials={testimonials} />
-          </div>
+          <Testimonials testimonials={testimonials} />
         </div>
       </section>
     </Layout>

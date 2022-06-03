@@ -5,6 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+import PostHeading from "../components/molecules/PostHeading"
 import Categories from "../components/Blog/Categories"
 
 const Post = ({ data: { previous, next, post } }) => {
@@ -15,24 +16,12 @@ const Post = ({ data: { previous, next, post } }) => {
   return (
     <Layout>
       <Seo title={post.title} />
-      <section>
-        <div className="inner-container">
-          <div className="content">
-            <Link to="/blog" rel="prev">
-              ← Blog Home
-            </Link>
-
-            <h1>{parse(post.title)}</h1>
-            {post.posts.summary && (
-              <p className="text-para bump">{parse(post.posts.summary)}</p>
-            )}
-            <p>
-              Posted: {post.date}
-              <Categories categories={post.categories.nodes} />
-            </p>
-          </div>
-        </div>
-      </section>
+      <PostHeading
+        title={post.title}
+        summary={post.posts.summary}
+        date={post.date}
+        categories={post.categories.nodes}
+      />
 
       <section>
         <div className="image-container">

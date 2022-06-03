@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+import Title from "../components/atoms/Title"
+import PageHeading from "../components/molecules/PageHeading"
 import Accordion from "../components/Accordion"
 
 const FaqPage = ({ data }) => {
@@ -10,25 +12,32 @@ const FaqPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="FAQ" />
-      <div className="inner-container">
-        <div className="content title">
-          <h1 className="text-center">Frequently Asked Questions</h1>
-          <section>
-            {faqs.map((faq, index) => {
-              const theFaq = faq.faq
-              console.log(theFaq.questions)
-              return (
-                <>
-                  <h2 className={`${index > 0 ? "mt-8" : ""} text-center`}>
-                    {theFaq.type}
-                  </h2>
-                  <Accordion items={theFaq.questions} />
-                </>
-              )
-            })}
-          </section>
+      <PageHeading title="Frequently Asked Questions" />
+      <section>
+        <div className="inner-container">
+          <div className="content">
+            <section>
+              {faqs.map((faq, index) => {
+                const theFaq = faq.faq
+                console.log(theFaq.questions)
+                return (
+                  <>
+                    <Title
+                      variant="h2"
+                      className={`${
+                        index > 0 ? "mt-10" : ""
+                      } mb-0 text-center md:text-left`}
+                    >
+                      {theFaq.type}
+                    </Title>
+                    <Accordion items={theFaq.questions} />
+                  </>
+                )
+              })}
+            </section>
+          </div>
         </div>
-      </div>
+      </section>
     </Layout>
   )
 }
