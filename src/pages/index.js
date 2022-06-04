@@ -10,7 +10,7 @@ import Quicklinks from "../components/Home/QuickLinks"
 import Service from "../components/Home/Service"
 import Testimonials from "../components/Home/Testimonials"
 import ServiceBanner from "../components/organisms/ServiceBanner"
-import Cta from "../components/CTA"
+import CallToAction from "../components/molecules/CallToAction"
 import { CheckCircleIcon } from "@heroicons/react/solid"
 
 const IndexPage = ({ data }) => {
@@ -23,8 +23,6 @@ const IndexPage = ({ data }) => {
   const featuresSecondHalf = featureList.splice(-half)
 
   const cta = content.callToAction
-
-  console.log("content", content)
 
   return (
     <Layout>
@@ -135,26 +133,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-      <Cta {...cta} />
-      <section className="section-tint angle-border angle-border-top angle-border-bottom angle-border-tint">
-        <div className="inner-container">
-          <div className="content">
-            <h2 className="text-center">{content.longFormCta.headline}</h2>
-            <p className="text-center text-dark">
-              {parse(content.longFormCta.content)}
-            </p>
-            <div className="text-center text-bold">
-              <Link
-                to={content.longFormCta.linkUrl}
-                className="text-primary font-bold uppercase underline"
-              >
-                {content.longFormCta.linkText}
-              </Link>
-              →
-            </div>
-          </div>
-        </div>
-      </section>
+      <CallToAction {...cta} />
     </Layout>
   )
 }
@@ -167,7 +146,6 @@ export const query = graphql`
       ...serviceFields
       ...whatMakesAgsSpecialFields
       ...customerLogoFields
-      ...longFormCtaFields
       ...callToActionFields
     }
     allWpTestimonial(

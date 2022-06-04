@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 export const callToActionFields = graphql`
   fragment callToActionFields on WpPage {
     homepage {
-      callToAction {
+      callToAction: homepageCallToAction {
         background
         headline
         content
