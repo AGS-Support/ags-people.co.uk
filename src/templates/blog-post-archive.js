@@ -3,8 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import PageHeading from "../components/molecules/PageHeading"
-import PostSummary from "../components/Blog/PostSummary"
-
+import PostArchive from "../components/organisms/PostArchive"
 const BlogIndex = ({
   data,
   pageContext: { nextPagePath, previousPagePath },
@@ -28,15 +27,7 @@ const BlogIndex = ({
     <Layout isHomePage>
       <Seo title="All posts" />
       <PageHeading title="Blog" />
-      <section>
-        <div className="container">
-          <div className="flex flex-wrap -mx-4 mb-12">
-            {posts.map(post => {
-              return <PostSummary post={post} />
-            })}
-          </div>
-        </div>
-      </section>
+      <PostArchive posts={posts} />
       <section>
         <div className="container">
           <div className="content">

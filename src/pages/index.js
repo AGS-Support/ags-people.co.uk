@@ -4,10 +4,12 @@ import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+import Button from "../components/atoms/Button"
 import Banner from "../components/Home/Banner"
 import Quicklinks from "../components/Home/QuickLinks"
 import Service from "../components/Home/Service"
 import Testimonials from "../components/Home/Testimonials"
+import ServiceBanner from "../components/organisms/ServiceBanner"
 import { CheckCircleIcon } from "@heroicons/react/solid"
 
 const IndexPage = ({ data }) => {
@@ -29,7 +31,7 @@ const IndexPage = ({ data }) => {
         <div className="container">
           <div className="content">
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24">
-              <Service {...content.services.leftService} />
+              <ServiceBanner {...content.services.leftService} />
               <Service {...content.services.rightService} />
             </div>
           </div>
@@ -113,19 +115,15 @@ const IndexPage = ({ data }) => {
             <div className="mx-auto mt-10 text-center block  md:flex md:justify-center">
               {content.whatMakesAgsSpecial.buttons.map((button, index) => {
                 return (
-                  <Link
-                    to={button.url}
-                    className={`
-                    button-full text-center w-[100%] md:w-[250px]  mb-5 md:mb-0
-                    ${
-                      index === 0
-                        ? "text-white bg-primary border-2 border-primary mr-10 "
-                        : "text-primary bg-white border-2 border-primary"
-                    } `}
-                    style={{ paddingTop: "10px", paddingBottom: "10px" }}
-                  >
-                    {button.text}
-                  </Link>
+                  <div className={`${index === 0 ? "mr-10" : "mr-0"}`}>
+                    <Button
+                      variant={`${index === 0 ? "primary" : "primary-outline"}`}
+                      size="sm"
+                      width="grow"
+                    >
+                      {button.text}
+                    </Button>
+                  </div>
                 )
               })}
             </div>

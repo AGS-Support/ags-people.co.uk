@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import parse from "html-react-parser"
-import Video from "../../Video"
+import Video from "../../atoms/Video"
+import Button from "../../atoms/button"
 const Banner = ({ headline, subHeading, button, video }) => {
   return (
     <section className="banner">
@@ -11,12 +12,9 @@ const Banner = ({ headline, subHeading, button, video }) => {
             <h1>{parse(headline)}</h1>
             <p className="bump">{parse(subHeading)}</p>
             <div className="mt-12 mb-6">
-              <Link
-                to="#0"
-                className="bg-primary  text-white font-bold p-4 rounded"
-              >
+              <Button variant="primary" to="/services">
                 {button.text}
-              </Link>
+              </Button>
             </div>
           </div>
           <Video {...video} />

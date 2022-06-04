@@ -6,7 +6,6 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import PostHeading from "../components/molecules/PostHeading"
-import Categories from "../components/Blog/Categories"
 
 const Post = ({ data: { previous, next, post } }) => {
   const featuredImage = {
