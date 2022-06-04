@@ -10,6 +10,7 @@ import Quicklinks from "../components/Home/QuickLinks"
 import Service from "../components/Home/Service"
 import Testimonials from "../components/Home/Testimonials"
 import ServiceBanner from "../components/organisms/ServiceBanner"
+import Cta from "../components/CTA"
 import { CheckCircleIcon } from "@heroicons/react/solid"
 
 const IndexPage = ({ data }) => {
@@ -20,6 +21,10 @@ const IndexPage = ({ data }) => {
   const half = Math.ceil(featureList.length / 2)
   const featuresFirstHalf = featureList.splice(0, half)
   const featuresSecondHalf = featureList.splice(-half)
+
+  const cta = content.callToAction
+
+  console.log("content", content)
 
   return (
     <Layout>
@@ -130,7 +135,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-
+      <Cta {...cta} />
       <section className="section-tint angle-border angle-border-top angle-border-bottom angle-border-tint">
         <div className="inner-container">
           <div className="content">
@@ -163,6 +168,7 @@ export const query = graphql`
       ...whatMakesAgsSpecialFields
       ...customerLogoFields
       ...longFormCtaFields
+      ...callToActionFields
     }
     allWpTestimonial(
       filter: { testimonials: { showOnHomepage: { eq: true } } }
