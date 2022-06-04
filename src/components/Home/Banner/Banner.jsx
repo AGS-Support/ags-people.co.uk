@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import parse from "html-react-parser"
 import Video from "../../atoms/Video"
-import Button from "../../atoms/button"
+import Button from "../../atoms/Button"
 const Banner = ({ headline, subHeading, button, video }) => {
   return (
     <section className="banner">
