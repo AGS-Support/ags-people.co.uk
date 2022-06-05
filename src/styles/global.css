@@ -43,6 +43,11 @@ p {
   line-height: 1.4rem;
 }
 
+p {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
 h1,
 h2,
 h3,
@@ -65,6 +70,7 @@ h1 {
   font-size: 1.8rem;
   margin-bottom: 1.2rem;
 }
+
 @media only screen and (min-width: 600px) {
   h1 {
     font-size: 2.2rem;
@@ -145,7 +151,7 @@ img {
   opacity: 1;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 820px) {
   .banner .content {
     flex-wrap: nowrap;
     column-gap: 3rem;
@@ -199,6 +205,10 @@ img {
 .button.button--primary {
   background: var(--colour-accent);
   color: var(--colour-lightest);
+}
+
+.button-wide {
+  min-width: 250px;
 }
 
 /* SECTIONS */
@@ -257,6 +267,9 @@ section.quick-links {
 .quick-links h2,
 .quick-links a {
   color: var(--colour-lightest);
+}
+.quick-links a {
+  font-size: 1.1rem;
 }
 
 /* ANGLED BORDER */

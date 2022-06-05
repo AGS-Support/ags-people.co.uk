@@ -13,6 +13,10 @@ module.exports = {
         yellow: "#F8CE01",
       },
     },
+    screens: {
+      md: "820px",
+      sm: "420px",
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 }

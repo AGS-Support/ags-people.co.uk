@@ -62,12 +62,12 @@ const ContactUs = ({ data }) => {
         />
 
         <button
-          className="block w-full px-5 py-3 text-sm bg-secondary text-white font-semibold  rounded transition duration-200"
+          className="font-bold rounded rounded-lg border-2 px-10  text-center w-[100%]   mb-5 md:mb-0 p-4 block md:inline md:w-auto bg-primary border-primary text-white"
           isSubmit={false}
-          text="Send"
+          text="Submit"
           disabled={state.submitting}
         >
-          Send
+          Submit
         </button>
       </form>
     </>

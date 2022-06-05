@@ -1,4 +1,5 @@
 import React from "react"
+import parse from "html-react-parser"
 import styled from "styled-components"
 const TitleTag = styled.div``
 const Title = ({ className, variant, children }) => {

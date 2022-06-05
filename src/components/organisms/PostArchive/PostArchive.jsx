@@ -1,30 +1,41 @@
 import React from "react"
 import { VerticalCard } from "../Cards"
+import Masonry from "react-masonry-css"
 const PostArchive = ({ posts, className }) => {
+  const breakpointColumnsObj = {
+    default: 3,
+
+    1000: 2,
+    720: 1,
+  }
   if (posts.length < 1) return null
   return (
     <section className={className}>
       <div className="container">
         <div className="content">
-          <div className="flex flex-wrap -mx-4 mb-12">
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
             {posts.map(post => {
               const bodyText = post.posts?.summary
                 ? post.posts?.summary
                 : post.excerpt
               return (
-                <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                <div className="mb-10">
                   <VerticalCard
                     image={post.featuredImage}
                     eyebrow={post.date}
                     title={post.title}
                     bodyText={bodyText}
-                    linkText="Read More"
+                    linkText="Read more"
                     url={post.uri}
                   />
                 </div>
               )
             })}
-          </div>
+          </Masonry>
         </div>
       </div>
     </section>

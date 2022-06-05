@@ -6,7 +6,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Button from "../components/atoms/Button"
 import Banner from "../components/Home/Banner"
-import Quicklinks from "../components/Home/QuickLinks"
+import Quicklinks from "../components/organisms/QuickLinks"
 import Service from "../components/Home/Service"
 import Testimonials from "../components/Home/Testimonials"
 import ServiceBanner from "../components/organisms/ServiceBanner"
@@ -35,7 +35,7 @@ const IndexPage = ({ data }) => {
           <div className="content">
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24">
               <ServiceBanner {...content.services.leftService} />
-              <Service {...content.services.rightService} />
+              <ServiceBanner {...content.services.rightService} />
             </div>
           </div>
         </div>
@@ -118,10 +118,10 @@ const IndexPage = ({ data }) => {
             <div className="mx-auto mt-10 text-center block  md:flex md:justify-center">
               {content.whatMakesAgsSpecial.buttons.map((button, index) => {
                 return (
-                  <div className={`${index === 0 ? "mr-10" : "mr-0"}`}>
+                  <div className={`${index === 0 ? "md:mr-10" : "mr-0"}`}>
                     <Button
                       variant={`${index === 0 ? "primary" : "primary-outline"}`}
-                      size="sm"
+                      size="md"
                       width="grow"
                     >
                       {button.text}

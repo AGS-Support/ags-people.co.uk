@@ -20,7 +20,7 @@ const CallToAction = ({ background, headline, content, button, className }) => {
               background === "Dark" ? "white" : "primary"
             }`}
           >
-            {headline}
+            {parse(headline)}
           </Title>
           <p
             className={`text-center text-${
@@ -40,7 +40,7 @@ const CallToAction = ({ background, headline, content, button, className }) => {
               <Link
                 type="internal"
                 to={button.internalUrl.uri}
-                className={`font-bold uppercase underline text-${
+                className={`font-bold text-lg underline text-${
                   background === "Dark" ? "white" : "primary"
                 }`}
               >
@@ -53,7 +53,7 @@ const CallToAction = ({ background, headline, content, button, className }) => {
               <Link
                 type="internal"
                 to={button.externalUrl}
-                className={`font-bold uppercase underline text-${
+                className={`font-bold  :first-letter before:content-[ →] underline text-${
                   background === "Dark" ? "white" : "primary"
                 }`}
               >

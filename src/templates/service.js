@@ -23,14 +23,24 @@ const Service = ({ data }) => {
             <div className="grid grid-cols-1 md:grid-cols-2  gap-12">
               <div>
                 <p className="text-dark">{parse(service.content)}</p>
-
-                <Link
-                  to="/contact-us"
-                  className="button  text-center text-white bg-secondary border-2 border-secondary"
-                  style={{ paddingTop: "10px", paddingBottom: "10px" }}
-                >
-                  Call Us Now
-                </Link>
+                <div className="hidden sm:block">
+                  <Link
+                    to="/contact-us"
+                    className="button  text-center text-white bg-secondary border-2 border-secondary"
+                    style={{ paddingTop: "10px", paddingBottom: "10px" }}
+                  >
+                    Call Us Now
+                  </Link>
+                </div>
+                <div className="block sm:hidden">
+                  <Link
+                    to="tel:+614-988-868-868"
+                    className="button  text-center text-white bg-secondary border-2 border-secondary"
+                    style={{ paddingTop: "10px", paddingBottom: "10px" }}
+                  >
+                    Call Us Now
+                  </Link>
+                </div>
               </div>
               <div>
                 <GatsbyImage image={serviceImage} className="max-h-[300px]" />

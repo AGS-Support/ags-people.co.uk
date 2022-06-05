@@ -3,10 +3,6 @@ import { Link } from "gatsby"
 import parse from "html-react-parser"
 
 const Cta = ({ background, headline, content, button }) => {
-  console.log("background", background)
-  console.log("headline", headline)
-  console.log("content", content)
-  console.log("button", button)
   return (
     <section
       class={`bg-${
@@ -22,7 +18,7 @@ const Cta = ({ background, headline, content, button }) => {
               background === "Dark" ? "white" : "primary"
             }`}
           >
-            {headline}
+            {parse(headline)}
           </h2>
           <p
             className={`text-center text-${
@@ -52,7 +48,7 @@ const Cta = ({ background, headline, content, button }) => {
                 to={button.internalUrl.uri}
                 className={`text-${
                   background === "Dark" ? "white" : "primary"
-                } font-bold uppercase underline`}
+                } font-bold underline`}
               >
                 {button.text}
               </Link>

@@ -32,7 +32,7 @@ const ContactUs = ({ data }) => {
                   <ContactForm />
                 </div>
                 <div>
-                  <div className="text-center md:text-left">
+                  <div className="text-left">
                     <h2 className="mb-3 ">Contact Us</h2>
                     <p>
                       Tel:{" "}
@@ -56,7 +56,17 @@ const ContactUs = ({ data }) => {
                   <h2 className="margin-reset text-center md:text-left hidden">
                     Offices
                   </h2>
-                  <Accordion items={offices} />
+
+                  {offices.map((item, index) => {
+                    return (
+                      <>
+                        <h3 className="margin-reset text-lg font-bold">
+                          {item.question}
+                        </h3>
+                        <span className="text-para">{parse(item.answer)}</span>
+                      </>
+                    )
+                  })}
                 </div>
               </div>
             </GoogleReCaptchaProvider>

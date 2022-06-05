@@ -2,16 +2,29 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const Button = ({ children, to, variant, className, size, width }) => {
+const Button = ({
+  children,
+  to,
+  variant,
+  type,
+  className,
+  size,
+  width,
+  arrowPosition,
+}) => {
   const padding = {
     sm: "2",
     md: "4",
     lg: "6",
   }
+
   className += ` p-${padding[size]}`
-  if (width === "grow") {
-    className += ` button-full text-center w-[100%] md:w-[250px]  mb-5 md:mb-0`
-  }
+
+  className +=
+    width === "grow"
+      ? " block md:inline-block md:w-[250px]"
+      : " block md:inline md:w-auto"
+
   switch (variant) {
     case "primary":
       className += " bg-primary border-primary text-white"
@@ -25,6 +38,46 @@ const Button = ({ children, to, variant, className, size, width }) => {
     case "secondary-outline":
       className += " bg-white border-secondary text-primary"
       break
+    case "white-outline":
+      className += " bg-primary border-white text-white"
+      break
+    case "tertiary":
+      className = " text-primary underline"
+      break
+  }
+
+  if (variant === "tertiary") {
+    switch (type) {
+      case "internal":
+        return (
+          <>
+            {arrowPosition === "left" && "← "}
+            <Link to={to} className={className}>
+              {children}
+            </Link>
+            {arrowPosition === "right" && " →"}
+          </>
+        )
+        break
+      case "external":
+        return (
+          <>
+            {arrowPosition === "left" && "← "}
+            <a href={to} className={className}>
+              {children}
+            </a>
+            {arrowPosition === "right" && " →"}
+          </>
+        )
+        break
+      case "calendly":
+        return (
+          <Link to={`${process.env.GATSBY_CALENDLY_URL}`} className={className}>
+            {children}
+          </Link>
+        )
+        break
+    }
   }
 
   return (
@@ -37,9 +90,12 @@ Button.defaultProps = {
   children: "",
   to: "",
   variant: "primary",
-  width: "normal",
+  width: "",
   size: "md",
-  className: "font-bold rounded rounded-lg border-2",
+  type: "internal",
+  className:
+    "font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0",
+  arrowPosition: "right",
 }
 
 Button.propTypes = {
@@ -48,8 +104,10 @@ Button.propTypes = {
     "secondary",
     "primary-outline",
     "secondary-outline",
+    "tertiary",
   ]),
-
+  type: PropTypes.oneOf(["internal", "external", "calendly"]),
+  arrowPosition: PropTypes.oneOf(["left", "right"]),
   width: PropTypes.oneOf(["normal", "wide"]),
 }
 export default Button

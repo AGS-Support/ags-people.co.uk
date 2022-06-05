@@ -8,15 +8,21 @@ const IrLink = ({ to, type, className, children }) => {
   switch (type) {
     case "internal":
       return (
-        <Link to={to} className={className}>
-          {children} →
-        </Link>
+        <>
+          <Link to={to} className={className}>
+            {children}
+          </Link>
+          <Link to={to} className={`${className} no-underline`}>
+            {" "}
+            →
+          </Link>
+        </>
       )
       break
     case "external":
       return (
         <a href={to} className={className}>
-          {children} →
+          {children}
         </a>
       )
       break
