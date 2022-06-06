@@ -26,10 +26,6 @@ export const heroFields = graphql`
         }
         quicksLinks {
           headline
-          links {
-            name
-            url
-          }
         }
       }
     }

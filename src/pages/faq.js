@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Title from "../components/atoms/Title"
 import PageHeading from "../components/molecules/PageHeading"
-import Accordion from "../components/Accordion"
+import Accordion from "../components/molecules/Accordion"
 
 const FaqPage = ({ data }) => {
   const faqs = data.wpPage.faqs.faqs

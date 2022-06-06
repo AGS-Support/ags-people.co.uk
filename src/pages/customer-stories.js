@@ -1,13 +1,14 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
-import PageHeading from "../components/molecules/PageHeading"
-import Cta from "../components/CTA"
 import Section from "../components/Section"
-import Partners from "../components/Partners"
+
+import Partners from "../components/molecules/Partners"
+import PageHeading from "../components/molecules/PageHeading"
+import CallToAction from "../components/molecules/CallToAction"
 
 const CustomerStoriesPage = ({ data }) => {
   const stories = data.allWpCustomerStory.nodes
@@ -53,7 +54,7 @@ const CustomerStoriesPage = ({ data }) => {
         </div>
       </section>
 
-      <Cta {...callToAction} />
+      <CallToAction {...callToAction} />
     </Layout>
   )
 }

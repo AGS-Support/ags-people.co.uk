@@ -1,9 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
-import Accordion from "../components/Accordion"
+
+import Accordion from "../components/molecules/Accordion"
 
 const PrivacyPolicyPage = ({ data }) => {
   const privacyPolicyPage = data.wpPage.privacyPolicyPage

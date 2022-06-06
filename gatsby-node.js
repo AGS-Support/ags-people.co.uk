@@ -273,7 +273,7 @@ async function getServices({ graphql, reporter }) {
   const graphqlResult = await graphql(/* GraphQL */ `
     query WpServices {
       # Query all WordPress blog posts sorted by date
-      allWpService(sort: { fields: [date], order: DESC }) {
+      allWpService(sort: { fields: menuOrder, order: ASC }) {
         edges {
           previous {
             id

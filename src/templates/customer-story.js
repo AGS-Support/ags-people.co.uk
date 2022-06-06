@@ -2,10 +2,14 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+
+import Video from "../components/atoms/Video"
+
 import PageHeading from "../components/molecules/PageHeading"
-import Video from "../components/Video"
+
 const CustomerStory = ({ data }) => {
   const story = data.wpCustomerStory.customerStories
   const logo = getImage(story.logo?.localFile)

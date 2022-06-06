@@ -1,11 +1,13 @@
 import React from "react"
 import parse from "html-react-parser"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+
 import PostHeading from "../components/molecules/PostHeading"
+import PostPagination from "../components/molecules/PostPagination"
 
 const Post = ({ data: { previous, next, post } }) => {
   const featuredImage = {
@@ -38,35 +40,7 @@ const Post = ({ data: { previous, next, post } }) => {
         <div className="inner-container">
           <div className="content title">
             <div className="text-para">{parse(post.content)}</div>
-            <nav className="blog-post-nav mt-16 flex justify-between">
-              {previous ? (
-                <div style={{ maxWidth: "48%" }}>
-                  <Link to={previous.uri} rel="prev">
-                    <p className="text-dark margin-reset text-left">Previous</p>
-                    <div className="inline-flex">
-                      <span>←&nbsp;&nbsp;</span>
-                      <span>{parse(previous.title)}</span>
-                    </div>
-                  </Link>
-                </div>
-              ) : (
-                <div style={{ maxWidth: "48%" }}>
-                  <div className="inline-flex"></div>
-                </div>
-              )}
-
-              {next && (
-                <div className="text-right" style={{ maxWidth: "48%" }}>
-                  <Link to={next.uri} rel="prev">
-                    <p className="text-dark margin-reset text-right">Next</p>
-                    <div className="inline-flex">
-                      <span>{parse(next.title)}</span>
-                      <span>&nbsp;&nbsp;→</span>
-                    </div>
-                  </Link>
-                </div>
-              )}
-            </nav>
+            <PostPagination next={next} previous={previous} />
           </div>
         </div>
       </section>

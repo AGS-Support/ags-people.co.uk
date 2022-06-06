@@ -12,6 +12,9 @@ const Button = ({
   width,
   arrowPosition,
 }) => {
+  if (type === "calendly") {
+    to = process.env.GATSBY_CALENDLY_URL
+  }
   const padding = {
     sm: "2",
     md: "4",

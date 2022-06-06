@@ -1,22 +1,20 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
-import PageHeading from "../components/molecules/PageHeading"
-import Cta from "../components/CTA"
 import Section from "../components/Section"
-import Partners from "../components/Partners"
+
+import Partners from "../components/molecules/Partners"
+import PageHeading from "../components/molecules/PageHeading"
+import CallToAction from "../components/molecules/CallToAction"
 
 const ServicesPage = ({ data }) => {
-  console.log("data", data)
   const services = data.allWpService.nodes
   const pageData = data.wpPage.servicePage
-  const cta = pageData.servicesCallToAction
-  console.log("cta", cta)
+  const callToAction = pageData.servicesCallToAction
 
-  const whoWeWorkWith = pageData.whoWeWorkWith
   return (
     <Layout>
       <Seo title="Services" />
@@ -31,14 +29,18 @@ const ServicesPage = ({ data }) => {
           const service = services.services
           const serviceImage = getImage(service.image?.localFile)
           return (
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 shadow-md mb-8 bg-white">
-              <GatsbyImage image={serviceImage} alt="Service Image" />
-              <div>
-                <h2>{service.title}</h2>
-                <p className="text-para">{service.excerpt}</p>
-                <Link to={services.slug}>Learn More →</Link>
-              </div>
-            </div>
+            <>
+              <Link to={services.slug}>
+                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 shadow-md mb-8 bg-white">
+                  <GatsbyImage image={serviceImage} alt="Service Image" />
+                  <div>
+                    <h2 className="margin-reset">{service.title}</h2>
+                    <p className="text-para">{service.excerpt}</p>
+                    Learn More →
+                  </div>
+                </div>
+              </Link>
+            </>
           )
         })}
       </Section>
@@ -51,7 +53,7 @@ const ServicesPage = ({ data }) => {
         </div>
       </section>
 
-      <Cta {...cta} />
+      <CallToAction {...callToAction} />
     </Layout>
   )
 }

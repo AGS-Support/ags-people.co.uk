@@ -1,10 +1,12 @@
 import React from "react"
-import { VerticalCard } from "../Cards"
+import PropTypes from "prop-types"
 import Masonry from "react-masonry-css"
+
+import { VerticalCard } from "../Cards"
+
 const PostArchive = ({ posts, className }) => {
   const breakpointColumnsObj = {
     default: 3,
-
     1000: 2,
     720: 1,
   }
@@ -45,4 +47,10 @@ PostArchive.defaultProps = {
   posts: [],
   className: "",
 }
+
+PostArchive.propTypes = {
+  posts: PropTypes.array,
+  className: PropTypes.string,
+}
+
 export default PostArchive

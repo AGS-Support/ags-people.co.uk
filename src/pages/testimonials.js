@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
-import Testimonials from "../components/Home/Testimonials"
+import Testimonials from "../components/molecules/Testimonials"
 import PageHeading from "../components/molecules/PageHeading"
 const TestominialPage = ({ data }) => {
   const testimonials = data.allWpTestimonial.nodes

@@ -1,13 +1,18 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
-import Cta from "../components/CTA"
+
 import Section from "../components/Section"
+
+import CallToAction from "../components/molecules/CallToAction"
+import PostPagination from "../components/molecules/PostPagination"
+
 const Service = ({ data }) => {
-  console.log("data", data)
   const service = data.wpService.services
   const serviceImage = getImage(service.image?.localFile)
   const callToAction = service.callToAction
@@ -62,42 +67,11 @@ const Service = ({ data }) => {
         </div>
       </Section>
       <div style={{ height: "5px" }}></div>
-      <Cta {...callToAction} />
+      <CallToAction {...callToAction} />
       <section>
         <div class="container">
           <div className="content">
-            <nav
-              className="blog-post-nav mt-16"
-              style={{ display: "flex", justifyContent: "space-between" }}
-            >
-              {previous ? (
-                <div style={{ maxWidth: "48%" }}>
-                  <Link to={previous.uri} rel="prev">
-                    <p className="text-dark margin-reset text-left">Previous</p>
-                    <div style={{ display: "inline-flex" }}>
-                      <span>←&nbsp;&nbsp;</span>
-                      <span>{parse(previous.title)}</span>
-                    </div>
-                  </Link>
-                </div>
-              ) : (
-                <div style={{ maxWidth: "48%" }}>
-                  <div style={{ display: "inline-flex" }}></div>
-                </div>
-              )}
-
-              {next && (
-                <div className="text-right" style={{ maxWidth: "48%" }}>
-                  <Link to={next.uri} rel="prev">
-                    <p className="text-dark margin-reset text-right">Next</p>
-                    <div style={{ display: "inline-flex" }}>
-                      <span>{parse(next.title)}</span>
-                      <span>&nbsp;&nbsp;→</span>
-                    </div>
-                  </Link>
-                </div>
-              )}
-            </nav>
+            <PostPagination next={next} previous={previous} />
           </div>
         </div>
       </section>

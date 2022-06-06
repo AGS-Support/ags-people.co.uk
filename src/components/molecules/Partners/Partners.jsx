@@ -1,6 +1,7 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { useClients } from "../../hooks/use-clients"
+
+import { useClients } from "../../../hooks/use-clients"
 
 const Partners = ({ cols, colsDesktop }) => {
   const clients = useClients()

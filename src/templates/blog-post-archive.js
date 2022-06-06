@@ -1,9 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+
 import PageHeading from "../components/molecules/PageHeading"
+
 import PostArchive from "../components/organisms/PostArchive"
+
 const BlogIndex = ({
   data,
   pageContext: { nextPagePath, previousPagePath },
@@ -14,7 +18,6 @@ const BlogIndex = ({
     return (
       <Layout isHomePage>
         <Seo title="All posts" />
-
         <p>
           No blog posts found. Add posts to your WordPress site and they'll
           appear here!

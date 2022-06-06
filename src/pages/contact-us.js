@@ -6,7 +6,7 @@ import ContactForm from "../components/ContactForm"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import PageHeading from "../components/molecules/PageHeading"
-import Accordion from "../components/Accordion"
+
 const ContactUs = ({ data }) => {
   const pageData = data.wpPage.contactUs
   //get our office array in format suitable for Accordion component to consume

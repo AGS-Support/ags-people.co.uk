@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+
 import Button from "../Button"
 
 const IrLink = ({ to, type, className, children }) => {
-  if (to === "") return null
+  if (type !== "calendly" && to === "") return null
   switch (type) {
     case "internal":
       return (
