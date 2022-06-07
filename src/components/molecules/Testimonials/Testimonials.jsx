@@ -31,6 +31,7 @@ const Testimonials = ({ headline, testimonials }) => {
               headline={testimonial.testimonials.title}
               testimonial={testimonial.testimonials.content}
               numStars={5}
+              background="tint"
               key={`testimonial-${index}`}
             />
           )

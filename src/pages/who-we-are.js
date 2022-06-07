@@ -26,21 +26,7 @@ const WhoWeArePage = ({ data }) => {
           </div>
         </div>
       </section>
-      <section>
-        <div class="container">
-          <div class="content title">
-            <h1 className="text-center">{content.headline}</h1>
-            <p
-              className="text-para text-center"
-              style={{ maxWidth: "620px", margin: "0px auto" }}
-            >
-              {parse(content.intro)}
-            </p>
 
-            <GatsbyImage image={bannnerImage} className="max-w-full mb-10" />
-          </div>
-        </div>
-      </section>
       {teamMembers.map((teamMember, index) => {
         const profileImage = getImage(teamMember.theTeam.profilePic?.localFile)
         console.log("profileImage", teamMember.profilePic?.localFile)

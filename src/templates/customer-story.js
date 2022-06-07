@@ -20,6 +20,7 @@ const CustomerStory = ({ data }) => {
     <Layout>
       <Seo title="Customer Story" />
       <PageHeading title="Customer Story" />
+
       <section>
         <div className="container">
           <div className="content title">

@@ -9,6 +9,8 @@ import Seo from "../components/SEO"
 
 import Section from "../components/Section"
 
+import Button from "../components/atoms/Button"
+
 import CallToAction from "../components/molecules/CallToAction"
 import PostPagination from "../components/molecules/PostPagination"
 
@@ -25,7 +27,15 @@ const Service = ({ data }) => {
       <section>
         <div className="container">
           <div className="content">
-            <h1 className="">{service.title}</h1>
+            <Button
+              to="/services"
+              variant="tertiary"
+              arrowPosition="left"
+              className=""
+            >
+              All Services
+            </Button>
+            <h1 className="mt-10">{service.title}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2  gap-12">
               <div>
                 <p className="text-dark">{parse(service.content)}</p>

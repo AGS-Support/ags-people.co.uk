@@ -309,7 +309,7 @@ async function getCustomerStories({ graphql, reporter }) {
   const graphqlResult = await graphql(/* GraphQL */ `
     query WpCustomerStories {
       # Query all WordPress blog posts sorted by date
-      allWpCustomerStory(sort: { fields: [date], order: DESC }) {
+      allWpCustomerStory(sort: { fields: menuOrder, order: ASC }) {
         edges {
           previous {
             id

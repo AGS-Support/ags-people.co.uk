@@ -24,14 +24,15 @@ const ServicesPage = ({ data }) => {
         intro={pageData.content}
         className="text-center pb-4"
       />
-      <Section background="light">
-        {services.map((services, index) => {
-          const service = services.services
-          const serviceImage = getImage(service.image?.localFile)
-          return (
-            <>
+
+      {services.map((services, index) => {
+        const service = services.services
+        const serviceImage = getImage(service.image?.localFile)
+        return (
+          <>
+            <Section background={index % 2 === 0 ? "light" : "white"}>
               <Link to={services.slug}>
-                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 shadow-md mb-8 bg-white">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 ">
                   <GatsbyImage image={serviceImage} alt="Service Image" />
                   <div>
                     <h2 className="margin-reset">{service.title}</h2>
@@ -40,10 +41,12 @@ const ServicesPage = ({ data }) => {
                   </div>
                 </div>
               </Link>
-            </>
-          )
-        })}
-      </Section>
+            </Section>
+            <div className="mb-1">&nbsp;</div>
+          </>
+        )
+      })}
+
       <section>
         <div className="container">
           <div className="content text-center">
