@@ -1,9 +1,10 @@
 import React from "react"
 import parse from "html-react-parser"
 import Masonry from "react-masonry-css"
-import { StarIcon } from "@heroicons/react/solid"
 
 import Title from "../../atoms/Title"
+
+import { TestimonialCard } from "../../organisms/Cards"
 
 const Testimonials = ({ headline, testimonials }) => {
   const breakpointColumnsObj = {
@@ -26,23 +27,11 @@ const Testimonials = ({ headline, testimonials }) => {
       >
         {testimonials.map((testimonial, index) => {
           return (
-            <div className="p-8 bg-white mb-26 shadow-md mb-6 mb-10 border border-[#f2f2f2]">
-              <div className="grid grid-cols-2  md:grid-cols-2 gap-4 pb-6">
-                <div className="text-lg font-bold text-black">
-                  {testimonial.testimonials.title}
-                </div>
-                <div className="flex justify-end">
-                  <StarIcon className="h-5 w-5 text-yellow" />
-                  <StarIcon className="h-5 w-5 text-yellow" />
-                  <StarIcon className="h-5 w-5 text-yellow" />
-                  <StarIcon className="h-5 w-5 text-yellow" />
-                  <StarIcon className="h-5 w-5 text-yellow" />
-                </div>
-              </div>
-              <p className="text-para">
-                {parse(testimonial.testimonials.content)}
-              </p>
-            </div>
+            <TestimonialCard
+              headline={testimonial.testimonials.title}
+              testimonial={testimonial.testimonials.content}
+              numStars="5"
+            />
           )
         })}
       </Masonry>

@@ -17,6 +17,7 @@ import ServiceBanner from "../components/organisms/ServiceBanner"
 const IndexPage = ({ data }) => {
   const homepage = data.wpPage.homepage
   const pageData = {
+    seo: data.wpPage.seo,
     hero: homepage.hero,
     quickLinks: homepage.hero.quicksLinks,
     services: homepage.services,
@@ -29,7 +30,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="Home" seo={pageData.seo} />
       {/* Hero */}
       <Banner {...pageData.hero} />
       <Quicklinks {...pageData.quickLinks} />
@@ -81,6 +82,7 @@ export default IndexPage
 export const query = graphql`
   query HomePageQuery {
     wpPage(isFrontPage: { eq: true }) {
+      ...seoFields
       ...heroFields
       ...serviceFields
       ...whatMakesAgsSpecialFields

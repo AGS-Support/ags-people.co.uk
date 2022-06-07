@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, seo }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -24,10 +24,18 @@ function SEO({ description, lang, meta, title }) {
       }
     `
   )
-
-  const metaDescription = description || site.siteMetadata.description
+  /* get metaDescription from description prop or seo or siteMetadata in this order of priority */
+  if (!description && !seo?.metaDescription) {
+    description = site.siteMetadata.description
+  }
+  if (!description && seo?.metaDescription) {
+    description = seo.metaDescription
+  }
+  const metaDescription = description
   const defaultTitle = site.siteMetadata?.title
-
+  const ogImage =
+    seo?.opengraphImage?.src ||
+    "https://agsheadless.tempurl.host/wp-content/uploads/2022/05/ags-branda.jpg"
   return (
     <Helmet
       htmlAttributes={{
@@ -49,6 +57,10 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          property: `og:image`,
+          content: ogImage,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
@@ -58,7 +70,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          content: "AGS Support",
         },
         {
           name: `twitter:title`,
