@@ -6,6 +6,8 @@ import ContactForm from "../components/ContactForm"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import PageHeading from "../components/molecules/PageHeading"
+import { PhoneIcon } from "@heroicons/react/solid"
+import { AtSymbolIcon } from "@heroicons/react/solid"
 
 const ContactUs = ({ data }) => {
   const pageData = data.wpPage.contactUs
@@ -27,35 +29,38 @@ const ContactUs = ({ data }) => {
             <GoogleReCaptchaProvider
               reCaptchaKey={process.env.GATSBY_CAPTCHA_V3_key}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24">
+              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-24 lg:gap-24">
                 <div className="order-last md:order-first mt-10 md:mt-0">
                   <ContactForm />
                 </div>
                 <div>
-                  <div className="text-left">
-                    <h2 className="mb-3 ">Contact Us</h2>
-                    <p>
-                      Tel:{" "}
+                  <div className="text-left ">
+                    <h3 className=" text-lg font-bold text-para margin-reset">
+                      Telephone:
+                    </h3>
+                    <h3 className=" text-lg font-bold">
                       <a
                         className="underline"
                         href={`tel:${pageData.telephoneNumber}`}
                       >
                         {pageData.telephoneNumber}
                       </a>
-                    </p>
-                    <p>
-                      Email:{" "}
+                    </h3>
+                    <h3 className=" text-lg font-bold text-para margin-reset">
+                      Email:
+                    </h3>
+                    <h3 className="text-lg font-bold">
                       <a
                         className="underline"
                         href={`mailto:${pageData.emailAddress}`}
                       >
                         {pageData.emailAddress}
                       </a>
-                    </p>
+                    </h3>
                   </div>
-                  <h2 className="margin-reset text-center md:text-left hidden">
-                    Offices
-                  </h2>
+                  <h3 className=" text-lg font-bold text-para margin-reset">
+                    Offices:
+                  </h3>
 
                   {offices.map((item, index) => {
                     return (
