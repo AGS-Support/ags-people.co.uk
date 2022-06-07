@@ -11,7 +11,7 @@ const Section = ({ children, background }) => {
 
   return (
     <section
-      className={`bg-${background} angle-border angle-border-top angle-border-bottom angle-border-${background}`}
+      className={`bg-${background} angle-border angle-border-top angle-border-bottom angle-border-${background} py-10`}
     >
       <div className="container">
         <div className="content">{children}</div>

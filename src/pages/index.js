@@ -36,7 +36,7 @@ const IndexPage = ({ data }) => {
       <Banner {...pageData.hero} />
       <Quicklinks {...pageData.quickLinks} />
       {/* Services */}
-      <section>
+      <section className="py-10">
         <div className="container">
           <div className="content">
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24">
@@ -63,7 +63,7 @@ const IndexPage = ({ data }) => {
         </div>
       </Section>
       {/* What Makes AGS Special */}
-      <section>
+      <section className="py-20">
         <div className="container">
           <div className="content">
             <WhatMakesAGSSpecial
