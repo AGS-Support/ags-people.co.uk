@@ -21,8 +21,8 @@ const CustomerStory = ({ data }) => {
       <Seo title="Customer Story" />
       <PageHeading title="Customer Story" />
       <section>
-        <div class="container">
-          <div class="content title">
+        <div className="container">
+          <div className="content title">
             <div className="mx-auto text-center my-3">
               <GatsbyImage image={logo} className="max-w-[200px] logo" />
             </div>
@@ -35,19 +35,19 @@ const CustomerStory = ({ data }) => {
       </section>
 
       <section
-        class="full-width section-tint angle-border angle-border-top angle-border-bottom angle-border-tint"
+        className="full-width section-tint angle-border angle-border-top angle-border-bottom angle-border-tint"
         style={{ marginTop: "-50px" }}
       >
-        <div class="inner-container">
-          <div class="content">
+        <div className="inner-container">
+          <div className="content">
             <p>{story.heroTestimonial.quote}</p>
             <p>---{story.heroTestimonial.customer}</p>
           </div>
         </div>
       </section>
       <section>
-        <div class="inner-container">
-          <div class="content">
+        <div className="inner-container">
+          <div className="content">
             <h2>Challenge</h2>
             <p className="text-para">{story.challenge}</p>
             <h2>Solution</h2>
@@ -56,7 +56,7 @@ const CustomerStory = ({ data }) => {
             <p className="text-para">{story.outcome.quote}</p>
             <p>---{story.outcome.customer}</p>
           </div>
-          <div class="content">
+          <div className="content">
             <nav
               className="blog-post-nav mt-16"
               style={{ display: "flex", justifyContent: "space-between" }}

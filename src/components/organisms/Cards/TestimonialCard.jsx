@@ -16,7 +16,7 @@ const TestimonialCard = ({ headline, testimonial, numStars }) => {
           <StarRating numStars={numStars} />
         </div>
       </div>
-      <p className="text-para">{parse(testimonial)}</p>
+      <span className="text-para">{parse(testimonial)}</span>
     </div>
   )
 }

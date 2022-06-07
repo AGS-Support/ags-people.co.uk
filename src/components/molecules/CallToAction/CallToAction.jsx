@@ -12,8 +12,8 @@ const CallToAction = ({ background, headline, content, button, className }) => {
         background === "Dark" ? "primary" : "tint"
       }`}
     >
-      <div class="inner-container">
-        <div class="content">
+      <div className="inner-container">
+        <div className="content">
           <Title
             variant="h2"
             className={`text-center font-bold text-${
@@ -22,13 +22,13 @@ const CallToAction = ({ background, headline, content, button, className }) => {
           >
             {parse(headline)}
           </Title>
-          <p
+          <span
             className={`text-center text-${
               background === "Dark" ? "white" : "dark"
             }`}
           >
             {content && parse(content)}
-          </p>
+          </span>
           {button?.link === "Calendly" ? (
             <div className="text-center mt-16">
               <Link type="calendly">{button.text}</Link>

@@ -7,7 +7,7 @@ const ServiceFeatures = ({ features }) => {
     <div>
       {features.map((feature, index) => {
         return (
-          <p>
+          <p key={`servicefeature-${index}`}>
             <CheckCircleIcon className="w-[24px] h-[24px] text-[#6AC259] inline mr-[8px]" />
             {feature.featureText}
           </p>

@@ -27,16 +27,24 @@ const CustomerStoriesPage = ({ data }) => {
         {stories.map((storyItem, index) => {
           const story = storyItem.customerStories
           const storyImage = getImage(story.logo?.localFile)
+          const storyPoster = getImage(story.video?.poster?.localFile)
           return (
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 shadow-md mb-8 bg-white">
-              <div style={{ maxWidth: "100%", width: "200px" }}>
+              <div>
                 <GatsbyImage
-                  image={storyImage}
+                  image={storyPoster}
                   objectFit="contain"
                   alt="Service Image"
                 />
               </div>
               <div>
+                <div className="mt-10 md:mt-0 mb-10">
+                  <GatsbyImage
+                    image={storyImage}
+                    objectFit="contain"
+                    alt="Service Image"
+                  />
+                </div>
                 <h2 className="margin-reset">{story.customerName}</h2>
                 <p className="text-para">{story.challenge}</p>
                 <Link to={storyItem.uri}>Learn More →</Link>
@@ -68,6 +76,18 @@ export const query = graphql`
         customerStories {
           customerName
           challenge
+          video {
+            poster {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+            }
+          }
           logo {
             localFile {
               childImageSharp {

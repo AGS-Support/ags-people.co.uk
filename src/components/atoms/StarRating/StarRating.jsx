@@ -5,7 +5,7 @@ import { StarIcon } from "@heroicons/react/solid"
 const StarRating = ({ numStars, classsName }) => {
   let stars = []
   for (var i = 0; i < numStars; i++) {
-    stars.push(<StarIcon className={classsName} />)
+    stars.push(<StarIcon className={classsName} key={`star-rating-${i}`} />)
   }
   return stars
 }

@@ -18,9 +18,10 @@ const CustomerLogos = ({ headline, logos }) => {
               className={`brands__item ${
                 index > 8 ? "hidden md:inline" : "visible"
               }`}
+              key={`customerlogo-${index}`}
             >
               <span>
-                <GatsbyImage image={logoImage} />
+                <GatsbyImage image={logoImage} alt="Customer Logo" />
               </span>
             </div>
           )

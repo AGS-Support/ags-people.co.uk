@@ -47,6 +47,8 @@ const Button = ({
     case "tertiary":
       className = " text-primary underline"
       break
+    default:
+      className += " "
   }
 
   if (variant === "tertiary") {
@@ -61,7 +63,7 @@ const Button = ({
             {arrowPosition === "right" && " →"}
           </>
         )
-        break
+
       case "external":
         return (
           <>
@@ -72,14 +74,16 @@ const Button = ({
             {arrowPosition === "right" && " →"}
           </>
         )
-        break
+
       case "calendly":
         return (
           <Link to={`${process.env.GATSBY_CALENDLY_URL}`} className={className}>
             {children}
           </Link>
         )
-        break
+
+      default:
+        return null
     }
   }
 
@@ -103,14 +107,16 @@ Button.defaultProps = {
 
 Button.propTypes = {
   variant: PropTypes.oneOf([
+    "",
     "primary",
     "secondary",
     "primary-outline",
     "secondary-outline",
     "tertiary",
+    "white-outline",
   ]),
   type: PropTypes.oneOf(["internal", "external", "calendly"]),
   arrowPosition: PropTypes.oneOf(["left", "right"]),
-  width: PropTypes.oneOf(["normal", "wide"]),
+  width: PropTypes.oneOf(["", "normal", "wide"]),
 }
 export default Button

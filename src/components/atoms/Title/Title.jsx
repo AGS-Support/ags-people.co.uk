@@ -1,7 +1,7 @@
 import React from "react"
-import parse from "html-react-parser"
 import styled from "styled-components"
 const TitleTag = styled.div``
+
 const Title = ({ className, variant, children }) => {
   return (
     <TitleTag className={className} as={variant}>
@@ -9,9 +9,11 @@ const Title = ({ className, variant, children }) => {
     </TitleTag>
   )
 }
+
 Title.defaultProps = {
   title: "please add a title",
   variant: "h1",
   className: "text-primary",
 }
+
 export default Title

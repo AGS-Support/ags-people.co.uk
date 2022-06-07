@@ -8,7 +8,7 @@ const NotFoundPage = () => (
     <Seo title="404: Not found" />
     <Section>
       <div className="container text-center">
-        <div class="content">
+        <div className="content">
           <h1>404</h1>
           <h2>Sorry, this page could not be found.</h2>
           <Link to="/" className="text-primary font-bold uppercase underline">

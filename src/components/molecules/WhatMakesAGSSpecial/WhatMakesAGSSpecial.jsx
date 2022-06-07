@@ -19,13 +19,21 @@ const WhatMakesAGSSpecial = ({ headline, featureList, buttons }) => {
 
       <div className="block md:flex md:justify-between inner-container">
         {Services.map((feature, index) => {
-          return <ServiceFeatures features={feature} />
+          return (
+            <ServiceFeatures
+              features={feature}
+              key={`service-featue-${index}`}
+            />
+          )
         })}
       </div>
       <div className="mx-auto mt-10 text-center block  md:flex md:justify-center">
         {buttons.map((button, index) => {
           return (
-            <div className={`${index === 0 ? "md:mr-10" : "mr-0"}`}>
+            <div
+              className={`${index === 0 ? "md:mr-10" : "mr-0"}`}
+              key={`whatwedobutton-${index}`}
+            >
               <Button
                 variant={`${index === 0 ? "primary" : "primary-outline"}`}
                 size="md"

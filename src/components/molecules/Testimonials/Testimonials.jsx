@@ -30,7 +30,8 @@ const Testimonials = ({ headline, testimonials }) => {
             <TestimonialCard
               headline={testimonial.testimonials.title}
               testimonial={testimonial.testimonials.content}
-              numStars="5"
+              numStars={5}
+              key={`testimonial-${index}`}
             />
           )
         })}

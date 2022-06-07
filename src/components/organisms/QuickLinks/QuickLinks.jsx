@@ -11,7 +11,7 @@ const Quicklinks = ({ headline, links }) => {
     <section className="quick-links angle-border angle-border-top angle-border-brand">
       <div className="container">
         <div className="content ">
-          <h2 className="pt-10">{parse(headline)}</h2>
+          <h2 className="pt-10 margin-reset">{parse(headline)}</h2>
           <div className="block md:flex md:justify-between">
             <ul className="list-reset list-inline">
               {services.map(service => {
@@ -28,7 +28,7 @@ const Quicklinks = ({ headline, links }) => {
               })}
             </ul>
             <div className="mb-5 mt-10 md:mb-0 md:mt-0 md:flex md:justify-between">
-              <div className="order-2">
+              <div className="order-3">
                 <Button
                   to={`${process.env.GATSBY_CALENDLY_URL}`}
                   variant="white-outline"
@@ -37,7 +37,9 @@ const Quicklinks = ({ headline, links }) => {
                   Book a free call
                 </Button>
               </div>
-
+              <div className="order-2 hidden md:flex">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </div>
               <div className="order-1">
                 <Button to="contact-us" variant="secondary" size="md">
                   Call us now

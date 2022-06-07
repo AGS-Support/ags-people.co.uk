@@ -23,8 +23,8 @@ const Service = ({ data }) => {
     <Layout>
       <Seo title={service.title} seo={seo} />
       <section>
-        <div class="container">
-          <div class="content">
+        <div className="container">
+          <div className="content">
             <h1 className="">{service.title}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2  gap-12">
               <div>
@@ -70,7 +70,7 @@ const Service = ({ data }) => {
       <div style={{ height: "5px" }}></div>
       <CallToAction {...callToAction} />
       <section>
-        <div class="container">
+        <div className="container">
           <div className="content">
             <PostPagination next={next} previous={previous} />
           </div>
