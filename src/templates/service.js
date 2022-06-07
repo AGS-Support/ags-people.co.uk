@@ -14,13 +14,14 @@ import PostPagination from "../components/molecules/PostPagination"
 
 const Service = ({ data }) => {
   const service = data.wpService.services
+  const seo = data.wpService.seo
   const serviceImage = getImage(service.image?.localFile)
   const callToAction = service.callToAction
   const previous = data.previous
   const next = data.next
   return (
     <Layout>
-      <Seo title={service.title} />
+      <Seo title={service.title} seo={seo} />
       <section>
         <div class="container">
           <div class="content">
@@ -87,6 +88,22 @@ export const query = graphql`
     $nextPostId: String
   ) {
     wpService(id: { eq: $id }) {
+      seo {
+        metaDesc
+        metaKeywords
+        title
+        twitterDescription
+        opengraphType
+        opengraphTitle
+        opengraphImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        twitterImage {
+          sourceUrl
+        }
+      }
       services {
         title
         content

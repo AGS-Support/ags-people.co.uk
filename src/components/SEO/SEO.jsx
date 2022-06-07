@@ -25,17 +25,20 @@ function SEO({ description, lang, meta, title, seo }) {
     `
   )
   /* get metaDescription from description prop or seo or siteMetadata in this order of priority */
-  if (!description && !seo?.metaDescription) {
+  if (!description && !seo?.metaDesc) {
     description = site.siteMetadata.description
   }
-  if (!description && seo?.metaDescription) {
-    description = seo.metaDescription
+  if (!description && seo?.metaDesc) {
+    description = seo.metaDesc
   }
+
   const metaDescription = description
   const defaultTitle = site.siteMetadata?.title
   const ogImage =
     seo?.opengraphImage?.src ||
     "https://agsheadless.tempurl.host/wp-content/uploads/2022/05/ags-branda.jpg"
+
+  title = seo?.title || title || defaultTitle
   return (
     <Helmet
       htmlAttributes={{
