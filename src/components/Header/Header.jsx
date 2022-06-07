@@ -13,35 +13,40 @@ const Header = ({ siteTitle }) => {
     { name: "Contact", link: "/contact-us" },
   ]
   return (
-    <div className="container">
-      <div className="navbar">
-        <div className="nav-logo">
-          <a href="/">
-            <span className="font-bold">AGS</span>
-            <span className="font-normal">SUPPORT</span>
-          </a>
-        </div>
+    <section
+      className="mb-10 bg-[#f8f8f8]"
+      style={{ borderBottom: "1px solid #f8f8f8" }}
+    >
+      <div className="container">
+        <div className="navbar">
+          <div className="nav-logo">
+            <a href="/">
+              <span className="font-bold">AGS</span>
+              <span className="font-normal">SUPPORT</span>
+            </a>
+          </div>
 
-        <input type="checkbox" id="nav-check" />
-        <div className="nav-btn">
-          <label htmlFor="nav-check">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-        </div>
+          <input type="checkbox" id="nav-check" />
+          <div className="nav-btn">
+            <label htmlFor="nav-check">
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
 
-        <div className="nav-links bg-white md:bg-transparent">
-          {menu.map((item, index) => {
-            return (
-              <Link key={`desktop-menu-item-${index}`} to={item.link}>
-                {item.name}
-              </Link>
-            )
-          })}
+          <div className="nav-links bg-white md:bg-transparent">
+            {menu.map((item, index) => {
+              return (
+                <Link key={`desktop-menu-item-${index}`} to={item.link}>
+                  {item.name}
+                </Link>
+              )
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

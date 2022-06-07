@@ -1,12 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Masonry from "react-masonry-css"
 
 import Title from "../../atoms/Title"
 
 import { TestimonialCard } from "../../organisms/Cards"
 
-const Testimonials = ({ headline, testimonials, background }) => {
+const HomeTestimonials = ({ headline, testimonials, background }) => {
   const breakpointColumnsObj = {
     default: 3,
     1000: 2,
@@ -20,11 +19,7 @@ const Testimonials = ({ headline, testimonials, background }) => {
           {headline}
         </Title>
       )}
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {testimonials.map((testimonial, index) => {
           return (
             <TestimonialCard
@@ -36,21 +31,21 @@ const Testimonials = ({ headline, testimonials, background }) => {
             />
           )
         })}
-      </Masonry>
+      </div>
     </>
   )
 }
 
-Testimonials.defaultProps = {
+HomeTestimonials.defaultProps = {
   headline: "",
   testimonials: [],
   background: "tint",
 }
 
-Testimonials.propTypes = {
+HomeTestimonials.propTypes = {
   headline: PropTypes.string,
   testimonials: PropTypes.array,
   background: PropTypes.oneOf(["", "white", "tint", "primary"]),
 }
 
-export default Testimonials
+export default HomeTestimonials

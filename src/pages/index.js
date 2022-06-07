@@ -6,6 +6,7 @@ import Seo from "../components/SEO"
 import Section from "../components/Section"
 
 import Testimonials from "../components/molecules/Testimonials"
+import HomeTestimonials from "../components/molecules/HomeTestimonials"
 import CustomerLogos from "../components/molecules/CustomerLogos"
 import WhatMakesAGSSpecial from "../components/molecules/WhatMakesAGSSpecial"
 import CallToAction from "../components/molecules/CallToAction"
@@ -54,9 +55,10 @@ const IndexPage = ({ data }) => {
         />
         {/* Testimonials */}
         <div className="content">
-          <Testimonials
+          <HomeTestimonials
             headline={pageData.testimonials.headline}
             testimonials={pageData.testimonials.testimonials}
+            background="white"
           />
         </div>
       </Section>
