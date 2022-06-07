@@ -38,11 +38,12 @@ const CustomerStoriesPage = ({ data }) => {
                 />
               </div>
               <div>
-                <div className="mt-10 md:mt-0 mb-10">
+                <div className="mt-10 md:mt-0 mb-5">
                   <GatsbyImage
                     image={storyImage}
                     objectFit="contain"
                     alt="Service Image"
+                    style={{ width: "150px" }}
                   />
                 </div>
                 <h2 className="margin-reset">{story.customerName}</h2>
