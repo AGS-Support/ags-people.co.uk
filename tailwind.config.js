@@ -16,6 +16,7 @@ module.exports = {
     screens: {
       md: "820px",
       sm: "420px",
+      quickLinks: "1200px",
     },
   },
   plugins: [require("@tailwindcss/typography")],

@@ -12,8 +12,8 @@ const Quicklinks = ({ headline, links }) => {
       <div className="container">
         <div className="content ">
           <h2 className="pt-10 margin-reset">{parse(headline)}</h2>
-          <div className="block md:flex md:justify-between">
-            <ul className="list-reset list-inline">
+          <div className="block quickLinks:flex quickLinks:justify-between">
+            <ul className="list-reset list-inline mr-10">
               {services.map(service => {
                 return (
                   <li key={service.slug} className="mb-4 md:mb-0">
@@ -27,23 +27,25 @@ const Quicklinks = ({ headline, links }) => {
                 )
               })}
             </ul>
-            <div className="mb-5 mt-10 md:mb-0 md:mt-0 md:flex md:justify-between">
+            <div className="mb-5 mt-10 block md:mb-0 md:mt-0 quickLinks:flex quickLinks:justify-between pt-0 md:pt-10 quickLinks:pt-0">
               <div className="order-3">
-                <Button
+                <Link
                   to={`${process.env.GATSBY_CALENDLY_URL}`}
-                  variant="white-outline"
-                  type="calendly"
+                  className="font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-primary border-white text-white block quickLinks:inline quickLinks:w-auto p-4"
                 >
                   Book a free call
-                </Button>
+                </Link>
               </div>
               <div className="order-2 hidden md:flex">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </div>
               <div className="order-1">
-                <Button to="contact-us" variant="secondary" size="md">
-                  Call us now
-                </Button>
+                <Link
+                  to="contact-us"
+                  className="font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-secondary border-secondary text-white block quickLinks:inline quickLinks:w-auto p-4"
+                >
+                  Call Us Now
+                </Link>
               </div>
             </div>
           </div>
