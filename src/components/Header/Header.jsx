@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
+import logo from "../../assets/images/logo.svg"
+
 const Header = ({ siteTitle }) => {
   const menu = [
     { name: "Services", link: "/services" },
@@ -21,8 +23,7 @@ const Header = ({ siteTitle }) => {
         <div className="navbar">
           <div className="nav-logo">
             <a href="/">
-              <span className="font-bold">AGS</span>
-              <span className="font-normal">SUPPORT</span>
+              <img alt="AGS Logo" src={logo} style={{ maxHeight: "30px" }} />
             </a>
           </div>
 
