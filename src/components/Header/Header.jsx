@@ -23,7 +23,7 @@ const Header = ({ siteTitle }) => {
         <div className="navbar">
           <div className="nav-logo">
             <a href="/">
-              <img alt="AGS Logo" src={logo} style={{ maxHeight: "30px" }} />
+              <img alt="AGS Logo" src={logo} className="max-h-[35px]" />
             </a>
           </div>
 

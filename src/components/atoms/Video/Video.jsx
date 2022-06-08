@@ -13,9 +13,11 @@ const Video = ({ vimeoUrl, poster }) => {
     controls: true,
     playsInline: true,
     preload: "metadata",
+    width: "100vw",
+    height: "100%",
     autoPlay: true,
     src: vimeoUrl + "#t=0.001",
-    style: { minWidth: "75vw" },
+    style: { minWidth: "100vw", width: "100%", height: "auto" },
   }
   return (
     <div className="video-container">
@@ -36,6 +38,7 @@ const Video = ({ vimeoUrl, poster }) => {
           toggler={toggler}
           sources={[<video {...videoProps} />]}
           type="video"
+          style={{ width: "100%" }}
         />
       </div>
     </div>
