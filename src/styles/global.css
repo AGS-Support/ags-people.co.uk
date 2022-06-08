@@ -125,6 +125,13 @@ img {
 
 .video {
   position: relative;
+  min-width: 100% !important;
+  height: auto !important;
+}
+
+video {
+  main-width: 100% !important;
+  height: auto !important;
 }
 
 .video:hover {
