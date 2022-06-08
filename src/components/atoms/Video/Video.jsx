@@ -17,7 +17,8 @@ const Video = ({ vimeoUrl, poster }) => {
     height: "100%",
     autoPlay: true,
     src: vimeoUrl + "#t=0.001",
-    style: { minWidth: "100vw", width: "100%", height: "auto" },
+
+    className: "min-w-[100vw] md:min-w-[75vw]",
   }
   return (
     <div className="video-container">
