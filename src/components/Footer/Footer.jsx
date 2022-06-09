@@ -12,9 +12,10 @@ import flogo3 from "../../assets/images/footer-logo-3.png"
 import Section from "../../components/Section/Section"
 
 import { useQuickLinks } from "../../hooks/use-quicklinks"
-
+import { useOffices } from "../../hooks/use-offices"
 const Footer = () => {
   const services = useQuickLinks()
+  const offices = useOffices()
   const menu = [
     { name: "Team", link: "/who-we-are" },
     { name: "Customer Stories", link: "/customer-stories" },
@@ -35,66 +36,19 @@ const Footer = () => {
       <section className="bg-header angle-border angle-border-top  angle-border-header py-10">
         <div class="container content">
           <div className="grid text-center md:text-left grid-cols-2 md:grid-cols-5">
-            <div className="">
-              <div className="text-dark font-bold">Head Office</div>
-              <div className="text-dark font-bold">(South)</div>
-              <div className="text-dark">
-                Suite 242
-                <br />
-                80 High Street
-                <br />
-                Winchester
-                <br />
-                Hampshire
-                <br />
-                SO23 9AT
-              </div>
-            </div>
-            <div className="">
-              <div className="text-dark font-bold">Head Office</div>
-              <div className="text-dark font-bold">(South)</div>
-              <div className="text-dark">
-                Suite 242
-                <br />
-                80 High Street
-                <br />
-                Winchester
-                <br />
-                Hampshire
-                <br />
-                SO23 9AT
-              </div>
-            </div>
-            <div className="">
-              <div className="text-dark font-bold">Head Office</div>
-              <div className="text-dark font-bold">(South)</div>
-              <div className="text-dark">
-                Suite 242
-                <br />
-                80 High Street
-                <br />
-                Winchester
-                <br />
-                Hampshire
-                <br />
-                SO23 9AT
-              </div>
-            </div>
-            <div className="text-dark">
-              <div className="font-bold">Head Office</div>
-              <div className="font-bold">(South)</div>
-              <div className="">
-                Suite 242
-                <br />
-                80 High Street
-                <br />
-                Winchester
-                <br />
-                Hampshire
-                <br />
-                SO23 9AT
-              </div>
-            </div>
+            {offices.map((office, index) => {
+              const officeData = office.offices
+              return (
+                <div className="">
+                  <div className="text-dark font-bold">{officeData.title}</div>
+                  <div className="text-dark font-bold">
+                    {officeData.region || <br />}
+                  </div>
+                  <div className="text-dark">{parse(officeData.address)}</div>
+                </div>
+              )
+            })}
+
             <div className="text-dark">
               <div className="font-bold">Contact</div>
               <div className="">0845 0523597</div>
@@ -159,7 +113,7 @@ const Footer = () => {
 
       <Section background="white">
         <div className="container content">
-          <div className="flex justify-between text-para">
+          <div className="block md:flex mdjustify-between text-para">
             <div className="" style={{ minWidth: "50%" }}>
               <img src={flogo1} className="inline max-h-[80px] mr-8" />
               <img src={flogo2} className="inline max-h-[80px] mr-8" />
@@ -171,6 +125,9 @@ const Footer = () => {
               Kingdom
               <br /> © 2022 AGS Support Ltd. Built with 💖 by{" "}
               <a href="https://indieridge.com">Indie Ridge</a>
+              <br />
+              <Link to="/privacy-policy">Privacy Policy</Link> |{" "}
+              <Link to="/terms-and-conditions">Terms & Conditions</Link>
             </div>
           </div>
         </div>
