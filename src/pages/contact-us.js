@@ -9,15 +9,11 @@ import PageHeading from "../components/molecules/PageHeading"
 import { PhoneIcon } from "@heroicons/react/solid"
 import { AtSymbolIcon } from "@heroicons/react/solid"
 
+import { useOffices } from "../hooks/use-offices"
+
 const ContactUs = ({ data }) => {
+  const offices = useOffices()
   const pageData = data.wpPage.contactUs
-  //get our office array in format suitable for Accordion component to consume
-  const offices = data.allWpOffice.nodes.map((office, index) => {
-    return {
-      question: office.offices.question,
-      answer: office.offices.answer,
-    }
-  })
 
   return (
     <Layout>
@@ -62,13 +58,18 @@ const ContactUs = ({ data }) => {
                     Offices:
                   </h2>
 
-                  {offices.map((item, index) => {
+                  {offices.map((office, index) => {
+                    const officeData = office.offices
                     return (
                       <>
                         <h3 className="margin-reset text-lg font-bold text-para">
-                          {item.question}
+                          {officeData.title}
+                          <br />
+                          {officeData.region}
                         </h3>
-                        <span className="text-para">{parse(item.answer)}</span>
+                        <span className="text-para">
+                          {parse(officeData.address)}
+                        </span>
                       </>
                     )
                   })}

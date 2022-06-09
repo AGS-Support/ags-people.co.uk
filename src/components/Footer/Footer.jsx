@@ -13,6 +13,7 @@ import Section from "../../components/Section/Section"
 
 import { useQuickLinks } from "../../hooks/use-quicklinks"
 import { useOffices } from "../../hooks/use-offices"
+
 const Footer = () => {
   const services = useQuickLinks()
   const offices = useOffices()
@@ -112,7 +113,7 @@ const Footer = () => {
       </section>
 
       <Section background="white">
-        <div className="container content">
+        <div className="container">
           <div className="block md:flex mdjustify-between text-para">
             <div className="" style={{ minWidth: "50%" }}>
               <img src={flogo1} className="inline max-h-[80px] mr-8" />
