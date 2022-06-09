@@ -1,8 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
+import parse from "html-react-parser"
 import Svg from "react-inlinesvg"
 import facebookLogo from "../../assets/icons/facebook.svg"
 import LinkedInLogo from "../../assets/icons/linkedin.svg"
+
+import flogo1 from "../../assets/images/footer-logo-1.png"
+import flogo2 from "../../assets/images/footer-logo-2.png"
+import flogo3 from "../../assets/images/footer-logo-3.png"
+
+import Section from "../../components/Section/Section"
 const Footer = () => {
   const svgProps = {
     width: "24",
@@ -13,179 +20,154 @@ const Footer = () => {
   //linkedin #0A66C2
   //fb #1877F2
   return (
-    <footer className="py-20">
-      <div className="container px-4 mx-auto">
-        <div className="flex flex-wrap -mx-4 mb-8 lg:mb-16">
-          <div className="w-full lg:w-1/3 px-4 mb-12 lg:mb-0">
-            <p className="mt-5 mb-6 max-w-xs text-gray-500 leading-loose">
+    <footer>
+      <Section>
+        <div class="container content">
+          <div className="grid grid-cols-5">
+            <div className="">
+              <div className="text-dark font-bold">Head Office</div>
+              <div className="text-dark font-bold">(South)</div>
+              <div className="text-dark">
+                Suite 242
+                <br />
+                80 High Street
+                <br />
+                Winchester
+                <br />
+                Hampshire
+                <br />
+                SO23 9AT
+              </div>
+            </div>
+            <div className="">
+              <div className="text-dark font-bold">Head Office</div>
+              <div className="text-dark font-bold">(South)</div>
+              <div className="text-dark">
+                Suite 242
+                <br />
+                80 High Street
+                <br />
+                Winchester
+                <br />
+                Hampshire
+                <br />
+                SO23 9AT
+              </div>
+            </div>
+            <div className="">
+              <div className="text-dark font-bold">Head Office</div>
+              <div className="text-dark font-bold">(South)</div>
+              <div className="text-dark">
+                Suite 242
+                <br />
+                80 High Street
+                <br />
+                Winchester
+                <br />
+                Hampshire
+                <br />
+                SO23 9AT
+              </div>
+            </div>
+            <div className="text-dark">
+              <div className="font-bold">Head Office</div>
+              <div className="font-bold">(South)</div>
+              <div className="">
+                Suite 242
+                <br />
+                80 High Street
+                <br />
+                Winchester
+                <br />
+                Hampshire
+                <br />
+                SO23 9AT
+              </div>
+            </div>
+            <div className="text-dark">
+              <div className="font-bold">Contact</div>
+              <div className="">0845 0523597</div>
+              <div>info@agssupport.co.uk</div>
+              <div className="mt-5">
+                <a
+                  className="inline-block h-6 mr-8"
+                  href="https://www.linkedin.com/company/agssupport"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Svg src={LinkedInLogo} fill="#0A66C2" {...svgProps} />
+                </a>
+                <a
+                  className="inline-block h-6 mr-8"
+                  href="https://www.facebook.com/AGSSupportFacilities/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Svg src={facebookLogo} fill="#1877F2" {...svgProps} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-20 mt-20">
+            <div className="text-para">
               AGS Support concierge service provides an extremely apt and cost
               effective alternative to in House and outsourced agency staffing
               within the supported housing sector. Our highly trained Concierge
               Personnel are “Enhanced” DBS checked and are seasoned veterans of
               the Supported Housing environment.
-            </p>
-            <p className="mt-5 mb-6 max-w-xs text-gray-500 leading-loose">
-              © {new Date().getFullYear()} &middot; Built with 💖 by{" "}
-              <a href="https://indieridge.com" target="_blank" rel="noreferrer">
-                Indie Ridge
-              </a>
-            </p>
-            <div>
-              <a
-                className="inline-block h-6 mr-8"
-                href="https://www.linkedin.com/company/agssupport"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Svg src={LinkedInLogo} fill="#0A66C2" {...svgProps} />
-              </a>
-              <a
-                className="inline-block h-6 mr-8"
-                href="https://www.facebook.com/AGSSupportFacilities/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Svg src={facebookLogo} fill="#1877F2" {...svgProps} />
-              </a>
             </div>
-          </div>
-          <div className="w-full lg:w-2/3 px-4">
-            <div className="flex flex-wrap justify-between">
-              <div className="w-1/2 lg:w-1/4 mb-8 lg:mb-0">
-                <h3 className="mb-6 text-lg font-bold font-heading">Company</h3>
-                <ul className="text-sm">
-                  <li className="mb-4">
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      About Us
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Careers
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Press
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Blog
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="w-1/2 lg:w-1/4 mb-8 lg:mb-0">
-                <h3 className="mb-6 text-lg font-bold font-heading">Pages</h3>
-                <ul className="text-sm">
-                  <li>
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="w-1/2 lg:w-1/4 mb-8 lg:mb-0">
-                <h3 className="mb-6 text-lg font-bold font-heading">Legal</h3>
-                <ul className="text-sm">
-                  <li className="mb-4">
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Terms
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      About Us
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Team
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Privacy
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="w-1/2 lg:w-1/4">
-                <h3 className="mb-6 text-lg font-bold font-heading">
-                  Resources
-                </h3>
-                <ul className="text-sm">
-                  <li className="mb-4">
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Blog
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Service
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Product
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="text-indigo-500 hover:text-indigo-700"
-                      href="#"
-                    >
-                      Pricing
-                    </a>
-                  </li>
-                </ul>
-              </div>
+
+            <div className="text-dark">
+              <div className="font-bold">Services</div>
+              <ul>
+                <li className="border-b-2 border-slate py-4">Night Support</li>
+                <li className="border-b-2 border-slate py-4">
+                  Concierge Service
+                </li>
+                <li className="border-b-2 border-slate py-4">
+                  Mobile Concierge Service
+                </li>
+                <li className="border-b-2 border-slate py-4">
+                  Bespoke Staffing Solutions
+                </li>
+                <li className="border-b-2 border-slate py-4">Bank Workers</li>
+              </ul>
+            </div>
+            <div className="text-dark">
+              <div className="font-bold">AGS Support</div>
+              <ul>
+                <li className="border-b-2 border-slate py-4">Team</li>
+                <li className="border-b-2 border-slate py-4">
+                  Customer Stories
+                </li>
+                <li className="border-b-2 border-slate py-4">FAQ</li>
+                <li className="border-b-2 border-slate py-4">Testimonials</li>
+                <li className="border-b-2 border-slate py-4">Blog</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div className="border-t pt-8">
-          <p className="lg:text-center text-sm text-gray-500">
-            All rights reserved. © AGS Support
-          </p>
+      </Section>
+
+      <section className="bg-white">
+        <div className="container content">
+          <div className="flex justify-between text-para">
+            <div className="" style={{ minWidth: "50%" }}>
+              <img src={flogo1} className="inline max-h-[80px] mr-8" />
+              <img src={flogo2} className="inline max-h-[80px] mr-8" />
+              <img src={flogo3} className="inline max-h-[80px]" />
+            </div>
+            <div className="text-right">
+              VAT No. GB 315333630 Company No. 11648687
+              <br /> Registered Address: 24 Park Rd S, Havant PO9 1HB, United
+              Kingdom
+              <br /> © 2022 AGS Support Ltd. Built with 💖 by{" "}
+              <a href="https://indieridge.com">Indie Ridge</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </footer>
   )
 }

@@ -10,6 +10,7 @@ const Video = ({ vimeoUrl, poster }) => {
   }
   const videoPoster = getImage(poster?.localFile)
   const videoProps = {
+    fullScreen: true,
     controls: true,
     playsInline: true,
     preload: "metadata",
