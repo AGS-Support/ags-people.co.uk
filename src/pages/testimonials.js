@@ -1,12 +1,15 @@
 import React from "react"
-import { graphql } from "gatsby"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+
 import Testimonials from "../components/molecules/Testimonials"
 import PageHeading from "../components/molecules/PageHeading"
-const TestominialPage = ({ data }) => {
-  const testimonials = data.allWpTestimonial.nodes
 
+import { useTestimonials } from "../hooks/use-testimonials"
+
+const TestominialPage = ({ data }) => {
+  const testimonials = useTestimonials()
   return (
     <Layout>
       <Seo title="Testimonials" />
@@ -20,18 +23,3 @@ const TestominialPage = ({ data }) => {
   )
 }
 export default TestominialPage
-
-export const query = graphql`
-  query TestimonialPageQuery {
-    allWpTestimonial(sort: { fields: menuOrder, order: ASC }) {
-      nodes {
-        testimonials {
-          title
-          subTitle
-          content
-          showOnHomepage
-        }
-      }
-    }
-  }
-`

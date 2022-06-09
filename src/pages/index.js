@@ -17,6 +17,7 @@ import ServiceBanner from "../components/organisms/ServiceBanner"
 
 const IndexPage = ({ data }) => {
   const homepage = data.wpPage.homepage
+
   const pageData = {
     seo: data.wpPage.seo,
     hero: homepage.hero,
