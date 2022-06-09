@@ -5,8 +5,10 @@ const PageHeading = ({ title, intro, className }) => {
   return (
     <section className={className}>
       <div className="inner-container">
-        <Title variant="h1">{title}</Title>
-        {intro && <p className="text-para">{parse(intro)}</p>}
+        <div className="pt-3 pb-8">
+          <Title variant="h1">{title}</Title>
+          {intro && <p className="text-para">{parse(intro)}</p>}
+        </div>
       </div>
     </section>
   )

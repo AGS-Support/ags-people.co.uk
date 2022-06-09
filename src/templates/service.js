@@ -77,7 +77,7 @@ const Service = ({ data }) => {
           })}
         </div>
       </Section>
-      <div style={{ height: "5px" }}></div>
+
       <CallToAction {...callToAction} />
       <section>
         <div className="container">

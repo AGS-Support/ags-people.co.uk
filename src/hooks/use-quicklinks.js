@@ -7,6 +7,7 @@ export const useQuickLinks = () => {
         allWpService(sort: { fields: menuOrder, order: ASC }) {
           nodes {
             slug
+            uri
             services {
               title
             }

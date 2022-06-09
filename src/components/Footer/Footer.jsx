@@ -10,7 +10,18 @@ import flogo2 from "../../assets/images/footer-logo-2.png"
 import flogo3 from "../../assets/images/footer-logo-3.png"
 
 import Section from "../../components/Section/Section"
+
+import { useQuickLinks } from "../../hooks/use-quicklinks"
+
 const Footer = () => {
+  const services = useQuickLinks()
+  const menu = [
+    { name: "Team", link: "/who-we-are" },
+    { name: "Customer Stories", link: "/customer-stories" },
+    { name: "FAQ", link: "/faq" },
+    { name: "Testimonials", link: "/testimonials" },
+    { name: "Blog", link: "/blog" },
+  ]
   const svgProps = {
     width: "24",
     height: "24",
@@ -21,9 +32,9 @@ const Footer = () => {
   //fb #1877F2
   return (
     <footer>
-      <Section>
+      <section className="bg-header angle-border angle-border-top  angle-border-header py-10">
         <div class="container content">
-          <div className="grid grid-cols-5">
+          <div className="grid text-center md:text-left grid-cols-2 md:grid-cols-5">
             <div className="">
               <div className="text-dark font-bold">Head Office</div>
               <div className="text-dark font-bold">(South)</div>
@@ -109,7 +120,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-20 mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mt-20">
             <div className="text-para">
               AGS Support concierge service provides an extremely apt and cost
               effective alternative to in House and outsourced agency staffing
@@ -121,36 +132,32 @@ const Footer = () => {
             <div className="text-dark">
               <div className="font-bold">Services</div>
               <ul>
-                <li className="border-b-2 border-slate py-4">Night Support</li>
-                <li className="border-b-2 border-slate py-4">
-                  Concierge Service
-                </li>
-                <li className="border-b-2 border-slate py-4">
-                  Mobile Concierge Service
-                </li>
-                <li className="border-b-2 border-slate py-4">
-                  Bespoke Staffing Solutions
-                </li>
-                <li className="border-b-2 border-slate py-4">Bank Workers</li>
+                {services.map(service => (
+                  <li className="border-b-2 border-slate py-4">
+                    <Link to={service.uri}>{service.services.title}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="text-dark">
               <div className="font-bold">AGS Support</div>
               <ul>
-                <li className="border-b-2 border-slate py-4">Team</li>
-                <li className="border-b-2 border-slate py-4">
-                  Customer Stories
-                </li>
-                <li className="border-b-2 border-slate py-4">FAQ</li>
-                <li className="border-b-2 border-slate py-4">Testimonials</li>
-                <li className="border-b-2 border-slate py-4">Blog</li>
+                {menu.map((item, index) => {
+                  return (
+                    <Link key={`desktop-menu-item-${index}`} to={item.link}>
+                      <li className="border-b-2 border-slate py-4">
+                        {item.name}
+                      </li>
+                    </Link>
+                  )
+                })}
               </ul>
             </div>
           </div>
         </div>
-      </Section>
+      </section>
 
-      <section className="bg-white">
+      <Section background="white">
         <div className="container content">
           <div className="flex justify-between text-para">
             <div className="" style={{ minWidth: "50%" }}>
@@ -167,7 +174,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     </footer>
   )
 }

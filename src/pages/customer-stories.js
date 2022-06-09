@@ -29,28 +29,30 @@ const CustomerStoriesPage = ({ data }) => {
           const storyImage = getImage(story.logo?.localFile)
           const storyPoster = getImage(story.video?.poster?.localFile)
           return (
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 shadow-md mb-8 bg-white">
-              <div>
-                <GatsbyImage
-                  image={storyPoster}
-                  objectFit="contain"
-                  alt="Service Image"
-                />
-              </div>
-              <div>
-                <div className="mt-10 md:mt-0 mb-5">
+            <Link to={storyItem.uri}>
+              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 shadow-md mb-8 bg-white">
+                <div>
                   <GatsbyImage
-                    image={storyImage}
+                    image={storyPoster}
                     objectFit="contain"
                     alt="Service Image"
-                    style={{ width: "150px" }}
                   />
                 </div>
-                <h2 className="margin-reset">{story.customerName}</h2>
-                <p className="text-para">{story.challenge}</p>
-                <Link to={storyItem.uri}>Learn More →</Link>
+                <div>
+                  <div className="mt-10 md:mt-0 mb-5">
+                    <GatsbyImage
+                      image={storyImage}
+                      objectFit="contain"
+                      alt="Service Image"
+                      style={{ width: "150px" }}
+                    />
+                  </div>
+                  <h2 className="margin-reset">{story.customerName}</h2>
+                  <p className="text-para">{story.challenge}</p>
+                  <span className="font-bold">Learn More →</span>
+                </div>
               </div>
-            </div>
+            </Link>
           )
         })}
       </Section>

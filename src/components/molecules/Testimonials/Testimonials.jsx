@@ -44,7 +44,7 @@ const Testimonials = ({ headline, testimonials, background }) => {
 Testimonials.defaultProps = {
   headline: "",
   testimonials: [],
-  background: "tint",
+  background: "",
 }
 
 Testimonials.propTypes = {

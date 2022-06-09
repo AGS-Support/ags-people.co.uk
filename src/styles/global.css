@@ -14,6 +14,7 @@
   --colour-brand: #003d7a;
   --colour-brand-tint: #ebeff4;
   --colour-accent: #fe9d0b;
+  --colour-header: #f2f2f2;
 
   --space-base: 0.48rem;
   --space-small: 0.16rem;
@@ -327,11 +328,16 @@ section.quick-links {
   background: var(--colour-brand);
 }
 
+.angle-border-top.angle-border-header:before,
+.angle-border-bottom.angle-border-header:after {
+  background: var(--colour-header);
+}
+
 section.angle-border-top {
-  margin-top: 32px;
+  margin-top: 72px;
 }
 section.angle-border-bottom {
-  margin-bottom: 32px;
+  margin-bottom: 72px;
 }
 
 /* LISTS */

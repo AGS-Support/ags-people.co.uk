@@ -11,6 +11,8 @@ module.exports = {
         para: "#2D1115",
         dark: "#111111",
         yellow: "#F8CE01",
+        header: "#F2F2F2",
+        footer: "#F2F2F2",
       },
     },
     screens: {

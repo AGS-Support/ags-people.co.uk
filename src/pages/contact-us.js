@@ -35,9 +35,9 @@ const ContactUs = ({ data }) => {
                 </div>
                 <div>
                   <div className="text-left ">
-                    <h3 className=" text-lg font-bold text-para margin-reset">
+                    <h2 className="  font-bold text-para margin-reset">
                       Telephone:
-                    </h3>
+                    </h2>
                     <h3 className=" text-lg font-bold">
                       <a
                         className="underline"
@@ -46,9 +46,9 @@ const ContactUs = ({ data }) => {
                         {pageData.telephoneNumber}
                       </a>
                     </h3>
-                    <h3 className=" text-lg font-bold text-para margin-reset">
+                    <h2 className="  font-bold text-para margin-reset">
                       Email:
-                    </h3>
+                    </h2>
                     <h3 className="text-lg font-bold">
                       <a
                         className="underline"
@@ -58,14 +58,14 @@ const ContactUs = ({ data }) => {
                       </a>
                     </h3>
                   </div>
-                  <h3 className=" text-lg font-bold text-para margin-reset">
+                  <h2 className="  font-bold text-para margin-reset">
                     Offices:
-                  </h3>
+                  </h2>
 
                   {offices.map((item, index) => {
                     return (
                       <>
-                        <h3 className="margin-reset text-lg font-bold">
+                        <h3 className="margin-reset text-lg font-bold text-para">
                           {item.question}
                         </h3>
                         <span className="text-para">{parse(item.answer)}</span>
