@@ -3,6 +3,9 @@ import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { SparklesIcon } from "@heroicons/react/solid"
+import { LightningBoltIcon } from "@heroicons/react/solid"
+import { HeartIcon } from "@heroicons/react/solid"
 
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
@@ -69,23 +72,21 @@ const Service = ({ data }) => {
         <div className="grid grid-cols-2  gap-12">
           {service.serviceFeatures.map((feature, index) => {
             return (
-              <div>
-                <h2>{feature.headline}</h2>
-                <p className="text-dark">{parse(feature.content)}</p>
+              <div className="flex">
+                <div>
+                  <SparklesIcon className="w-[32px] h-[32px] text-secondary mr-2 mt-1" />
+                </div>
+                <div>
+                  <h2 className="margin-reset">{feature.headline}</h2>
+                  <p className="text-dark">{parse(feature.content)}</p>
+                </div>
               </div>
             )
           })}
         </div>
       </Section>
-      <div style={{ height: "5px" }}></div>
+
       <CallToAction {...callToAction} />
-      <section>
-        <div className="container">
-          <div className="content">
-            <PostPagination next={next} previous={previous} />
-          </div>
-        </div>
-      </section>
     </Layout>
   )
 }
