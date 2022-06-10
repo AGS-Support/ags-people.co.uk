@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => {
   ]
   return (
     <section
-      className="mb-10 bg-header"
+      className="md:mb-10 bg-header"
       style={{ borderBottom: "1px solid #f8f8f8 " }}
     >
       <div className="container">

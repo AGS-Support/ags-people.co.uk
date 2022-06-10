@@ -24,29 +24,32 @@ const ServicesPage = ({ data }) => {
         intro={pageData.content}
         className="text-center pb-4"
       />
-
-      {services.map((services, index) => {
-        const service = services.services
-        const serviceImage = getImage(service.image?.localFile)
-        return (
-          <>
-            <Section background={index % 2 === 0 ? "light" : "white"}>
-              <Link to={services.slug}>
-                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 ">
-                  <GatsbyImage image={serviceImage} alt="Service Image" />
-                  <div>
-                    <h2 className="margin-reset">{service.title}</h2>
-                    <p className="text-para">{service.excerpt}</p>
-                    Learn More →
-                  </div>
+      <Section background="tint">
+        {services.map((services, index) => {
+          const service = services.services
+          const serviceImage = getImage(service.image?.localFile)
+          const uri = services.uri
+          return (
+            <Link to={uri}>
+              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 shadow-md mb-8 bg-white">
+                <div>
+                  <GatsbyImage
+                    image={serviceImage}
+                    objectFit="contain"
+                    alt="Service Image"
+                    className="max-h-[300px]"
+                  />
                 </div>
-              </Link>
-            </Section>
-            <div className="mb-1">&nbsp;</div>
-          </>
-        )
-      })}
-
+                <div>
+                  <h2 className="margin-reset">{service.title}</h2>
+                  <p className="text-para">{service.excerpt}</p>
+                  <span className="font-bold">Learn More →</span>
+                </div>
+              </div>
+            </Link>
+          )
+        })}
+      </Section>
       <section>
         <div className="container">
           <div className="content text-center">
@@ -67,6 +70,7 @@ export const query = graphql`
     allWpService(sort: { fields: menuOrder, order: ASC }) {
       nodes {
         slug
+        uri
         services {
           title
           excerpt
@@ -76,7 +80,9 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  height: 200
+                  width: 600
+
+                  aspectRatio: 1.9
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                 )
@@ -95,6 +101,17 @@ export const query = graphql`
       servicePage {
         title
         content
+        customerLogos {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                height: 200
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+        }
         servicesCallToAction {
           background
           headline

@@ -36,8 +36,26 @@ const IndexPage = ({ data }) => {
       {/* Hero */}
       <Banner {...pageData.hero} />
       <Quicklinks {...pageData.quickLinks} />
+      <section className="md:py-10">
+        <div className="container">
+          <div className="content">
+            <CustomerLogos
+              headline={pageData.customerLogos.headline}
+              logos={pageData.customerLogos.logos}
+            />
+          </div>
+        </div>
+      </section>
+      {/* What Makes AGS Special */}
+      <Section background="light">
+        <WhatMakesAGSSpecial
+          headline={pageData.whatMakesAgsSpecial.headline}
+          featureList={pageData.whatMakesAgsSpecial.feature}
+          buttons={pageData.whatMakesAgsSpecial.buttons}
+        />
+      </Section>
       {/* Services */}
-      <section className="py-10">
+      <section className="md:py-10">
         <div className="container">
           <div className="content">
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24">
@@ -47,13 +65,10 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
+      {/* Call To Action */}
+      <CallToAction {...pageData.callToAction} />
       {/* Customer Logos & Testiominials Section */}
-      <Section>
-        {/* Customer Logos */}
-        <CustomerLogos
-          headline={pageData.customerLogos.headline}
-          logos={pageData.customerLogos.logos}
-        />
+      <Section background="white">
         {/* Testimonials */}
         <div className="content">
           <HomeTestimonials
@@ -63,20 +78,6 @@ const IndexPage = ({ data }) => {
           />
         </div>
       </Section>
-      {/* What Makes AGS Special */}
-      <section className="py-20">
-        <div className="container">
-          <div className="content">
-            <WhatMakesAGSSpecial
-              headline={pageData.whatMakesAgsSpecial.headline}
-              featureList={pageData.whatMakesAgsSpecial.feature}
-              buttons={pageData.whatMakesAgsSpecial.buttons}
-            />
-          </div>
-        </div>
-      </section>
-      {/* Call To Action */}
-      <CallToAction {...pageData.callToAction} />
     </Layout>
   )
 }

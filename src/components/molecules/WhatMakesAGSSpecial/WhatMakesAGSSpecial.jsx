@@ -9,7 +9,8 @@ import ServiceFeatures from "../../molecules/ServiceFeatures"
 
 const WhatMakesAGSSpecial = ({ headline, featureList, buttons }) => {
   const half = Math.ceil(featureList.length / 2)
-  const Services = [featureList.splice(0, half), featureList.splice(-half)]
+  const firstHalf = featureList.slice(0, half)
+  const secondHalf = featureList.slice(half)
 
   return (
     <>
@@ -17,15 +18,9 @@ const WhatMakesAGSSpecial = ({ headline, featureList, buttons }) => {
         {headline}
       </Title>
 
-      <div className="block md:flex md:justify-between inner-container">
-        {Services.map((feature, index) => {
-          return (
-            <ServiceFeatures
-              features={feature}
-              key={`service-featue-${index}`}
-            />
-          )
-        })}
+      <div className="block md:flex md:justify-between features-container">
+        <ServiceFeatures features={firstHalf} />
+        <ServiceFeatures features={secondHalf} />
       </div>
       <div className="mx-auto mt-10 text-center block  md:flex md:justify-center">
         {buttons.map((button, index) => {
@@ -35,6 +30,7 @@ const WhatMakesAGSSpecial = ({ headline, featureList, buttons }) => {
               key={`whatwedobutton-${index}`}
             >
               <Button
+                to={button.url}
                 variant={`${index === 0 ? "primary" : "primary-outline"}`}
                 size="md"
                 width="grow"

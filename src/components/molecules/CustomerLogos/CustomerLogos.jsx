@@ -10,7 +10,7 @@ const CustomerLogos = ({ headline, logos }) => {
       <Title className="text-center" variant="h2">
         {headline}
       </Title>
-      <div className="grid grid-cols-3 md:grid-cols-5  gap-8 brands mb-10 ">
+      <div className="grid grid-cols-3 md:grid-cols-6  gap-8 brands mb-10 ">
         {logos.map((logo, index) => {
           var logoImage = getImage(logo.localFile)
           return (
