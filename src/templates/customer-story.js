@@ -19,6 +19,7 @@ const CustomerStory = ({ data }) => {
   return (
     <Layout>
       <Seo title="Customer Story" />
+
       <PageHeading title="Customer Story" />
 
       <section>

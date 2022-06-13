@@ -35,14 +35,8 @@ const IrLink = ({ to, type, className, children }) => {
       )
       break
   }
-  /*
-  return (
-    <Link to={to} className={className}>
-      {children}
-    </Link>
-  )
-  */
 }
+
 IrLink.defaultProps = {
   type: "internal",
   to: "",

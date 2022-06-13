@@ -10,6 +10,8 @@ import Partners from "../components/molecules/Partners"
 import PageHeading from "../components/molecules/PageHeading"
 import CallToAction from "../components/molecules/CallToAction"
 
+import { HorizontalCard } from "../components/organisms/Cards"
+
 const CustomerStoriesPage = ({ data }) => {
   const stories = data.allWpCustomerStory.nodes
   const pageData = data.wpPage.customerStoriesPage
@@ -30,28 +32,14 @@ const CustomerStoriesPage = ({ data }) => {
           const storyPoster = getImage(story.video?.poster?.localFile)
           return (
             <Link to={storyItem.uri}>
-              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 shadow-md mb-8 bg-white">
-                <div>
-                  <GatsbyImage
-                    image={storyPoster}
-                    objectFit="contain"
-                    alt="Service Image"
-                  />
-                </div>
-                <div>
-                  <div className="mt-10 md:mt-0 mb-5">
-                    <GatsbyImage
-                      image={storyImage}
-                      objectFit="contain"
-                      alt="Service Image"
-                      style={{ width: "150px" }}
-                    />
-                  </div>
-                  <h2 className="margin-reset">{story.customerName}</h2>
-                  <p className="text-para">{story.challenge}</p>
-                  <span className="font-bold">Learn More →</span>
-                </div>
-              </div>
+              <HorizontalCard
+                image={storyPoster}
+                eyebrowLogo={storyImage}
+                title={story.customerName}
+                bodyText={story.challenge}
+                linkText="Learn More"
+                url={storyItem.uri}
+              />
             </Link>
           )
         })}

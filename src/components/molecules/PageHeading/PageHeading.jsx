@@ -1,6 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 import parse from "html-react-parser"
+
 import Title from "../../atoms/Title"
+
 const PageHeading = ({ title, intro, className }) => {
   return (
     <section className={className}>
@@ -18,6 +21,12 @@ PageHeading.defaultProps = {
   title: "please add a title",
   intro: "",
   className: "text-center",
+}
+
+PageHeading.propTypes = {
+  title: PropTypes.string,
+  intro: PropTypes.string,
+  className: PropTypes.string,
 }
 
 export default PageHeading

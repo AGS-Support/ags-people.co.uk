@@ -1,7 +1,9 @@
 import React from "react"
-import Link from "../../atoms/Link"
+import PropTypes from "prop-types"
 import parse from "html-react-parser"
+
 import Title from "../../atoms/Title"
+import Link from "../../atoms/Link"
 
 const CallToAction = ({ background, headline, content, button, className }) => {
   return (
@@ -66,4 +68,21 @@ const CallToAction = ({ background, headline, content, button, className }) => {
     </section>
   )
 }
+
+CallToAction.defaultProps = {
+  background: "",
+  headline: "",
+  content: "",
+  button: {},
+  className: "",
+}
+
+CallToAction.propTypes = {
+  background: PropTypes.string,
+  headline: PropTypes.string,
+  content: PropTypes.string,
+  button: PropTypes.object,
+  className: PropTypes.string,
+}
+
 export default CallToAction

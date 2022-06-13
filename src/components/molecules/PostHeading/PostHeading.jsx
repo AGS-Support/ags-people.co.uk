@@ -1,6 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
+import PropTypes from "prop-types"
 import parse from "html-react-parser"
+
 import Button from "../../atoms/Button"
 import Title from "../../atoms/Title"
 import Categories from "../../atoms/Categories"
@@ -39,6 +40,15 @@ PostHeading.defaultProps = {
   date: "",
   categories: [],
   className: "",
+}
+
+PostHeading.propTypes = {
+  breadcrumb: PropTypes.string,
+  title: PropTypes.string,
+  summary: PropTypes.string,
+  date: PropTypes.string,
+  categories: PropTypes.array,
+  className: PropTypes.string,
 }
 
 export default PostHeading

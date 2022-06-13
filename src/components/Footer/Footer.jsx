@@ -1,37 +1,69 @@
 import React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import parse from "html-react-parser"
 import Svg from "react-inlinesvg"
-import facebookLogo from "../../assets/icons/facebook.svg"
-import LinkedInLogo from "../../assets/icons/linkedin.svg"
-
-import flogo1 from "../../assets/images/footer-logo-1.png"
-import flogo2 from "../../assets/images/footer-logo-2.png"
-import flogo3 from "../../assets/images/footer-logo-3.png"
-
-import Section from "../../components/Section/Section"
 
 import { useQuickLinks } from "../../hooks/use-quicklinks"
 import { useOffices } from "../../hooks/use-offices"
+import { useOptions } from "../../hooks/use-options"
+import { useOptionsContactDetails } from "../../hooks/use-options-contact-details"
+import { useMenuFooter } from "../../hooks/use-menu-footer"
+import { useMenuHeader } from "../../hooks/use-menu-header"
+
+import Section from "../../components/Section/Section"
+
+import facebookLogo from "../../assets/icons/facebook.svg"
+import LinkedInLogo from "../../assets/icons/linkedin.svg"
 
 const Footer = () => {
   const services = useQuickLinks()
   const offices = useOffices()
-  const menu = [
-    { name: "Team", link: "/who-we-are" },
-    { name: "Customer Stories", link: "/customer-stories" },
-    { name: "FAQ", link: "/faq" },
-    { name: "Testimonials", link: "/testimonials" },
-    { name: "Blog", link: "/blog" },
-  ]
+  const options = useOptions()
+
+  let menu = useMenuFooter()
+  if (!menu) {
+    menu = [
+      { label: "Privacy Policy", uri: "/privacy-policy" },
+      { label: "Terms & Conditions", uri: "/terms-and-conditions" },
+    ]
+  }
+  let headerMenu = useMenuHeader()
+  if (!headerMenu) {
+    headerMenu = [
+      { label: "Privacy Policy", uri: "/privacy-policy" },
+      { label: "Terms & Conditions", uri: "/terms-and-conditions" },
+    ]
+  }
+  const menuLength = menu.length
+  const footerOptions = options.indieRidgeOptionsFooter?.footerOptions
+  const socialMediaOptions =
+    options.indieRidgeOptionsContactDetails?.contactDetailsOptions
+      ?.socialMediaAccounts
+  const companyInfoOptions =
+    options.indieRidgeOptionsCompanyInfo?.companyInfoOptions
+
+  const footerData = {
+    blurb: footerOptions?.footerBlurb,
+    logos: footerOptions?.logos,
+    socialMedia: {
+      facebook: socialMediaOptions?.facebook || "",
+      linkedIn: socialMediaOptions?.linkedIn || "",
+    },
+    companyInfo: {
+      companyName: companyInfoOptions?.companyName || "",
+      vatNumber: companyInfoOptions?.vatNumber || "",
+      companyNumber: companyInfoOptions?.companyNumber || "",
+      registeredAddress: companyInfoOptions?.registeredAddress || "",
+    },
+  }
+  const contactDetails = useOptionsContactDetails()
+
   const svgProps = {
     width: "24",
     height: "24",
-    //style: style,
   }
 
-  //linkedin #0A66C2
-  //fb #1877F2
   return (
     <footer>
       <section className="bg-header angle-border angle-border-top  angle-border-header py-10">
@@ -52,12 +84,12 @@ const Footer = () => {
 
             <div className="text-dark">
               <div className="font-bold">Contact</div>
-              <div className="">0845 0523597</div>
-              <div>info@agssupport.co.uk</div>
+              <div className="">{contactDetails.telephone}</div>
+              <div>{contactDetails.email}</div>
               <div className="mt-5">
                 <a
                   className="inline-block h-6 mr-8"
-                  href="https://www.linkedin.com/company/agssupport"
+                  href={footerData.socialMedia.linkedIn}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -65,7 +97,7 @@ const Footer = () => {
                 </a>
                 <a
                   className="inline-block h-6 mr-8"
-                  href="https://www.facebook.com/AGSSupportFacilities/"
+                  href={footerData.socialMedia.facebook}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -77,15 +109,15 @@ const Footer = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mt-20">
             <div className="text-para">
-              AGS Support concierge service provides an extremely apt and cost
-              effective alternative to in House and outsourced agency staffing
-              within the supported housing sector. Our highly trained Concierge
-              Personnel are “Enhanced” DBS checked and are seasoned veterans of
-              the Supported Housing environment.
+              <div className="text-dark font-bold">About Us</div>
+              {footerData.blurb && parse(footerData.blurb)}
             </div>
 
             <div className="text-dark">
-              <div className="font-bold">Services</div>
+              <div className="font-bold">
+                {" "}
+                <Link to="/services">Services</Link>
+              </div>
               <ul>
                 {services.map(service => (
                   <li className="border-b-2 border-slate py-4">
@@ -95,13 +127,15 @@ const Footer = () => {
               </ul>
             </div>
             <div className="text-dark">
-              <div className="font-bold">AGS Support</div>
+              <div className="font-bold">
+                <Link to="/">AGS Support</Link>
+              </div>
               <ul>
-                {menu.map((item, index) => {
+                {headerMenu.map((item, index) => {
                   return (
-                    <Link key={`desktop-menu-item-${index}`} to={item.link}>
+                    <Link key={`desktop-menu-item-${index}`} to={item.uri}>
                       <li className="border-b-2 border-slate py-4">
-                        {item.name}
+                        {item.label}
                       </li>
                     </Link>
                   )
@@ -116,19 +150,35 @@ const Footer = () => {
         <div className="container">
           <div className="block md:flex mdjustify-between text-para">
             <div className="" style={{ minWidth: "50%" }}>
-              <img src={flogo1} className="inline max-h-[80px] mr-8" />
-              <img src={flogo2} className="inline max-h-[80px] mr-8" />
-              <img src={flogo3} className="inline max-h-[80px]" />
+              {footerData?.logos.map((logo, index) => {
+                var logoImage = getImage(logo.localFile)
+                return (
+                  <GatsbyImage
+                    image={logoImage}
+                    alt="Customer Logo"
+                    className="mr-5"
+                  />
+                )
+              })}
             </div>
             <div className="text-right">
-              VAT No. GB 315333630 Company No. 11648687
-              <br /> Registered Address: 24 Park Rd S, Havant PO9 1HB, United
-              Kingdom
-              <br /> © 2022 AGS Support Ltd. Built with 💖 by{" "}
-              <a href="https://indieridge.com">Indie Ridge</a>
+              VAT No. GB {footerData.companyInfo.vatNumber} Company No.{" "}
+              {footerData.companyInfo.companyNumber}
+              <br /> Registered Address:{" "}
+              {footerData.companyInfo.registeredAddress}
+              <br /> © 2022 {footerData.companyInfo.companyName}. Built with 💖
+              by <a href="https://indieridge.com">Indie Ridge</a>
               <br />
-              <Link to="/privacy-policy">Privacy Policy</Link> |{" "}
-              <Link to="/terms-and-conditions">Terms & Conditions</Link>
+              {menu.map((item, index) => {
+                return (
+                  <>
+                    <Link key={`footer-menu-item-${index}`} to={item.uri}>
+                      {item.label}
+                    </Link>
+                    {index !== menuLength - 1 && <> | </>}
+                  </>
+                )
+              })}
             </div>
           </div>
         </div>

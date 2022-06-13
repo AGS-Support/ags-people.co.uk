@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import PropTypes from "prop-types"
+
 const PostCategories = ({ categories }) => {
   return (
     <>
@@ -28,6 +30,14 @@ const PostCategories = ({ categories }) => {
       })}
     </>
   )
+}
+
+PostCategories.defaultProps = {
+  categories: [],
+}
+
+PostCategories.propTypes = {
+  categories: PropTypes.array,
 }
 
 export default PostCategories

@@ -1,6 +1,8 @@
 import React from "react"
+import PropTypes from "prop-types"
 import parse from "html-react-parser"
 import { Disclosure } from "@headlessui/react"
+
 import { PlusIcon } from "@heroicons/react/solid"
 import { XIcon } from "@heroicons/react/solid"
 
@@ -32,4 +34,9 @@ const Accordion = ({ items }) => {
     </>
   )
 }
+
+Accordion.propTypes = {
+  items: PropTypes.array.isRequired,
+}
+
 export default Accordion

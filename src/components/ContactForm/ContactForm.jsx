@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { useForm, ValidationError } from "@formspree/react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
@@ -73,4 +74,13 @@ const ContactUs = ({ data }) => {
     </>
   )
 }
+
+ContactUs.defaultProps = {
+  data: {},
+}
+
+ContactUs.propTypes = {
+  data: PropTypes.object,
+}
+
 export default ContactUs

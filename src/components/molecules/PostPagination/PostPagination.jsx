@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import parse from "html-react-parser"
 
@@ -34,6 +35,11 @@ const PostPagination = ({ next, previous }) => {
       )}
     </nav>
   )
+}
+
+PostPagination.propTypes = {
+  next: PropTypes.object,
+  previous: PropTypes.object,
 }
 
 export default PostPagination

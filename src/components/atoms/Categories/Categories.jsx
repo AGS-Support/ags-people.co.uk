@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import PropTypes from "prop-types"
+
 const Categories = ({ categories }) => {
   if (categories.length === 0) {
     return null
@@ -21,6 +23,14 @@ const Categories = ({ categories }) => {
       })}
     </>
   )
+}
+
+Categories.defaultProps = {
+  categories: [],
+}
+
+Categories.propTypes = {
+  categories: PropTypes.array,
 }
 
 export default Categories

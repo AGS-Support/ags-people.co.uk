@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { CheckCircleIcon } from "@heroicons/react/solid"
 
 import Title from "../../atoms/Title"
 import Button from "../../atoms/Button"

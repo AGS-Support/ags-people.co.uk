@@ -1,11 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import parse from "html-react-parser"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
-import parse from "html-react-parser"
-import PageHeading from "../components/molecules/PageHeading"
 import Section from "../components/Section"
+
+import PageHeading from "../components/molecules/PageHeading"
+
 const WhoWeArePage = ({ data }) => {
   const content = data.wpPage.whoWeAre
   const teamMembers = data.allWpTeamMember.nodes

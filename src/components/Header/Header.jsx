@@ -4,16 +4,22 @@ import { Link } from "gatsby"
 
 import logo from "../../assets/images/logo.svg"
 
+import { useMenuHeader } from "../../hooks/use-menu-header"
+
 const Header = ({ siteTitle }) => {
-  const menu = [
-    { name: "Services", link: "/services" },
-    { name: "Team", link: "/who-we-are" },
-    { name: "Customer Stories", link: "/customer-stories" },
-    { name: "FAQ", link: "/faq" },
-    { name: "Testimonials", link: "/testimonials" },
-    { name: "Blog", link: "/blog" },
-    { name: "Contact", link: "/contact-us" },
-  ]
+  let menu = useMenuHeader()
+  if (!menu) {
+    menu = [
+      { label: "Services", uri: "/services" },
+      { label: "Team", uri: "/who-we-are" },
+      { label: "Customer Stories", uri: "/customer-stories" },
+      { label: "FAQ", uri: "/faq" },
+      { label: "Testimonials", uri: "/testimonials" },
+      { label: "Blog", uri: "/blog" },
+      { label: "Contact", uri: "/contact-us" },
+    ]
+  }
+
   return (
     <section
       className="md:mb-10 bg-header"
@@ -39,8 +45,8 @@ const Header = ({ siteTitle }) => {
           <div className="nav-links bg-white md:bg-transparent">
             {menu.map((item, index) => {
               return (
-                <Link key={`desktop-menu-item-${index}`} to={item.link}>
-                  {item.name}
+                <Link key={`desktop-menu-item-${index}`} to={item.uri}>
+                  {item.label}
                 </Link>
               )
             })}
@@ -56,7 +62,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: "",
 }
 
 export default Header

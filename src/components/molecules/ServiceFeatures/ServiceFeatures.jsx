@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 import { CheckCircleIcon } from "@heroicons/react/solid"
 
 const ServiceFeatures = ({ features }) => {
@@ -23,6 +24,7 @@ const ServiceFeatures = ({ features }) => {
 ServiceFeatures.defaultProps = {
   features: [],
 }
+
 ServiceFeatures.propTypes = {
   features: PropTypes.array,
 }

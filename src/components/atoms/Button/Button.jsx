@@ -119,4 +119,5 @@ Button.propTypes = {
   arrowPosition: PropTypes.oneOf(["left", "right"]),
   width: PropTypes.oneOf(["", "normal", "wide"]),
 }
+
 export default Button

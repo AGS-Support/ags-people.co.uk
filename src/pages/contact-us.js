@@ -2,17 +2,20 @@ import React from "react"
 import { graphql } from "gatsby"
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 import parse from "html-react-parser"
+
+import { useOffices } from "../hooks/use-offices"
+import { useOptionsContactDetails } from "../hooks/use-options-contact-details"
+
 import ContactForm from "../components/ContactForm"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
-import PageHeading from "../components/molecules/PageHeading"
-import { PhoneIcon } from "@heroicons/react/solid"
-import { AtSymbolIcon } from "@heroicons/react/solid"
 
-import { useOffices } from "../hooks/use-offices"
+import PageHeading from "../components/molecules/PageHeading"
 
 const ContactUs = ({ data }) => {
   const offices = useOffices()
+  const contactDetails = useOptionsContactDetails()
+
   const pageData = data.wpPage.contactUs
 
   return (
@@ -39,7 +42,7 @@ const ContactUs = ({ data }) => {
                         className="underline"
                         href={`tel:${pageData.telephoneNumber}`}
                       >
-                        {pageData.telephoneNumber}
+                        {contactDetails.telephone}
                       </a>
                     </h3>
                     <h2 className="  font-bold text-para margin-reset">
@@ -50,7 +53,7 @@ const ContactUs = ({ data }) => {
                         className="underline"
                         href={`mailto:${pageData.emailAddress}`}
                       >
-                        {pageData.emailAddress}
+                        {contactDetails.email}
                       </a>
                     </h3>
                   </div>

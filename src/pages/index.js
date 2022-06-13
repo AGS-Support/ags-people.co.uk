@@ -5,9 +5,10 @@ import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Section from "../components/Section"
 
-import Testimonials from "../components/molecules/Testimonials"
+import Title from "../components/atoms/Title"
+
 import HomeTestimonials from "../components/molecules/HomeTestimonials"
-import CustomerLogos from "../components/molecules/CustomerLogos"
+import LogoGrid from "../components/molecules/LogoGrid"
 import WhatMakesAGSSpecial from "../components/molecules/WhatMakesAGSSpecial"
 import CallToAction from "../components/molecules/CallToAction"
 
@@ -17,7 +18,6 @@ import ServiceBanner from "../components/organisms/ServiceBanner"
 
 const IndexPage = ({ data }) => {
   const homepage = data.wpPage.homepage
-
   const pageData = {
     seo: data.wpPage.seo,
     hero: homepage.hero,
@@ -39,10 +39,10 @@ const IndexPage = ({ data }) => {
       <section className="md:py-10">
         <div className="container">
           <div className="content">
-            <CustomerLogos
-              headline={pageData.customerLogos.headline}
-              logos={pageData.customerLogos.logos}
-            />
+            <Title className="text-center" variant="h2">
+              {pageData.customerLogos.headline}
+            </Title>
+            <LogoGrid />
           </div>
         </div>
       </section>

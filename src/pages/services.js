@@ -6,15 +6,18 @@ import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Section from "../components/Section"
 
-import Partners from "../components/molecules/Partners"
+import Title from "../components/atoms/Title"
+
+import LogoGrid from "../components/molecules/LogoGrid"
 import PageHeading from "../components/molecules/PageHeading"
 import CallToAction from "../components/molecules/CallToAction"
+
+import { HorizontalCard } from "../components/organisms/Cards"
 
 const ServicesPage = ({ data }) => {
   const services = data.allWpService.nodes
   const pageData = data.wpPage.servicePage
   const callToAction = pageData.servicesCallToAction
-
   return (
     <Layout>
       <Seo title="Services" />
@@ -31,21 +34,13 @@ const ServicesPage = ({ data }) => {
           const uri = services.uri
           return (
             <Link to={uri}>
-              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 p-4 shadow-md mb-8 bg-white">
-                <div>
-                  <GatsbyImage
-                    image={serviceImage}
-                    objectFit="contain"
-                    alt="Service Image"
-                    className="max-h-[300px]"
-                  />
-                </div>
-                <div>
-                  <h2 className="margin-reset">{service.title}</h2>
-                  <p className="text-para">{service.excerpt}</p>
-                  <span className="font-bold">Learn More →</span>
-                </div>
-              </div>
+              <HorizontalCard
+                image={serviceImage}
+                title={service.title}
+                bodyText={service.excerpt}
+                linkText="Learn More"
+                url={uri}
+              />
             </Link>
           )
         })}
@@ -53,8 +48,10 @@ const ServicesPage = ({ data }) => {
       <section>
         <div className="container">
           <div className="content text-center">
-            <h2>Who We Work With</h2>
-            <Partners />
+            <Title className="text-center" variant="h2">
+              Who we work with
+            </Title>
+            <LogoGrid columns={6} mobileColumns={3} />
           </div>
         </div>
       </section>

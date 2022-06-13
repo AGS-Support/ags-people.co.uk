@@ -1,12 +1,12 @@
 import React from "react"
 
+import { useTestimonials } from "../hooks/use-testimonials"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 
 import Testimonials from "../components/molecules/Testimonials"
 import PageHeading from "../components/molecules/PageHeading"
-
-import { useTestimonials } from "../hooks/use-testimonials"
 
 const TestominialPage = ({ data }) => {
   const testimonials = useTestimonials()

@@ -1,8 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
+
 import Title from "../components/atoms/Title"
+
 import PageHeading from "../components/molecules/PageHeading"
 import Accordion from "../components/molecules/Accordion"
 

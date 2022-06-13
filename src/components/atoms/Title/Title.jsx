@@ -1,5 +1,7 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
+
 const TitleTag = styled.div``
 
 const Title = ({ className, variant, children }) => {
@@ -14,6 +16,12 @@ Title.defaultProps = {
   title: "please add a title",
   variant: "h1",
   className: "text-primary",
+}
+
+Title.propTypes = {
+  title: PropTypes.string,
+  variant: PropTypes.oneOf(["h1", "h2", "h3", "h4", "h5", "h6"]),
+  className: PropTypes.string,
 }
 
 export default Title

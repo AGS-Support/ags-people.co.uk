@@ -1,7 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import parse from "html-react-parser"
+import PropTypes from "prop-types"
 import { GatsbyImage } from "gatsby-plugin-image"
+
 const PostSummary = ({ post }) => {
   const featuredImage = {
     data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
@@ -45,4 +47,13 @@ const PostSummary = ({ post }) => {
     </div>
   )
 }
+
+PostSummary.defaultProps = {
+  post: {},
+}
+
+PostSummary.propTypes = {
+  post: PropTypes.object,
+}
+
 export default PostSummary

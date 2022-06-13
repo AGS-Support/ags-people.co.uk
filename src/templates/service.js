@@ -9,7 +9,6 @@ import { HeartIcon } from "@heroicons/react/solid"
 
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
-
 import Section from "../components/Section"
 
 import Button from "../components/atoms/Button"
@@ -30,14 +29,10 @@ const Service = ({ data }) => {
       <section>
         <div className="container">
           <div className="content">
-            <Button
-              to="/services"
-              variant="tertiary"
-              arrowPosition="left"
-              className=""
-            >
-              All Services
-            </Button>
+            <Button to="/services" variant="tertiary" arrowPosition="none">
+              Services
+            </Button>{" "}
+            > {service.title}
             <h1 className="mt-10">{service.title}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2  gap-12">
               <div>
