@@ -1,11 +1,13 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Section from "../components/Section"
+
+import Button from "../components/atoms/Button"
 
 import PageHeading from "../components/molecules/PageHeading"
 
@@ -49,6 +51,11 @@ const WhoWeArePage = ({ data }) => {
                         {parse(teamMember.theTeam.profile)}
                       </p>
                     )}
+                    {teamMember.theTeam.founder && (
+                      <Button to="/founders-story" variant="tertiary">
+                        Founders Story
+                      </Button>
+                    )}
                   </div>
                 </div>
               </Section>
@@ -78,6 +85,9 @@ const WhoWeArePage = ({ data }) => {
                         <p className="text-dark">
                           {parse(teamMember.theTeam.profile)}
                         </p>
+                      )}
+                      {teamMember.theTeam.founder && (
+                        <Link to="/founder-story">Founders Story</Link>
                       )}
                     </div>
                   </div>
@@ -116,6 +126,7 @@ export const query = graphql`
           name
           profile
           role
+          founder
           profilePic {
             localFile {
               childImageSharp {
