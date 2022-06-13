@@ -13,15 +13,17 @@ const LogoGrid = ({ columns, mobileColumns }) => {
       {logos.map((logo, index) => {
         var logoImage = getImage(logo.localFile)
         return (
-          <div
-            className={`brands__item ${
-              index > 8 ? "hidden md:inline" : "visible"
-            }`}
-            key={`customerlogo-${index}`}
-          >
-            <span>
-              <GatsbyImage image={logoImage} alt="Customer Logo" />
-            </span>
+          <div>
+            <div
+              className={`brands__item ${
+                index > 8 ? "hidden md:inline" : "visible"
+              }`}
+              key={`customerlogo-${index}`}
+            >
+              <span>
+                <GatsbyImage image={logoImage} alt="Customer Logo" />
+              </span>
+            </div>
           </div>
         )
       })}
