@@ -6,6 +6,8 @@ import parse from "html-react-parser"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 
+import Button from "../components/atoms/Button"
+
 import PageHeading from "../components/molecules/PageHeading"
 
 const FoundersStoryPage = ({ data }) => {
@@ -39,6 +41,11 @@ const FoundersStoryPage = ({ data }) => {
               />
             </div>
           )}
+          <div className="mt-10 text-right">
+            <Button to="/customer-stories" variant="tertiary">
+              See some of our customer stories
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>
