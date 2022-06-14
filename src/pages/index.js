@@ -42,7 +42,9 @@ const IndexPage = ({ data }) => {
             <Title className="text-center" variant="h2">
               {pageData.customerLogos.headline}
             </Title>
-            <LogoGrid />
+            <div className="grid grid-cols-3 md:grid-cols-6  gap-8 brands mb-10 ">
+              <LogoGrid />
+            </div>
           </div>
         </div>
       </section>

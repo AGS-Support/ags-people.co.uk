@@ -51,7 +51,9 @@ const ServicesPage = ({ data }) => {
             <Title className="text-center" variant="h2">
               Who we work with
             </Title>
-            <LogoGrid columns={6} mobileColumns={3} />
+            <div className="grid grid-cols-3 md:grid-cols-6  gap-8 brands mb-10 ">
+              <LogoGrid />
+            </div>
           </div>
         </div>
       </section>
