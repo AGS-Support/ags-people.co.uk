@@ -46,7 +46,7 @@ export const useOptions = () => {
                   localFile {
                     childImageSharp {
                       gatsbyImageData(
-                        height: 75
+                        height: 50
                         placeholder: BLURRED
                         formats: [AUTO, WEBP, AVIF]
                       )

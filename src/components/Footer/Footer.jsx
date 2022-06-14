@@ -66,7 +66,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <section className="bg-header angle-border angle-border-top  angle-border-header py-10">
+      <section className="bg-header angle-border angle-border-top  angle-border-header md:py-10">
         <div class="container content">
           <div className="grid text-center md:text-left grid-cols-2 md:grid-cols-5">
             {offices.map((office, index) => {
@@ -82,13 +82,13 @@ const Footer = () => {
               )
             })}
 
-            <div className="text-dark">
+            <div className="col-span-2 md:col-span-1 text-dark w-[100%]">
               <div className="font-bold">Contact</div>
               <div className="">{contactDetails.telephone}</div>
               <div>{contactDetails.email}</div>
               <div className="mt-5">
                 <a
-                  className="inline-block h-6 mr-8"
+                  className="inline-block h-6 mr-4"
                   href={footerData.socialMedia.linkedIn}
                   target="_blank"
                   rel="noreferrer"
@@ -96,7 +96,7 @@ const Footer = () => {
                   <Svg src={LinkedInLogo} fill="#0A66C2" {...svgProps} />
                 </a>
                 <a
-                  className="inline-block h-6 mr-8"
+                  className="inline-block h-6"
                   href={footerData.socialMedia.facebook}
                   target="_blank"
                   rel="noreferrer"
@@ -107,7 +107,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mt-10 md:mt-20">
             <div className="text-para">
               <div className="text-dark font-bold">About Us</div>
               {footerData.blurb && parse(footerData.blurb)}
@@ -148,8 +148,8 @@ const Footer = () => {
 
       <Section background="white">
         <div className="container">
-          <div className="block md:flex mdjustify-between text-para">
-            <div className="" style={{ minWidth: "50%" }}>
+          <div className="block md:flex md:justify-between text-para">
+            <div className="">
               {footerData?.logos.map((logo, index) => {
                 var logoImage = getImage(logo.localFile)
                 return (
@@ -161,13 +161,13 @@ const Footer = () => {
                 )
               })}
             </div>
-            <div className="text-right">
+            <div className="text-left md:text-right mt-10 md:mt-0">
               VAT No. GB {footerData.companyInfo.vatNumber} Company No.{" "}
               {footerData.companyInfo.companyNumber}
               <br /> Registered Address:{" "}
               {footerData.companyInfo.registeredAddress}
-              <br /> © 2022 {footerData.companyInfo.companyName}. Built with 💖
-              by <a href="https://indieridge.com">Indie Ridge</a>
+              <br /> © 2022 {footerData.companyInfo.companyName}.<br /> Built
+              with 💖 by <a href="https://indieridge.com">Indie Ridge</a>
               <br />
               {menu.map((item, index) => {
                 return (

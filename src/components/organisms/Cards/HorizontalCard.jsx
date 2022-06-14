@@ -29,7 +29,7 @@ const HorizontalCard = ({
             />
           </div>
         )}
-        <div>
+        <div className="pr-8">
           {eyebrowImage && (
             <div className="mt-10 md:mt-0 mb-5">
               <GatsbyImage
@@ -40,9 +40,10 @@ const HorizontalCard = ({
               />
             </div>
           )}
+
           <h2 className="margin-reset">{title}</h2>
-          <p className="text-para">{parse(bodyText)}</p>
-          <span className="font-bold">{linkText} →</span>
+          <span className="text-para">{parse(bodyText)}</span>
+          <div className="font-bold mt-5">{linkText} →</div>
         </div>
       </div>
     </Link>
