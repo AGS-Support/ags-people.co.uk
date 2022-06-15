@@ -26,6 +26,7 @@ const FoundersStoryPage = ({ data }) => {
                 image={profileImage}
                 objectFit="contain"
                 alt="Profile Image"
+                className="rounded-lg"
               />
             </div>
           )}
@@ -42,8 +43,8 @@ const FoundersStoryPage = ({ data }) => {
             </div>
           )}
           <div className="mt-10 text-right">
-            <Button to="/customer-stories" variant="tertiary">
-              See some of our customer stories
+            <Button to="/services" variant="tertiary">
+              See our services
             </Button>
           </div>
         </div>

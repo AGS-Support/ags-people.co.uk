@@ -15,7 +15,7 @@ const Categories = ({ categories }) => {
         return (
           <span>
             {index === 0 ? " in " : " "}
-            <Link to={`/categories/${category.slug}`} className="underline">
+            <Link to={`/category/${category.slug}`} className="underline">
               {category.name}
             </Link>
           </span>
