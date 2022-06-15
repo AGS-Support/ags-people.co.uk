@@ -16,7 +16,7 @@ const Section = ({ children, background }) => {
   return (
     <section className={sectionClass}>
       <div className="container">
-        <div className="content-xxx">{children}</div>
+        <div className="content">{children}</div>
       </div>
     </section>
   )

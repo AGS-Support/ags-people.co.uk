@@ -39,8 +39,8 @@ const WhoWeArePage = ({ data }) => {
           return (
             <>
               <Section background="tint">
-                <div className="grid grid-cols-1 md:grid-cols-3  lg:gap-2 md:gap-2 sm:gap-0">
-                  <div className="mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-2 ">
+                  <div className="w-[100%] md:w-auto mx-auto">
                     <GatsbyImage
                       image={profileImage}
                       className="rounded-lg  w-[50%]  md:w-[100%]"
@@ -62,46 +62,34 @@ const WhoWeArePage = ({ data }) => {
                   </div>
                 </div>
               </Section>
-              <div className="mt-10">&nbsp;</div>
             </>
           )
         }
         return (
           <>
             <Section background={`${index % 2 === 0 ? "tint" : "white"}`}>
-              <div class="container">
-                <div class="content">
-                  <div className="grid grid-cols-1 md:grid-cols-3  gap-0 md:gap-8">
-                    <div
-                      className={`mx-auto order-${
-                        index % 2 === 0 ? "first" : "last"
-                      } `}
-                    >
-                      <GatsbyImage
-                        image={profileImage}
-                        className="rounded-lg  w-[50%]  md:w-[100%]"
-                      />
-                    </div>
-                    <div
-                      className="col-span-2 mt-6 md:mt-0"
-                      key={teamMember.id}
-                    >
-                      <h1 className="margin-reset">
-                        {teamMember.theTeam.name}
-                      </h1>
-                      <h2 className="margin-reset">
-                        {teamMember.theTeam.role}
-                      </h2>
-                      {teamMember.theTeam.profile && (
-                        <p className="text-dark">
-                          {parse(teamMember.theTeam.profile)}
-                        </p>
-                      )}
-                      {teamMember.theTeam.founder && (
-                        <Link to="/founder-story">Founders Story</Link>
-                      )}
-                    </div>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-3  gap-0 md:gap-2">
+                <div
+                  className={`w-[100%] md:w-auto  mx-auto order-first md:order-${
+                    index % 2 === 0 ? "first" : "last"
+                  } `}
+                >
+                  <GatsbyImage
+                    image={profileImage}
+                    className="rounded-lg  w-[50%]  md:w-[100%]"
+                  />
+                </div>
+                <div className="col-span-2 mt-6 md:mt-0" key={teamMember.id}>
+                  <h1 className="margin-reset">{teamMember.theTeam.name}</h1>
+                  <h2 className="margin-reset">{teamMember.theTeam.role}</h2>
+                  {teamMember.theTeam.profile && (
+                    <p className="text-dark">
+                      {parse(teamMember.theTeam.profile)}
+                    </p>
+                  )}
+                  {teamMember.theTeam.founder && (
+                    <Link to="/founder-story">Founders Story</Link>
+                  )}
                 </div>
               </div>
             </Section>
