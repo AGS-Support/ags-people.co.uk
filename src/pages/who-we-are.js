@@ -39,11 +39,11 @@ const WhoWeArePage = ({ data }) => {
           return (
             <>
               <Section background="tint">
-                <div className="grid grid-cols-1 md:grid-cols-3  lg:gap-8 md:gap-2 sm:gap-0">
-                  <div>
+                <div className="grid grid-cols-1 md:grid-cols-3  lg:gap-2 md:gap-2 sm:gap-0">
+                  <div className="mx-auto">
                     <GatsbyImage
                       image={profileImage}
-                      className="rounded-lg  w-[50%]  md-w[100%]"
+                      className="rounded-lg  w-[50%]  md:w-[100%]"
                     />
                   </div>
                   <div className="col-span-2 mt-6 md:mt-0" key={teamMember.id}>
@@ -73,11 +73,13 @@ const WhoWeArePage = ({ data }) => {
                 <div class="content">
                   <div className="grid grid-cols-1 md:grid-cols-3  gap-0 md:gap-8">
                     <div
-                      className={`order-${index % 2 === 0 ? "first" : "last"} `}
+                      className={`mx-auto order-${
+                        index % 2 === 0 ? "first" : "last"
+                      } `}
                     >
                       <GatsbyImage
                         image={profileImage}
-                        className="rounded-lg w-[50%] md-w[100%]"
+                        className="rounded-lg  w-[50%]  md:w-[100%]"
                       />
                     </div>
                     <div
