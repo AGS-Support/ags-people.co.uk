@@ -26,7 +26,11 @@ const CustomerStory = ({ data }) => {
         <div className="container">
           <div className="content title">
             <div className="mx-auto text-center my-3">
-              <GatsbyImage image={logo} className="max-w-[200px] logo" />
+              <GatsbyImage
+                image={logo}
+                className="max-w-[200px] logo"
+                alt="customer logo"
+              />
             </div>
             {!story.video.vimeoUrl && <div className="mt-20"></div>}
             <div className="mt-6">

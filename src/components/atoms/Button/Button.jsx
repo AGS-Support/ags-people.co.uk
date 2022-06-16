@@ -86,12 +86,20 @@ const Button = ({
         return null
     }
   }
-
-  return (
-    <Link to={to} className={className}>
-      {children}
-    </Link>
-  )
+  switch (type) {
+    case "calendly":
+      return (
+        <a href={to} className={className}>
+          {children}
+        </a>
+      )
+    default:
+      return (
+        <Link to={to} className={className}>
+          {children}
+        </Link>
+      )
+  }
 }
 Button.defaultProps = {
   children: "",
@@ -116,7 +124,7 @@ Button.propTypes = {
     "white-outline",
   ]),
   type: PropTypes.oneOf(["internal", "external", "calendly"]),
-  arrowPosition: PropTypes.oneOf(["left", "right"]),
+  arrowPosition: PropTypes.oneOf(["none", "left", "right"]),
   width: PropTypes.oneOf(["", "normal", "wide", "grow"]),
 }
 

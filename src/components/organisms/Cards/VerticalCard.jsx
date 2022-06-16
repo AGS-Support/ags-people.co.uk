@@ -1,9 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
-import Button from "../../atoms/Button"
 import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import Title from "../../atoms/Title"
+
 const VerticalCard = ({ image, eyebrow, title, bodyText, linkText, url }) => {
   const cardImage = image?.node
     ? getImage(image?.node?.localFile)
@@ -34,10 +35,10 @@ const VerticalCard = ({ image, eyebrow, title, bodyText, linkText, url }) => {
           <div itemProp="description" className="mb-4 text-lg text-dark">
             {parse(bodyText)}
           </div>
-
-          <Button to={url} variant="tertiary">
-            {linkText}
-          </Button>
+          <div className="mb-5 md:mb-0">
+            <span className="underline">{linkText}</span>
+            {" →"}
+          </div>
         </div>
       </div>
     </Link>

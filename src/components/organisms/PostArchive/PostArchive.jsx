@@ -25,7 +25,7 @@ const PostArchive = ({ posts, className }) => {
                 ? post.posts?.summary
                 : post.excerpt
               return (
-                <div className="mb-10">
+                <div className="mb-10" key={post.uri}>
                   <VerticalCard
                     image={post.featuredImage}
                     eyebrow={post.date}

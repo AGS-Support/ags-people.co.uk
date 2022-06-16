@@ -27,7 +27,7 @@ const FaqPage = ({ data }) => {
                 const theFaq = faq.faq
 
                 return (
-                  <>
+                  <div key={`faq-section-${index}`}>
                     <Title
                       variant="h2"
                       className={`${
@@ -36,8 +36,8 @@ const FaqPage = ({ data }) => {
                     >
                       {theFaq.type}
                     </Title>
-                    <Accordion items={theFaq.questions} />
-                  </>
+                    <Accordion items={theFaq.questions} sectionNumber={index} />
+                  </div>
                 )
               })}
             </section>

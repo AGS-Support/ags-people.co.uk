@@ -33,15 +33,14 @@ const ServicesPage = ({ data }) => {
           const serviceImage = getImage(service.image?.localFile)
           const uri = services.uri
           return (
-            <Link to={uri}>
-              <HorizontalCard
-                image={serviceImage}
-                title={service.title}
-                bodyText={service.excerpt}
-                linkText="Learn More"
-                url={uri}
-              />
-            </Link>
+            <HorizontalCard
+              key={`services-card-${index}`}
+              image={serviceImage}
+              title={service.title}
+              bodyText={service.excerpt}
+              linkText="Learn More"
+              url={uri}
+            />
           )
         })}
       </Section>

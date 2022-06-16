@@ -10,7 +10,12 @@ const ContactUs = ({ data }) => {
     data: { "g-recaptcha-reponse": executeRecaptcha },
   })
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>
+    return (
+      <div className="bg-[#f2f2f2] p-10 rounded-lg h-[100%]">
+        <h2 className="margin-reset">Thanks for contacting us</h2>
+        <p> We'll be in touch with you soon</p>
+      </div>
+    )
   }
   return (
     <>
@@ -64,7 +69,7 @@ const ContactUs = ({ data }) => {
 
         <button
           className="font-bold rounded rounded-lg border-2 px-10  text-center w-[100%]   mb-5 md:mb-0 p-4 block md:inline md:w-auto bg-primary border-primary text-white"
-          isSubmit={false}
+          issubmit="false"
           text="Submit"
           disabled={state.submitting}
         >

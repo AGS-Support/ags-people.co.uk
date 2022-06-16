@@ -33,16 +33,15 @@ const CustomerStoriesPage = ({ data }) => {
           const storyImage = getImage(story.logo?.localFile)
           const storyPoster = getImage(story.video?.poster?.localFile)
           return (
-            <Link to={storyItem.uri}>
-              <HorizontalCard
-                image={storyPoster}
-                eyebrowLogo={storyImage}
-                title={story.customerName}
-                bodyText={story.challenge}
-                linkText="Learn More"
-                url={storyItem.uri}
-              />
-            </Link>
+            <HorizontalCard
+              key={`story-${storyItem.uri}`}
+              image={storyPoster}
+              eyebrowLogo={storyImage}
+              title={story.customerName}
+              bodyText={story.challenge}
+              linkText="Learn More"
+              url={storyItem.uri}
+            />
           )
         })}
       </Section>

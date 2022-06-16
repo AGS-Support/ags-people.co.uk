@@ -64,7 +64,7 @@ const ContactUs = ({ data }) => {
                   {offices.map((office, index) => {
                     const officeData = office.offices
                     return (
-                      <>
+                      <div key={officeData.title}>
                         <h3 className="margin-reset text-lg font-bold text-para">
                           {officeData.title}
                           <br />
@@ -73,7 +73,7 @@ const ContactUs = ({ data }) => {
                         <span className="text-para">
                           {parse(officeData.address)}
                         </span>
-                      </>
+                      </div>
                     )
                   })}
                 </div>

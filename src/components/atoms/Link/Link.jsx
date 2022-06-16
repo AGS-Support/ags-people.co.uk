@@ -29,7 +29,11 @@ const IrLink = ({ to, type, className, children }) => {
 
     case "calendly":
       return (
-        <Button variant="secondary" to={`${process.env.GATSBY_CALENDLY_URL}`}>
+        <Button
+          variant="secondary"
+          type="calendly"
+          to={`${process.env.GATSBY_CALENDLY_URL}`}
+        >
           {children}
         </Button>
       )

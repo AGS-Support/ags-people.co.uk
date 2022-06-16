@@ -6,14 +6,18 @@ import { Disclosure } from "@headlessui/react"
 import { PlusIcon } from "@heroicons/react/solid"
 import { XIcon } from "@heroicons/react/solid"
 
-const Accordion = ({ items }) => {
+const Accordion = ({ items, sectionNumber }) => {
   return (
-    <>
+    <div>
       {items.map((item, index) => {
         return (
-          <Disclosure as="div" className="mt-4">
+          <Disclosure
+            as="div"
+            className="mt-4"
+            key={`accordion-item-${sectionNumber}-${index}`}
+          >
             {({ open }) => (
-              <>
+              <div>
                 <Disclosure.Button className="flex w-full justify-between  bg-tint p-4 text-left text-sm font-medium text-black hover:bg-tint focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                   <span className="text-dark text-lg">{item.question}</span>
                   {open ? (
@@ -26,17 +30,18 @@ const Accordion = ({ items }) => {
                 <Disclosure.Panel className="p-4 text-md text-dark bg-tint">
                   {parse(item.answer)}
                 </Disclosure.Panel>
-              </>
+              </div>
             )}
           </Disclosure>
         )
       })}
-    </>
+    </div>
   )
 }
 
 Accordion.propTypes = {
   items: PropTypes.array.isRequired,
+  sectionNumber: PropTypes.number.isRequired,
 }
 
 export default Accordion

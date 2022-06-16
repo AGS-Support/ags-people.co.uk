@@ -32,7 +32,7 @@ const Service = ({ data }) => {
             <h1 className="mt-10">{service.title}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2  gap-12">
               <div>
-                <p className="text-dark">{parse(service.content)}</p>
+                <span className="text-dark">{parse(service.content)}</span>
                 <div className="hidden sm:block">
                   <Link
                     to="/contact-us"
@@ -53,7 +53,11 @@ const Service = ({ data }) => {
                 </div>
               </div>
               <div>
-                <GatsbyImage image={serviceImage} className="max-h-[300px]" />
+                <GatsbyImage
+                  image={serviceImage}
+                  className="max-h-[300px]"
+                  alt="service image"
+                />
               </div>
             </div>
           </div>
@@ -63,13 +67,13 @@ const Service = ({ data }) => {
         <div className="grid grid-cols-2  gap-12">
           {service.serviceFeatures.map((feature, index) => {
             return (
-              <div className="flex">
+              <div className="flex" key={`service-feature-bp-${index}`}>
                 <div>
                   <SparklesIcon className="w-[32px] h-[32px] text-secondary mr-2 mt-1" />
                 </div>
                 <div>
                   <h2 className="margin-reset">{feature.headline}</h2>
-                  <p className="text-dark">{parse(feature.content)}</p>
+                  <span className="text-dark">{parse(feature.content)}</span>
                 </div>
               </div>
             )
