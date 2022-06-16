@@ -6,7 +6,9 @@ import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Section from "../components/Section"
 
-import Partners from "../components/molecules/Partners"
+import Title from "../components/atoms/Title"
+
+import LogoGrid from "../components/molecules/LogoGrid"
 import PageHeading from "../components/molecules/PageHeading"
 import CallToAction from "../components/molecules/CallToAction"
 
@@ -47,8 +49,12 @@ const CustomerStoriesPage = ({ data }) => {
       <section>
         <div className="container">
           <div className="content text-center">
-            <h2>Who We Work With</h2>
-            <Partners />
+            <Title className="text-center" variant="h2">
+              Who we work with
+            </Title>
+            <div className="grid grid-cols-3 md:grid-cols-6  gap-8 brands mb-10 ">
+              <LogoGrid />
+            </div>
           </div>
         </div>
       </section>

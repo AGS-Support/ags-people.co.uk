@@ -70,7 +70,7 @@ const WhoWeArePage = ({ data }) => {
             <Section background={`${index % 2 === 0 ? "tint" : "white"}`}>
               <div className="grid grid-cols-1 md:grid-cols-3  gap-0 md:gap-2">
                 <div
-                  className={`w-[100%] md:w-auto  mx-auto order-first md:order-${
+                  className={`w-[100%] md:w-auto  mx-auto md:order-${
                     index % 2 === 0 ? "first" : "last"
                   } `}
                 >

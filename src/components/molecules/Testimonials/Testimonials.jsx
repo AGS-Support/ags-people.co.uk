@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import Masonry from "react-masonry-css"
 
+import Section from "../../Section"
+
 import Title from "../../atoms/Title"
 
 import { TestimonialCard } from "../../organisms/Cards"
@@ -20,23 +22,25 @@ const Testimonials = ({ headline, testimonials, background }) => {
           {headline}
         </Title>
       )}
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
-        {testimonials.map((testimonial, index) => {
-          return (
-            <TestimonialCard
-              headline={testimonial.testimonials.title}
-              testimonial={testimonial.testimonials.content}
-              numStars={5}
-              background={background}
-              key={`testimonial-${index}`}
-            />
-          )
-        })}
-      </Masonry>
+      <Section background="white">
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {testimonials.map((testimonial, index) => {
+            return (
+              <TestimonialCard
+                headline={testimonial.testimonials.title}
+                testimonial={testimonial.testimonials.content}
+                numStars={5}
+                background={background}
+                key={`testimonial-${index}`}
+              />
+            )
+          })}
+        </Masonry>
+      </Section>
     </>
   )
 }

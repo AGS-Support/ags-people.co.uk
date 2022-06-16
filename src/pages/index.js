@@ -36,18 +36,14 @@ const IndexPage = ({ data }) => {
       {/* Hero */}
       <Banner {...pageData.hero} />
       <Quicklinks {...pageData.quickLinks} />
-      <section className="md:py-10">
-        <div className="container">
-          <div className="content">
-            <Title className="text-center" variant="h2">
-              {pageData.customerLogos.headline}
-            </Title>
-            <div className="grid grid-cols-3 md:grid-cols-6  gap-8 brands mb-10 ">
-              <LogoGrid />
-            </div>
-          </div>
+      <Section background="white">
+        <Title className="text-center" variant="h2">
+          {pageData.customerLogos.headline}
+        </Title>
+        <div className="grid grid-cols-3 md:grid-cols-6  gap-8 brands mb-[-40px] md:mb-[-0px]">
+          <LogoGrid />
         </div>
-      </section>
+      </Section>
       {/* What Makes AGS Special */}
       <Section background="light">
         <WhatMakesAGSSpecial
@@ -72,13 +68,11 @@ const IndexPage = ({ data }) => {
       {/* Customer Logos & Testiominials Section */}
       <Section background="white">
         {/* Testimonials */}
-        <div className="content">
-          <HomeTestimonials
-            headline={pageData.testimonials.headline}
-            testimonials={pageData.testimonials.testimonials}
-            background="white"
-          />
-        </div>
+        <HomeTestimonials
+          headline={pageData.testimonials.headline}
+          testimonials={pageData.testimonials.testimonials}
+          background="white"
+        />
       </Section>
     </Layout>
   )

@@ -15,14 +15,17 @@ const FaqPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="FAQ" />
-      <PageHeading title="Frequently Asked Questions" />
+      <PageHeading
+        title="Frequently Asked Questions"
+        intro="Got any questions about our services? Wondering how we can help with your specific challenges? Whether you find your answer below or not, feel free to reach out to us at any time. "
+      />
       <section>
         <div className="inner-container">
           <div className="content">
             <section>
               {faqs.map((faq, index) => {
                 const theFaq = faq.faq
-                console.log(theFaq.questions)
+
                 return (
                   <>
                     <Title

@@ -8,9 +8,9 @@ const PageHeading = ({ title, intro, className }) => {
   return (
     <section className={className}>
       <div className="inner-container">
-        <div className="pt-3 pb-8">
+        <div className="pt-10 md:pt-4">
           <Title variant="h1">{title}</Title>
-          {intro && <p className="text-para">{parse(intro)}</p>}
+          {intro && <span className="text-para">{parse(intro)}</span>}
         </div>
       </div>
     </section>

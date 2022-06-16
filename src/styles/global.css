@@ -371,7 +371,7 @@ ul.list-inline li {
 .navbar .nav-btn {
   display: inline-block;
   position: absolute;
-  top: 0px;
+  top: 7px;
   right: 0px;
   z-index: 1000;
 }

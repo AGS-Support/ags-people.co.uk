@@ -13,7 +13,10 @@ const TestominialPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Testimonials" />
-      <PageHeading title="Testimonials" />
+      <PageHeading
+        title="Testimonials"
+        intro="Going above & beyond in delivering the best services, we always see our clients as long-term partners—providing them with the support that helps them care more for their people. "
+      />
       <section>
         <div className="container">
           <Testimonials testimonials={testimonials} />
