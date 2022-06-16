@@ -120,7 +120,10 @@ const Footer = () => {
               </div>
               <ul>
                 {services.map(service => (
-                  <li className="border-b-2 border-slate py-4">
+                  <li
+                    key={`footer-menu-${service.uri}`}
+                    className="border-b-2 border-slate py-4"
+                  >
                     <Link to={service.uri}>{service.services.title}</Link>
                   </li>
                 ))}
@@ -133,11 +136,12 @@ const Footer = () => {
               <ul>
                 {headerMenu.map((item, index) => {
                   return (
-                    <Link key={`desktop-menu-item-${index}`} to={item.uri}>
-                      <li className="border-b-2 border-slate py-4">
-                        {item.label}
-                      </li>
-                    </Link>
+                    <li
+                      key={`footer-menu-${item.uri}`}
+                      className="border-b-2 border-slate py-4"
+                    >
+                      <Link to={item.uri}>{item.label}</Link>
+                    </li>
                   )
                 })}
               </ul>
