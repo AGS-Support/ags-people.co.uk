@@ -1,9 +1,9 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import parse from "html-react-parser"
-import Title from "../../atoms/Title/Title"
-import Button from "../../atoms/Button"
+
 import { useQuickLinks } from "../../../hooks/use-quicklinks"
+
 const Quicklinks = ({ headline, links }) => {
   const services = useQuickLinks()
 
@@ -29,12 +29,12 @@ const Quicklinks = ({ headline, links }) => {
             </ul>
             <div className="mb-5 mt-10 block md:mb-0 md:mt-0 quickLinks:flex quickLinks:justify-between pt-0 md:pt-10 quickLinks:pt-0">
               <div className="order-3">
-                <Link
-                  to={`${process.env.GATSBY_CALENDLY_URL}`}
+                <a
+                  href={`${process.env.GATSBY_CALENDLY_URL}`}
                   className="font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-primary border-white text-white block quickLinks:inline quickLinks:w-auto p-4"
                 >
                   Book a free call
-                </Link>
+                </a>
               </div>
               <div className="order-2 hidden md:flex">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -54,4 +54,5 @@ const Quicklinks = ({ headline, links }) => {
     </section>
   )
 }
+
 export default Quicklinks

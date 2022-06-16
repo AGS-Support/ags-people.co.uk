@@ -9,12 +9,11 @@ const LogoGrid = ({ columns, mobileColumns }) => {
   return logos.map((logo, index) => {
     var logoImage = getImage(logo.localFile)
     return (
-      <div>
+      <div key={`customerlogo-${index}`}>
         <div
           className={`brands__item ${
             index > 8 ? "hidden md:inline" : "visible"
           }`}
-          key={`customerlogo-${index}`}
         >
           <span>
             <GatsbyImage image={logoImage} alt="Customer Logo" />

@@ -19,21 +19,23 @@ const IrLink = ({ to, type, className, children }) => {
           </Link>
         </>
       )
-      break
+
     case "external":
       return (
         <a href={to} className={className}>
           {children}
         </a>
       )
-      break
+
     case "calendly":
       return (
         <Button variant="secondary" to={`${process.env.GATSBY_CALENDLY_URL}`}>
           {children}
         </Button>
       )
-      break
+
+    default:
+      return null
   }
 }
 

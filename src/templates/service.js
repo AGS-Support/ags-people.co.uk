@@ -4,8 +4,6 @@ import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { SparklesIcon } from "@heroicons/react/solid"
-import { LightningBoltIcon } from "@heroicons/react/solid"
-import { HeartIcon } from "@heroicons/react/solid"
 
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
@@ -14,15 +12,13 @@ import Section from "../components/Section"
 import Button from "../components/atoms/Button"
 
 import CallToAction from "../components/molecules/CallToAction"
-import PostPagination from "../components/molecules/PostPagination"
 
 const Service = ({ data }) => {
   const service = data.wpService.services
   const seo = data.wpService.seo
   const serviceImage = getImage(service.image?.localFile)
   const callToAction = service.callToAction
-  const previous = data.previous
-  const next = data.next
+
   return (
     <Layout>
       <Seo title={service.title} seo={seo} />

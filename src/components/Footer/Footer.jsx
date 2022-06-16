@@ -67,12 +67,12 @@ const Footer = () => {
   return (
     <footer>
       <section className="bg-header angle-border angle-border-top  angle-border-header md:py-10">
-        <div class="container content">
+        <div className="container content">
           <div className="grid text-center md:text-left grid-cols-2 md:grid-cols-5">
             {offices.map((office, index) => {
               const officeData = office.offices
               return (
-                <div className="">
+                <div key={`office-${index}`}>
                   <div className="text-dark font-bold">{officeData.title}</div>
                   <div className="text-dark font-bold">
                     {officeData.region || <br />}
@@ -158,6 +158,7 @@ const Footer = () => {
                 var logoImage = getImage(logo.localFile)
                 return (
                   <GatsbyImage
+                    key={`footer-logo-${index}`}
                     image={logoImage}
                     alt="Customer Logo"
                     className="mr-5"
@@ -175,12 +176,10 @@ const Footer = () => {
               <br />
               {menu.map((item, index) => {
                 return (
-                  <>
-                    <Link key={`footer-menu-item-${index}`} to={item.uri}>
-                      {item.label}
-                    </Link>
+                  <div key={`footer-menu-item-${index}`}>
+                    <Link to={item.uri}>{item.label}</Link>
                     {index !== menuLength - 1 && <> | </>}
-                  </>
+                  </div>
                 )
               })}
             </div>

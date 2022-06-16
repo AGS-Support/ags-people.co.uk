@@ -6,12 +6,6 @@ import Title from "../../atoms/Title"
 import { TestimonialCard } from "../../organisms/Cards"
 
 const HomeTestimonials = ({ headline, testimonials, background }) => {
-  const breakpointColumnsObj = {
-    default: 3,
-    1000: 2,
-    720: 1,
-  }
-
   return (
     <>
       {headline && (

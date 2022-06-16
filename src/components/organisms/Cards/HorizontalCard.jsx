@@ -1,10 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import Button from "../../atoms/Button"
 import parse from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
-import Title from "../../atoms/Title"
 
 const HorizontalCard = ({
   image,

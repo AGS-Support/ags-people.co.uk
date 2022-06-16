@@ -77,9 +77,9 @@ const Button = ({
 
       case "calendly":
         return (
-          <Link to={`${process.env.GATSBY_CALENDLY_URL}`} className={className}>
+          <a href={`${process.env.GATSBY_CALENDLY_URL}`} className={className}>
             {children}
-          </Link>
+          </a>
         )
 
       default:
@@ -117,7 +117,7 @@ Button.propTypes = {
   ]),
   type: PropTypes.oneOf(["internal", "external", "calendly"]),
   arrowPosition: PropTypes.oneOf(["left", "right"]),
-  width: PropTypes.oneOf(["", "normal", "wide"]),
+  width: PropTypes.oneOf(["", "normal", "wide", "grow"]),
 }
 
 export default Button
