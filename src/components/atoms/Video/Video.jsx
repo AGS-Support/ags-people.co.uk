@@ -31,6 +31,8 @@ const Video = ({ vimeoUrl, poster }) => {
             alt="Play Video"
             src={playIcon}
             onClick={() => setToggler(!toggler)}
+            height="418"
+            width="418"
           />
         </div>
         <GatsbyImage

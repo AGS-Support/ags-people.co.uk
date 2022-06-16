@@ -171,17 +171,21 @@ const Footer = () => {
               {footerData.companyInfo.companyNumber}
               <br /> Registered Address:{" "}
               {footerData.companyInfo.registeredAddress}
-              <br /> © 2022 {footerData.companyInfo.companyName}.<br /> Built
-              with 💖 by <a href="https://indieridge.com">Indie Ridge</a>
-              <br />
-              {menu.map((item, index) => {
-                return (
-                  <div key={`footer-menu-item-${index}`}>
-                    <Link to={item.uri}>{item.label}</Link>
-                    {index !== menuLength - 1 && <> | </>}
-                  </div>
-                )
-              })}
+              <br /> © 2022 {footerData.companyInfo.companyName}.
+              <div className="mt-2">
+                Built with 💖 by{" "}
+                <a href="https://indieridge.com">Indie Ridge</a>
+              </div>
+              <div className="mt-3">
+                {menu.map((item, index) => {
+                  return (
+                    <div key={`footer-menu-item-${index}`} className="inline">
+                      <Link to={item.uri}>{item.label}</Link>
+                      {index !== menuLength - 1 && <> | </>}
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
