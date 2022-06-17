@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { useForm, ValidationError } from "@formspree/react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
-const ContactUs = ({ data }) => {
+const ContactUs = ({ title, buttonText }) => {
   const { executeRecaptcha } = useGoogleReCaptcha()
 
   const [state, handleSubmit] = useForm(process.env.GATSBY_FORMSPREE_ID, {
@@ -19,6 +19,7 @@ const ContactUs = ({ data }) => {
   }
   return (
     <>
+      <h2>{title}</h2>
       <form onSubmit={handleSubmit}>
         <label className="font-bold">Name*</label>
         <input
@@ -73,7 +74,7 @@ const ContactUs = ({ data }) => {
           text="Submit"
           disabled={state.submitting}
         >
-          Submit
+          {buttonText}
         </button>
       </form>
     </>
@@ -81,7 +82,8 @@ const ContactUs = ({ data }) => {
 }
 
 ContactUs.defaultProps = {
-  data: {},
+  title: "Contact Us",
+  buttonText: "Submit",
 }
 
 ContactUs.propTypes = {

@@ -23,61 +23,26 @@ const ContactUs = ({ data }) => {
       <Seo title="Contact Us" />
       <PageHeading title={pageData.headline} intro={pageData.intro} />
       <section>
-        <div className="container">
+        <div className="inner-container">
           <div className="content title">
             <GoogleReCaptchaProvider
               reCaptchaKey={process.env.GATSBY_CAPTCHA_V3_key}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-24 lg:gap-24">
-                <div className="order-last md:order-first mt-10 md:mt-0">
-                  <ContactForm />
-                </div>
-                <div>
-                  <div className="text-left ">
-                    <h2 className="  font-bold text-para margin-reset">
-                      Telephone:
-                    </h2>
-                    <h3 className=" text-lg font-bold">
-                      <a
-                        className="underline"
-                        href={`tel:${pageData.telephoneNumber}`}
-                      >
-                        {contactDetails.telephone}
-                      </a>
-                    </h3>
-                    <h2 className="  font-bold text-para margin-reset">
-                      Email:
-                    </h2>
-                    <h3 className="text-lg font-bold">
-                      <a
-                        className="underline"
-                        href={`mailto:${pageData.emailAddress}`}
-                      >
-                        {contactDetails.email}
-                      </a>
-                    </h3>
-                  </div>
-                  <h2 className="  font-bold text-para margin-reset">
-                    Offices:
-                  </h2>
-
-                  {offices.map((office, index) => {
-                    const officeData = office.offices
-                    return (
-                      <div key={officeData.title}>
-                        <h3 className="margin-reset text-lg font-bold text-para">
-                          {officeData.title}
-                          <br />
-                          {officeData.region}
-                        </h3>
-                        <span className="text-para">
-                          {parse(officeData.address)}
-                        </span>
-                      </div>
-                    )
-                  })}
-                </div>
+              <div
+                className="text-center mb-8"
+                style={{ borderBottom: "1px solid #f2f2f2" }}
+              >
+                <h2 className="text-para margin-reset">
+                  <a href="tel:08450523597">0845 0523597 </a>
+                </h2>
+                <h2 className="text-para">
+                  <a href="mailto:support@agssupport.co.uk">
+                    support@agssupport.co.uk
+                  </a>
+                </h2>
               </div>
+
+              <ContactForm title="Send us a message" />
             </GoogleReCaptchaProvider>
           </div>
         </div>

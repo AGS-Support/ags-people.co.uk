@@ -72,7 +72,7 @@ const Service = ({ data }) => {
                 key={`service-feature-bp-${index}`}
               >
                 <div>
-                  <SparklesIcon className="w-[32px] h-[32px] text-secondary mr-2 mt-1" />
+                  <SparklesIcon className="w-[32px] h-[32px] text-slate-500 mr-2 mt-1" />
                 </div>
                 <div>
                   <h2 className="margin-reset">{feature.headline}</h2>
