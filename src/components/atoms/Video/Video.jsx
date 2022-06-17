@@ -26,13 +26,14 @@ const Video = ({ vimeoUrl, poster }) => {
   return (
     <div className="video-container">
       <div className="video">
-        <div className="video-icon-play" style={{ zIndex: "2" }}>
+        <div className="video-icon-play">
           <img
             alt="Play Video"
             src={playIcon}
             onClick={() => setToggler(!toggler)}
             height="418"
             width="418"
+            className="z-10"
           />
         </div>
         <GatsbyImage

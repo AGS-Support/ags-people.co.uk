@@ -43,13 +43,13 @@ const Service = ({ data }) => {
                   </Link>
                 </div>
                 <div className="block sm:hidden">
-                  <Link
-                    to="tel:+614-988-868-868"
+                  <a
+                    href="tel:+614-988-868-868"
                     className="button  text-center text-white bg-secondary border-2 border-secondary"
                     style={{ paddingTop: "10px", paddingBottom: "10px" }}
                   >
                     Call Us Now
-                  </Link>
+                  </a>
                 </div>
               </div>
               <div>
@@ -64,10 +64,13 @@ const Service = ({ data }) => {
         </div>
       </section>
       <Section background="light">
-        <div className="grid grid-cols-2  gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap:5 md:gap-12">
           {service.serviceFeatures.map((feature, index) => {
             return (
-              <div className="flex" key={`service-feature-bp-${index}`}>
+              <div
+                className="flex mt-10 md:mt-0"
+                key={`service-feature-bp-${index}`}
+              >
                 <div>
                   <SparklesIcon className="w-[32px] h-[32px] text-secondary mr-2 mt-1" />
                 </div>

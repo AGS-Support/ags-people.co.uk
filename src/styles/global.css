@@ -147,6 +147,7 @@ video {
   left: calc(50% - 90px);
   top: calc(50% - 90px);
   transition: all 0.6s ease-in-out;
+  z-index: 2;
 }
 
 .video .video-icon-play img {
@@ -395,7 +396,7 @@ ul.list-inline li {
   overflow-y: hidden;
   top: 0px;
   right: 0px;
-  z-index: 2;
+  z-index: 3;
 }
 .navbar .nav-links a {
   display: block;
