@@ -6,14 +6,17 @@ import Title from "../../atoms/Title"
 import Link from "../../atoms/Link"
 
 const CallToAction = ({ background, headline, content, button, className }) => {
+  if (background === "Dark") {
+    className = `bg-brand angle-border angle-border-top angle-border-bottom angle-border-${
+      background === "Dark" ? "primary" : "tint"
+    }`
+  } else {
+    className = `bg-tint angle-border angle-border-top angle-border-bottom angle-border-${
+      background === "Dark" ? "primary" : "tint"
+    }`
+  }
   return (
-    <section
-      className={`bg-${
-        background === "Dark" ? "brand" : "tint"
-      } angle-border angle-border-top angle-border-bottom angle-border-${
-        background === "Dark" ? "primary" : "tint"
-      }`}
-    >
+    <section className={className}>
       <div className="inner-container">
         <div className="content">
           <Title

@@ -2,16 +2,21 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const Section = ({ children, background }) => {
+  console.log("background", background)
+  let sectionClass = ""
   if (background === "dark") {
-    background = "primary"
+    sectionClass =
+      "bg-primary angle-border angle-border-top angle-border-bottom angle-border-primary py-0 md:py-10"
   }
-  if (background === "light") {
-    background = "tint"
+  if (background === "light" || background === "tint") {
+    sectionClass =
+      "bg-tint angle-border angle-border-top angle-border-bottom angle-border-tint py-0 md:py-10"
+    console.log("sectionClass", sectionClass)
   }
 
-  var sectionClass = `bg-${background} angle-border angle-border-top angle-border-bottom angle-border-${background} py-0 md:py-10`
   if (background === "white") {
-    sectionClass = `bg-${background}`
+    sectionClass = `bg-white`
+    console.log("sectionClass", sectionClass)
   }
 
   return (

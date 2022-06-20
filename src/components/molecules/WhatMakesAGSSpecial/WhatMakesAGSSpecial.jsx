@@ -30,7 +30,7 @@ const WhatMakesAGSSpecial = ({ headline, featureList, buttons }) => {
             >
               <Button
                 to={button.url}
-                variant={`${index === 0 ? "primary" : "primary-outline"}`}
+                variant={`${index === 0 ? "secondary" : "primary-outline"}`}
                 size="md"
                 width="grow"
               >

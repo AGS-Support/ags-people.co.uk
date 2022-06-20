@@ -31,7 +31,7 @@ const Quicklinks = ({ headline, links }) => {
               <div className="order-3">
                 <a
                   href={`${process.env.GATSBY_CALENDLY_URL}`}
-                  className="font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-primary border-white text-white block quickLinks:inline quickLinks:w-auto p-4"
+                  className="font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-brand border-white text-white block quickLinks:inline quickLinks:w-auto p-4"
                 >
                   Book a free call
                 </a>
