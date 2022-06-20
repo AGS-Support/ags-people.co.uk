@@ -9,7 +9,7 @@ const CallToAction = ({ background, headline, content, button, className }) => {
   return (
     <section
       className={`bg-${
-        background === "Dark" ? "primary" : "tint"
+        background === "Dark" ? "brand" : "tint"
       } angle-border angle-border-top angle-border-bottom angle-border-${
         background === "Dark" ? "primary" : "tint"
       }`}

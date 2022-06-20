@@ -27,8 +27,7 @@ const Service = ({ data }) => {
           <div className="content">
             <Button to="/services" variant="tertiary" arrowPosition="none">
               Services
-            </Button>{" "}
-            > {service.title}
+            </Button>
             <h1 className="mt-10">{service.title}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2  gap-12">
               <div>

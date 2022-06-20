@@ -15,7 +15,7 @@ const Title = ({ className, variant, children }) => {
 Title.defaultProps = {
   title: "please add a title",
   variant: "h1",
-  className: "text-primary",
+  className: "",
 }
 
 Title.propTypes = {
