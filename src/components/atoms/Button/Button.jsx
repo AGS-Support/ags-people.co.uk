@@ -36,7 +36,7 @@ const Button = ({
       className += " bg-secondary border-secondary text-white"
       break
     case "primary-outline":
-      className += " bg-white border-primary text-primary"
+      className += " bg-white border-secondary text-secondary"
       break
     case "secondary-outline":
       className += " bg-white border-secondary text-primary"

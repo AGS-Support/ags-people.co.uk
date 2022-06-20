@@ -11,10 +11,10 @@
 :root {
   --font-base: "Red Hat Display", sans-serif;
   --colour-lightest: #ffffff;
-  --colour-root: #003d7a;
+  --colour-root: #222;
   --colour-brand: #a21c26;
   --colour-brand-tint: #ebeff4;
-  --colour-accent: #65b2b5;
+  --colour-accent: #479394;
   --colour-header: #f2f2f2;
 
   --space-base: 0.48rem;
@@ -36,7 +36,7 @@ body {
 }
 
 a {
-  color: var(--colour-root);
+  color: var(--colour-accent);
 }
 
 p {
@@ -61,6 +61,7 @@ h4 {
 
 h1,
 h2 {
+  color: var(--colour-accent);
   font-weight: 700;
 }
 

@@ -40,7 +40,7 @@ const HorizontalCard = ({
 
           <h2 className="margin-reset">{title}</h2>
           <span className="text-para">{parse(bodyText)}</span>
-          <div className="mt-5">{linkText} →</div>
+          <div className="mt-5 font-bold">{linkText} →</div>
         </div>
       </div>
     </Link>

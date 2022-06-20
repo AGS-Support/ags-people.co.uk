@@ -35,7 +35,7 @@ const VerticalCard = ({ image, eyebrow, title, bodyText, linkText, url }) => {
           <div itemProp="description" className="mb-4 text-lg text-dark">
             {parse(bodyText)}
           </div>
-          <div className="mb-5 md:mb-0">
+          <div className="mb-5 md:mb-0 font-bold">
             <span className="underline">{linkText}</span>
             {" →"}
           </div>

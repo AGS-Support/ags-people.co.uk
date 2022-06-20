@@ -44,7 +44,7 @@ const Quicklinks = ({ headline, links }) => {
                   to="contact-us"
                   className="font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-secondary border-secondary text-white block quickLinks:inline quickLinks:w-auto p-4"
                 >
-                  Call Us Now
+                  Call us now
                 </Link>
               </div>
             </div>
