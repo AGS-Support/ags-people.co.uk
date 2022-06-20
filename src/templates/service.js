@@ -30,7 +30,7 @@ const Service = ({ data }) => {
             </Button>
             <h1 className="mt-10">{service.title}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2  gap-12">
-              <div>
+              <div className="order-2 md:order-1">
                 <span className="text-dark">{parse(service.content)}</span>
                 <div className="hidden sm:block">
                   <Link
@@ -51,7 +51,7 @@ const Service = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div>
+              <div className="order-1 md:order-2">
                 <GatsbyImage
                   image={serviceImage}
                   className="max-h-[300px]"
