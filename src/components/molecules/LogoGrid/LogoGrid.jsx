@@ -14,6 +14,7 @@ const LogoGrid = ({ columns, mobileColumns }) => {
           className={`brands__item ${
             index > 8 ? "hidden md:inline" : "visible"
           }`}
+          style={{ minHeight: "75px", background: "#f2f2f2" }}
         >
           <span>
             <GatsbyImage image={logoImage} alt="Customer Logo" />
