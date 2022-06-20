@@ -496,6 +496,7 @@ ul.list-inline li {
   height: 70px;
   object-fit: contain !important;
   mix-blend-mode: multiply;
+  filter: grayscale(25%);
 }
 
 .brands__item span {
