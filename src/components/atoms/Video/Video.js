@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PropTypes from "prop-types"
+import LazyLoad from "react-lazyload"
 import FsLightbox from "fslightbox-react"
 
 import playIcon from "../../../assets/images/play-white.jpeg"
@@ -30,7 +31,7 @@ const Video = ({ vimeoUrl, poster }) => {
     controls: true,
     playsInline: true,
     preload: "metadata",
-    width: "100vw",
+    width: "100%",
     height: "100%",
     autoPlay: false,
     src: vimeoUrl,
@@ -40,7 +41,9 @@ const Video = ({ vimeoUrl, poster }) => {
   return (
     <div className="video-container">
       <div className="video">
-        <video {...embedVideoProps} />
+        <LazyLoad>
+          <video {...embedVideoProps} />
+        </LazyLoad>
       </div>
     </div>
   )
