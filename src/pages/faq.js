@@ -17,7 +17,7 @@ const FaqPage = ({ data }) => {
       <Seo title="FAQ" />
       <PageHeading
         title="Frequently Asked Questions"
-        intro="Got any questions about our services? Wondering how we can help with your specific challenges? Whether you find your answer below or not, feel free to reach out to us at any time. "
+        intro="<p>Got any questions about our services? Wondering how we can help with your specific challenges? Whether you find your answer below or not, feel free to reach out to us at any time.</p>"
       />
       <section>
         <div className="inner-container">
