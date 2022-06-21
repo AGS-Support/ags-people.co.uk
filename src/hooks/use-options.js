@@ -13,6 +13,7 @@ export const useOptions = () => {
                 socialMediaAccounts {
                   facebook
                   linkedIn
+                  twitter
                 }
               }
             }

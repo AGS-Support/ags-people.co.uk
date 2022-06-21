@@ -6,7 +6,7 @@ import FsLightbox from "fslightbox-react"
 
 import playIcon from "../../../assets/images/play-white.jpeg"
 
-const Video = ({ vimeoUrl, poster }) => {
+const Video = ({ vimeoUrl, poster, showPoster }) => {
   console.log(poster)
   const [toggler, setToggler] = useState(false)
   if (!vimeoUrl || !poster) {
@@ -35,7 +35,7 @@ const Video = ({ vimeoUrl, poster }) => {
     height: "100%",
     autoPlay: false,
     src: vimeoUrl,
-    poster: poster.sourceUrl,
+    poster: showPoster ? poster.sourceUrl : null,
     className: "min-w-[100%] md:min-w-[100%]",
   }
   return (
@@ -52,6 +52,7 @@ const Video = ({ vimeoUrl, poster }) => {
 Video.defaultProps = {
   vimeoUrl: "",
   poster: {},
+  showPoster: true,
 }
 
 Video.propTypes = {

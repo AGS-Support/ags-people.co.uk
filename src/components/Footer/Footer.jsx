@@ -15,6 +15,7 @@ import Section from "../../components/Section/Section"
 
 import facebookLogo from "../../assets/icons/facebook.svg"
 import LinkedInLogo from "../../assets/icons/linkedin.svg"
+import twitterLogo from "../../assets/icons/twitter.svg"
 
 const Footer = () => {
   const services = useQuickLinks()
@@ -51,6 +52,7 @@ const Footer = () => {
     socialMedia: {
       facebook: socialMediaOptions?.facebook || "",
       linkedIn: socialMediaOptions?.linkedIn || "",
+      twitter: socialMediaOptions?.twitter || "",
     },
     companyInfo: {
       companyName: companyInfoOptions?.companyName || "",
@@ -98,12 +100,20 @@ const Footer = () => {
                   <Svg src={LinkedInLogo} fill="#0A66C2" {...svgProps} />
                 </a>
                 <a
-                  className="inline-block h-6"
+                  className="inline-block h-6 mr-4"
                   href={footerData.socialMedia.facebook}
                   target="_blank"
                   rel="noreferrer"
                 >
                   <Svg src={facebookLogo} fill="#1877F2" {...svgProps} />
+                </a>
+                <a
+                  className="inline-block h-6"
+                  href={footerData.socialMedia.twitter}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Svg src={twitterLogo} fill="#1DA1F2" {...svgProps} />
                 </a>
               </div>
             </div>

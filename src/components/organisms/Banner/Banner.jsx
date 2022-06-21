@@ -22,7 +22,7 @@ const Banner = ({ headline, subHeading, button, video }) => {
               </Link>
             </div>
           </div>
-          <Video {...video} />
+          <Video {...video} showPoster={false} />
         </div>
       </div>
     </section>
