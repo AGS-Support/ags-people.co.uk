@@ -18,6 +18,7 @@ const HomeTestimonials = ({ headline, testimonials, background }) => {
           return (
             <TestimonialCard
               headline={testimonial.testimonials.title}
+              subTitle={testimonial.testimonials.subTitle}
               testimonial={testimonial.testimonials.content}
               numStars={5}
               background={background}
