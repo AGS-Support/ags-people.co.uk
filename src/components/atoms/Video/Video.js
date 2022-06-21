@@ -12,20 +12,7 @@ const Video = ({ vimeoUrl, poster, showPoster }) => {
   if (!vimeoUrl || !poster) {
     return <></>
   }
-  const videoPoster = getImage(poster?.localFile)
-
-  const videoProps = {
-    fullScreen: true,
-    controls: true,
-    playsInline: true,
-    preload: "metadata",
-    width: "100vw",
-    height: "100%",
-    autoPlay: true,
-    src: vimeoUrl + showPoster ? "" : "#t=0.001",
-    className: "min-w-[100vw] md:min-w-[75vw]",
-  }
-
+  const videoSrc = showPoster ? vimeoUrl : vimeoUrl + "#t=0.001"
   const embedVideoProps = {
     fullScreen: true,
     autoPlay: true,
@@ -35,7 +22,7 @@ const Video = ({ vimeoUrl, poster, showPoster }) => {
     width: "100%",
     height: "100%",
     autoPlay: false,
-    src: vimeoUrl,
+    src: videoSrc,
     poster: showPoster ? poster.sourceUrl : null,
     className: "min-w-[100%] md:min-w-[100%]",
   }
