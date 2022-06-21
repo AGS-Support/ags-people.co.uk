@@ -22,19 +22,20 @@ const Video = ({ vimeoUrl, poster, showPoster }) => {
     width: "100vw",
     height: "100%",
     autoPlay: true,
-    src: vimeoUrl + "#t=0.001",
+    src: vimeoUrl + showPoster ? "" : "#t=0.001",
     className: "min-w-[100vw] md:min-w-[75vw]",
   }
 
   const embedVideoProps = {
     fullScreen: true,
+    autoPlay: true,
     controls: true,
     playsInline: true,
     preload: "metadata",
     width: "100%",
     height: "100%",
     autoPlay: false,
-    src: vimeoUrl + "#t=0.1",
+    src: vimeoUrl,
     poster: showPoster ? poster.sourceUrl : null,
     className: "min-w-[100%] md:min-w-[100%]",
   }
