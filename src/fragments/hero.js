@@ -10,6 +10,7 @@ export const heroFields = graphql`
         video {
           vimeoUrl
           poster {
+            sourceUrl
             localFile {
               childImageSharp {
                 gatsbyImageData(

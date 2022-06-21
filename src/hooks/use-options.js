@@ -53,6 +53,17 @@ export const useOptions = () => {
                     }
                   }
                 }
+                helpForHeroesLogo {
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(
+                        height: 100
+                        placeholder: BLURRED
+                        formats: [AUTO, WEBP, AVIF]
+                      )
+                    }
+                  }
+                }
               }
             }
           }

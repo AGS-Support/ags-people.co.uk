@@ -118,6 +118,7 @@ export const query = graphql`
         video {
           vimeoUrl
           poster {
+            sourceUrl
             localFile {
               childImageSharp {
                 gatsbyImageData

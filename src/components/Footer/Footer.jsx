@@ -37,6 +37,7 @@ const Footer = () => {
   }
   const menuLength = menu.length
   const footerOptions = options.indieRidgeOptionsFooter?.footerOptions
+  console.log("help", footerOptions.helpForHeroesLogo)
   const socialMediaOptions =
     options.indieRidgeOptionsContactDetails?.contactDetailsOptions
       ?.socialMediaAccounts
@@ -46,6 +47,7 @@ const Footer = () => {
   const footerData = {
     blurb: footerOptions?.footerBlurb,
     logos: footerOptions?.logos,
+    helpForHeroesLogo: getImage(footerOptions?.helpForHeroesLogo.localFile),
     socialMedia: {
       facebook: socialMediaOptions?.facebook || "",
       linkedIn: socialMediaOptions?.linkedIn || "",
@@ -165,6 +167,10 @@ const Footer = () => {
                   />
                 )
               })}
+              <div className="block mt-4">
+                <p className="margin-reset">We suport Help for Heroes</p>
+                <GatsbyImage image={footerData.helpForHeroesLogo} />
+              </div>
             </div>
             <div className="text-left md:text-right mt-10 md:mt-0 text-[0.8rem]">
               VAT No. GB {footerData.companyInfo.vatNumber} Company No.{" "}
