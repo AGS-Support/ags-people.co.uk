@@ -13,11 +13,14 @@ import Button from "../components/atoms/Button"
 
 import CallToAction from "../components/molecules/CallToAction"
 
+import { useOptionsContactDetails } from "../hooks/use-options-contact-details"
+
 const Service = ({ data }) => {
   const service = data.wpService.services
   const seo = data.wpService.seo
   const serviceImage = getImage(service.image?.localFile)
   const callToAction = service.callToAction
+  const contactDetails = useOptionsContactDetails()
 
   return (
     <Layout>
@@ -43,7 +46,7 @@ const Service = ({ data }) => {
                 </div>
                 <div className="block sm:hidden">
                   <a
-                    href="tel:+614-988-868-868"
+                    href={`tel:${contactDetails.telephone}`}
                     className="button  text-center text-white bg-secondary border-2 border-secondary"
                     style={{ paddingTop: "10px", paddingBottom: "10px" }}
                   >

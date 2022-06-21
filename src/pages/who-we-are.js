@@ -26,7 +26,7 @@ const WhoWeArePage = ({ data }) => {
       />
       <section className="mt-0 pt-0">
         <div className="container">
-          <div className="content title">
+          <div className="content title text-center">
             <GatsbyImage
               image={bannnerImage}
               className="max-w-full mb-10"
