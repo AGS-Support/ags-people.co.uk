@@ -32,10 +32,10 @@ const ContactUs = ({ data }) => {
                 className="text-center mb-8"
                 style={{ borderBottom: "1px solid #f2f2f2" }}
               >
-                <h2 className="text-para margin-reset">
+                <h2 className="text-para margin-reset text-[1.2rem] md:text-[1.8rem]">
                   <a href="tel:08450523597">0845 0523597 </a>
                 </h2>
-                <h2 className="text-para">
+                <h2 className="text-para text-[1.2rem] md:text-[1.8rem]">
                   <a href="mailto:support@agssupport.co.uk">
                     support@agssupport.co.uk
                   </a>
