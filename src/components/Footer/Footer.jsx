@@ -177,12 +177,12 @@ const Footer = () => {
                   />
                 )
               })}
-              <div className="block mt-4">
+            </div>
+            <div className="text-left md:text-right mt-10 md:mt-0 text-[0.8rem]">
+              <div className="block py-3">
                 <p className="margin-reset">We support Help for Heroes</p>
                 <GatsbyImage image={footerData.helpForHeroesLogo} />
               </div>
-            </div>
-            <div className="text-left md:text-right mt-10 md:mt-0 text-[0.8rem]">
               VAT No. GB {footerData.companyInfo.vatNumber} Company No.{" "}
               {footerData.companyInfo.companyNumber}
               <br /> Registered Address:{" "}
