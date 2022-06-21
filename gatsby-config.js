@@ -19,7 +19,17 @@ module.exports = {
         url: `https://agsheadless.tempurl.host/graphql`,
       },
     },
-
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleTagManager: {
+          trackingId: "GTM-PQJ95ZN",
+          cookieName: "gatsby-gdpr-google-tagmanager",
+          dataLayerName: "dataLayer",
+        },
+        environments: ["production", "development"],
+      },
+    },
     {
       resolve: "gatsby-plugin-webfonts",
       options: {

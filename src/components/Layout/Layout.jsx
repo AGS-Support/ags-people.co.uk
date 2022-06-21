@@ -7,6 +7,7 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
+import CookieConsent from "react-cookie-consent"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../Header"
@@ -30,6 +31,23 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <Footer />
       </div>
+      <CookieConsent
+        style={{ background: "#e5e7eb", color: "#222" }}
+        enableDeclineButton
+        location="bottom"
+        buttonText="Accept"
+        declineButtonText="Decline"
+        cookieName="gatsby-gdpr-google-tagmanager"
+        buttonClasses="font-bold rounded rounded-lg border-2"
+        buttonStyle={{
+          borderRadius: "5px",
+          backgroundColor: "#479394",
+          color: "#fff",
+          padding: "10px",
+        }}
+      >
+        This site uses cookies ...
+      </CookieConsent>
     </>
   )
 }
