@@ -34,7 +34,7 @@ const Video = ({ vimeoUrl, poster, showPoster }) => {
     width: "100%",
     height: "100%",
     autoPlay: false,
-    src: vimeoUrl,
+    src: vimeoUrl + "#t=0.1",
     poster: showPoster ? poster.sourceUrl : null,
     className: "min-w-[100%] md:min-w-[100%]",
   }
