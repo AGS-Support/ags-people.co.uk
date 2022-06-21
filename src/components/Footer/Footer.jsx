@@ -178,7 +178,7 @@ const Footer = () => {
                 )
               })}
               <div className="block mt-4">
-                <p className="margin-reset">We suport Help for Heroes</p>
+                <p className="margin-reset">We support Help for Heroes</p>
                 <GatsbyImage image={footerData.helpForHeroesLogo} />
               </div>
             </div>
