@@ -5,6 +5,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 
 import PageHeading from "../components/molecules/PageHeading"
+import PostPagination from "../components/molecules/PostPagination"
 
 import PostArchive from "../components/organisms/PostArchive"
 
@@ -18,12 +19,25 @@ const BlogIndex = ({
     return (
       <Layout isHomePage>
         <Seo title="All posts" />
-        <p>
-          No blog posts found. Add posts to your WordPress site and they'll
-          appear here!
-        </p>
+        <p>Our Blog is coming soon. Check back soon to see all of our posts.</p>
       </Layout>
     )
+  }
+  let previous,
+    next = null
+
+  if (nextPagePath) {
+    next = {
+      uri: nextPagePath,
+      title: "Next Page",
+    }
+  }
+
+  if (previousPagePath) {
+    previous = {
+      uri: previousPagePath,
+      title: "Previous Page",
+    }
   }
 
   return (
@@ -34,13 +48,7 @@ const BlogIndex = ({
       <section>
         <div className="container">
           <div className="content">
-            {previousPagePath && (
-              <>
-                <Link to={previousPagePath}>Previous page</Link>
-                <br />
-              </>
-            )}
-            {nextPagePath && <Link to={nextPagePath}>Next page</Link>}
+            <PostPagination next={next} previous={previous} hideTopText />
           </div>
         </div>
       </section>

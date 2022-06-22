@@ -3,13 +3,15 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import parse from "html-react-parser"
 
-const PostPagination = ({ next, previous }) => {
+const PostPagination = ({ next, previous, hideTopText }) => {
   return (
     <nav className="blog-post-nav mt-16 flex justify-between">
       {previous ? (
         <div style={{ maxWidth: "48%" }}>
           <Link to={previous.uri} rel="prev">
-            <p className="text-dark margin-reset text-left">Previous</p>
+            {!hideTopText && (
+              <p className="text-dark margin-reset text-left">Previous</p>
+            )}
             <div className="inline-flex">
               <span>←&nbsp;&nbsp;</span>
               <span>{parse(previous.title)}</span>
@@ -25,7 +27,9 @@ const PostPagination = ({ next, previous }) => {
       {next && (
         <div className="text-right" style={{ maxWidth: "48%" }}>
           <Link to={next.uri} rel="prev">
-            <p className="text-dark margin-reset text-right">Next</p>
+            {!hideTopText && (
+              <p className="text-dark margin-reset text-right">Next</p>
+            )}
             <div className="inline-flex">
               <span>{parse(next.title)}</span>
               <span>&nbsp;&nbsp;→</span>
