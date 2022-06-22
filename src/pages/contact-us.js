@@ -15,7 +15,7 @@ import PageHeading from "../components/molecules/PageHeading"
 const ContactUs = ({ data }) => {
   const offices = useOffices()
   const contactDetails = useOptionsContactDetails()
-
+  console.log("contactDetails", contactDetails)
   const pageData = data.wpPage.contactUs
 
   return (
@@ -33,11 +33,13 @@ const ContactUs = ({ data }) => {
                 style={{ borderBottom: "1px solid #f2f2f2" }}
               >
                 <h2 className="text-para margin-reset text-[1.2rem] md:text-[1.8rem]">
-                  <a href="tel:08450523597">0845 0523597 </a>
+                  <a href={`tel:${contactDetails.telephone} `}>
+                    {contactDetails.telephone}{" "}
+                  </a>
                 </h2>
                 <h2 className="text-para text-[1.2rem] md:text-[1.8rem]">
-                  <a href="mailto:support@agssupport.co.uk">
-                    support@agssupport.co.uk
+                  <a href={`mailto:${contactDetails.email}`}>
+                    {contactDetails.email}
                   </a>
                 </h2>
               </div>

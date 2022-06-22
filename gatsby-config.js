@@ -9,7 +9,6 @@ module.exports = {
     siteUrl: process.env.WPGRAPHQL_URL,
   },
   plugins: [
-    "gatsby-plugin-preact",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-postcss",
     `gatsby-plugin-react-helmet`,

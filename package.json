@@ -32,7 +32,7 @@
     "helmet": "^5.1.0",
     "html-react-parser": "^1.4.12",
     "preact": "^10.8.1",
-    "preact-render-to-string": "^5.2.0",
+    "preact-render-to-string": "^5.1.6",
     "prop-types": "^15.8.1",
     "react": "^17.0.1",
     "react-cookie-consent": "^7.5.0",
