@@ -45,7 +45,11 @@ const Header = ({ siteTitle }) => {
           <div className="nav-links bg-white md:bg-transparent">
             {menu.map((item, index) => {
               return (
-                <Link key={`desktop-menu-item-${index}`} to={item.uri}>
+                <Link
+                  key={`desktop-menu-item-${index}`}
+                  to={item.uri}
+                  activeClassName="active"
+                >
                   {item.label}
                 </Link>
               )

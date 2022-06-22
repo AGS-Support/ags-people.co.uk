@@ -36,9 +36,10 @@ function SEO({ description, lang, meta, title, seo }) {
   const defaultTitle = site.siteMetadata?.title
   const ogImage =
     seo?.opengraphImage?.src ||
-    "https://agsheadless.tempurl.host/wp-content/uploads/2022/05/ags-branda.jpg"
+    "https://cms.agssupport.co.uk/wp-content/uploads/2022/05/ags-branda.jpg"
 
   title = seo?.title || title || defaultTitle
+  console.log("title", title)
   return (
     <Helmet
       htmlAttributes={{
