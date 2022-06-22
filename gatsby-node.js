@@ -21,10 +21,11 @@ exports.createPages = async gatsbyUtilities => {
   //dd(posts)
 
   // If there are no posts in WordPress, don't do anything
+  /*
   if (!posts.length) {
     return
   }
-
+*/
   // If there are posts, create pages for them
   await createIndividualBlogPostPages({ posts, gatsbyUtilities })
 
@@ -195,7 +196,7 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
           return page === 1 ? `/blog` : `/blog/${page}`
         }
 
-        return null
+        return "null"
       }
 
       // createPage is an action passed to createPages

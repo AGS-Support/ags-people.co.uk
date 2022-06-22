@@ -200,7 +200,7 @@ const Footer = () => {
                 })}
               </div>
             </div>
-            <div className="block">
+            <div className="block pt-3 md:pt-0">
               <p className="margin-reset">We support Help for Heroes</p>
               <GatsbyImage image={footerData.helpForHeroesLogo} />
             </div>
