@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const Section = ({ children, background }) => {
-  console.log("background", background)
   let sectionClass = ""
   if (background === "dark") {
     sectionClass =

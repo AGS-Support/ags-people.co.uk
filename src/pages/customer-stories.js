@@ -18,10 +18,10 @@ const CustomerStoriesPage = ({ data }) => {
   const stories = data.allWpCustomerStory.nodes
   const pageData = data.wpPage.customerStoriesPage
   const callToAction = pageData.callToAction
-
+  const seo = data.wpPage.seo
   return (
     <Layout>
-      <Seo title="Customer Stories" />
+      <Seo seo={seo} />
       <PageHeading
         title={pageData.title}
         intro={pageData.content}
@@ -101,6 +101,22 @@ export const query = graphql`
     wpPage(
       tags: { nodes: { elemMatch: { slug: { eq: "customer-stories" } } } }
     ) {
+      seo {
+        metaDesc
+        metaKeywords
+        title
+        twitterDescription
+        opengraphType
+        opengraphTitle
+        opengraphImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        twitterImage {
+          sourceUrl
+        }
+      }
       customerStoriesPage {
         title
         content

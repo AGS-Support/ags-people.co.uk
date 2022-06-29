@@ -11,10 +11,10 @@ import Accordion from "../components/molecules/Accordion"
 
 const FaqPage = ({ data }) => {
   const faqs = data.wpPage.faqs.faqs
-
+  const seo = data.wpPage.seo
   return (
     <Layout>
-      <Seo title="FAQ" />
+      <Seo seo={seo} />
       <PageHeading
         title="Frequently Asked Questions"
         intro="<p>Got any questions about our services? Wondering how we can help with your specific challenges? Whether you find your answer below or not, feel free to reach out to us at any time.</p>"
@@ -53,6 +53,22 @@ export default FaqPage
 export const query = graphql`
   query FaqQuery {
     wpPage(tags: { nodes: { elemMatch: { name: { eq: "faq" } } } }) {
+      seo {
+        metaDesc
+        metaKeywords
+        title
+        twitterDescription
+        opengraphType
+        opengraphTitle
+        opengraphImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        twitterImage {
+          sourceUrl
+        }
+      }
       faqs {
         faqs {
           faq {

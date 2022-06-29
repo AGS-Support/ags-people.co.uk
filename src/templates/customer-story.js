@@ -15,10 +15,10 @@ const CustomerStory = ({ data }) => {
   const logo = getImage(story.logo?.localFile)
   const previous = data.previous
   const next = data.next
-
+  const seo = data.wpCustomerStory.seo
   return (
     <Layout>
-      <Seo title="Customer Story" />
+      <Seo seo={seo} />
 
       <PageHeading title="Customer Story" />
 
@@ -106,6 +106,22 @@ export default CustomerStory
 export const query = graphql`
   query ($id: String!, $previousPostId: String, $nextPostId: String) {
     wpCustomerStory(id: { eq: $id }) {
+      seo {
+        metaDesc
+        metaKeywords
+        title
+        twitterDescription
+        opengraphType
+        opengraphTitle
+        opengraphImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        twitterImage {
+          sourceUrl
+        }
+      }
       customerStories {
         customerName
         logo {

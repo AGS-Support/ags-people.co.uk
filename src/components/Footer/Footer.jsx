@@ -38,7 +38,7 @@ const Footer = () => {
   }
   const menuLength = menu.length
   const footerOptions = options.indieRidgeOptionsFooter?.footerOptions
-  console.log("help", footerOptions.helpForHeroesLogo)
+
   const socialMediaOptions =
     options.indieRidgeOptionsContactDetails?.contactDetailsOptions
       ?.socialMediaAccounts

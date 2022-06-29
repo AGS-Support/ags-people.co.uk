@@ -18,9 +18,10 @@ const ServicesPage = ({ data }) => {
   const services = data.allWpService.nodes
   const pageData = data.wpPage.servicePage
   const callToAction = pageData.servicesCallToAction
+  const seo = data.wpPage.seo
   return (
     <Layout>
-      <Seo title="Services" />
+      <Seo seo={seo} />
 
       <PageHeading
         title={pageData.title}
@@ -96,6 +97,22 @@ export const query = graphql`
     }
 
     wpPage(tags: { nodes: { elemMatch: { slug: { eq: "services" } } } }) {
+      seo {
+        metaDesc
+        metaKeywords
+        title
+        twitterDescription
+        opengraphType
+        opengraphTitle
+        opengraphImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        twitterImage {
+          sourceUrl
+        }
+      }
       servicePage {
         title
         content

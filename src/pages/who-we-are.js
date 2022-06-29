@@ -15,10 +15,10 @@ const WhoWeArePage = ({ data }) => {
   const content = data.wpPage.whoWeAre
   const teamMembers = data.allWpTeamMember.nodes
   const bannnerImage = getImage(content.image?.localFile)
-
+  const seo = data.wpPage.seo
   return (
     <Layout>
-      <Seo title="Who We Are" />
+      <Seo seo={seo} />
       <PageHeading
         title={content.headline}
         intro={content.intro}
@@ -109,6 +109,22 @@ export default WhoWeArePage
 export const query = graphql`
   query WhoWeAreQuery {
     wpPage(tags: { nodes: { elemMatch: { slug: { eq: "who-we-are" } } } }) {
+      seo {
+        metaDesc
+        metaKeywords
+        title
+        twitterDescription
+        opengraphType
+        opengraphTitle
+        opengraphImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        twitterImage {
+          sourceUrl
+        }
+      }
       whoWeAre {
         headline
         intro

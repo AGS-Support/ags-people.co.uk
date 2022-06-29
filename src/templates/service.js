@@ -24,7 +24,7 @@ const Service = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title={service.title} seo={seo} />
+      <Seo seo={seo} />
       <section>
         <div className="container">
           <div className="content">

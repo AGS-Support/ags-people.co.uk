@@ -39,7 +39,7 @@ function SEO({ description, lang, meta, title, seo }) {
     "https://cms.agssupport.co.uk/wp-content/uploads/2022/05/ags-branda.jpg"
 
   title = seo?.title || title || defaultTitle
-  console.log("title", title)
+
   return (
     <Helmet
       htmlAttributes={{

@@ -7,7 +7,6 @@ import FsLightbox from "fslightbox-react"
 import playIcon from "../../../assets/images/play-white.jpeg"
 
 const Video = ({ vimeoUrl, poster, showPoster }) => {
-  console.log(poster)
   const [toggler, setToggler] = useState(false)
   if (!vimeoUrl || !poster) {
     return <></>

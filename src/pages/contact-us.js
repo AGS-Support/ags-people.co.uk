@@ -15,12 +15,12 @@ import PageHeading from "../components/molecules/PageHeading"
 const ContactUs = ({ data }) => {
   const offices = useOffices()
   const contactDetails = useOptionsContactDetails()
-  console.log("contactDetails", contactDetails)
-  const pageData = data.wpPage.contactUs
 
+  const pageData = data.wpPage.contactUs
+  const seo = data.wpPage.seo
   return (
     <Layout>
-      <Seo title="Contact Us" />
+      <Seo seo={seo} />
       <PageHeading title={pageData.headline} intro={pageData.intro} />
       <section>
         <div className="inner-container">
@@ -57,6 +57,22 @@ export default ContactUs
 export const pageQuery = graphql`
   query officeQuery {
     wpPage(tags: { nodes: { elemMatch: { name: { eq: "contact" } } } }) {
+      seo {
+        metaDesc
+        metaKeywords
+        title
+        twitterDescription
+        opengraphType
+        opengraphTitle
+        opengraphImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        twitterImage {
+          sourceUrl
+        }
+      }
       contactUs {
         headline
         intro
