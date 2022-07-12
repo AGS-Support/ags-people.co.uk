@@ -196,7 +196,7 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
           return page === 1 ? `/blog` : `/blog/${page}`
         }
 
-        return "null"
+        return null
       }
 
       // createPage is an action passed to createPages
