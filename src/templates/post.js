@@ -17,13 +17,14 @@ const Post = ({ data: { previous, next, post } }) => {
   return (
     <Layout>
       <Seo title={post.title} />
-      <PostHeading
-        title={post.title}
-        summary={post.posts.summary}
-        date={post.date}
-        categories={post.categories.nodes}
-      />
-
+      <div className="mt-10 md:mt-0">
+        <PostHeading
+          title={post.title}
+          summary={post.posts.summary}
+          date={post.date}
+          categories={post.categories.nodes}
+        />
+      </div>
       <section>
         <div className="image-container">
           {featuredImage?.data && (
