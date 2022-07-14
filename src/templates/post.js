@@ -6,6 +6,8 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 
+import Button from "../components/atoms/Button"
+
 import PostHeading from "../components/molecules/PostHeading"
 import PostPagination from "../components/molecules/PostPagination"
 
@@ -42,6 +44,22 @@ const Post = ({ data: { previous, next, post } }) => {
           <div className="content title">
             <div className="text-para">{parse(post.content)}</div>
             <PostPagination next={next} previous={previous} />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="inner-container">
+          <div className="md:flex md:justify-between">
+            <Button
+              to="/customer-stories/"
+              type="internal"
+              variant="primary-outline"
+            >
+              Customer Stories
+            </Button>
+            <Button type="calendly" variant="primary">
+              Get in touch
+            </Button>
           </div>
         </div>
       </section>
