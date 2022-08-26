@@ -15,6 +15,9 @@ export const heroFields = graphql`
               childImageSharp {
                 gatsbyImageData(
                   placeholder: BLURRED
+                  layout: CONSTRAINED
+                  width: 1600
+                  height: 900
                   formats: [AUTO, WEBP, AVIF]
                 )
               }

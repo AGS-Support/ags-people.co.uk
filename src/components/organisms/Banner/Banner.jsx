@@ -3,9 +3,11 @@ import { Link } from "gatsby"
 import parse from "html-react-parser"
 
 import Video from "../../atoms/Video"
+import { VideoPulse } from "../../atoms//Videos"
 import Button from "../../atoms/Button"
 
 const Banner = ({ headline, subHeading, button, video }) => {
+  console.log("video", video)
   return (
     <section className="banner">
       <div className="container">
@@ -22,7 +24,8 @@ const Banner = ({ headline, subHeading, button, video }) => {
               </Link>
             </div>
           </div>
-          <Video {...video} showPoster={false} />
+          {/* <Video {...video} showPoster={false} /> */}
+          <VideoPulse {...video} />
         </div>
       </div>
     </section>
