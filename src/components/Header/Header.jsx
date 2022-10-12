@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-import logo from "../../assets/images/logo.svg"
+import logo from "../../assets/images/logo-new-trans.png"
 
 import { useMenuHeader } from "../../hooks/use-menu-header"
 
@@ -29,7 +29,7 @@ const Header = ({ siteTitle }) => {
         <div className="navbar">
           <div className="nav-logo">
             <a href="/">
-              <img alt="AGS Logo" src={logo} className="max-h-[35px]" />
+              <img alt="AGS Logo" src={logo} className="max-h-[40px]" />
             </a>
           </div>
 
@@ -42,7 +42,7 @@ const Header = ({ siteTitle }) => {
             </label>
           </div>
 
-          <div className="nav-links bg-white md:bg-transparent">
+          <div className="bg-white nav-links md:bg-transparent">
             {menu.map((item, index) => {
               return (
                 <Link
