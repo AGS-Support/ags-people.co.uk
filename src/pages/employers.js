@@ -32,7 +32,7 @@ const EmployersPage = ({ data }) => {
       <Section background="tint">
         {services.map((services, index) => {
           const service = services.employer
-          console.log("service", service)
+
           const serviceImage = getImage(service.image?.localFile)
           const uri = services.uri
           return (
