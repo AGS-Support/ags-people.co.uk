@@ -10,7 +10,7 @@ const Header = ({ siteTitle }) => {
   let menu = useMenuHeader()
   if (!menu) {
     menu = [
-      { label: "Services", uri: "/services" },
+      { label: "Our sectors", uri: "/our-sectors" },
       { label: "Team", uri: "/who-we-are" },
       { label: "Customer Stories", uri: "/customer-stories" },
       { label: "FAQ", uri: "/faq" },
