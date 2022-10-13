@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `https://agsheadless.tempurl.host/graphql`,
+        url: `https://specialist-support.tempurl.host/graphql`,
       },
     },
     {
