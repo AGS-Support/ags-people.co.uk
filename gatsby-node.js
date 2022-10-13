@@ -17,6 +17,10 @@ exports.createPages = async gatsbyUtilities => {
 
   const services = await getServices(gatsbyUtilities)
 
+  const employers = await getEmployers(gatsbyUtilities)
+
+  const candidates = await getCandidates(gatsbyUtilities)
+
   const customerStories = await getCustomerStories(gatsbyUtilities)
   //dd(posts)
 
@@ -31,6 +35,13 @@ exports.createPages = async gatsbyUtilities => {
 
   await createIndividualServicePages({ services, gatsbyUtilities })
 
+  if (employers.length) {
+    await createIndividualEmployerPages({ employers, gatsbyUtilities })
+  }
+
+  if (candidates.length) {
+    await createIndividualCandidatePages({ candidates, gatsbyUtilities })
+  }
   await createIndividualCustomerStoryPages({ customerStories, gatsbyUtilities })
 
   // And a paginated archive
@@ -116,6 +127,67 @@ const createIndividualServicePages = async ({ services, gatsbyUtilities }) =>
 
         // use the blog post template as the page component
         component: path.resolve(`./src/templates/service.js`),
+
+        // `context` is available in the template as a prop and
+        // as a variable in GraphQL.
+        context: {
+          // we need to add the post id here
+          // so our blog post template knows which blog post
+          // the current page is (when you open it in a browser)
+          id: post.id,
+
+          // We also use the next and previous id's to query them and add links!
+          previousPostId: previous ? previous.id : null,
+          nextPostId: next ? next.id : null,
+        },
+      })
+    )
+  )
+
+const createIndividualEmployerPages = async ({ employers, gatsbyUtilities }) =>
+  Promise.all(
+    employers.map(({ previous, post, next }) =>
+      // createPage is an action passed to createPages
+      // See https://www.gatsbyjs.com/docs/actions#createPage for more info
+      gatsbyUtilities.actions.createPage({
+        // Use the WordPress uri as the Gatsby page path
+        // This is a good idea so that internal links and menus work 👍
+        path: post.uri,
+
+        // use the blog post template as the page component
+        component: path.resolve(`./src/templates/employer.js`),
+
+        // `context` is available in the template as a prop and
+        // as a variable in GraphQL.
+        context: {
+          // we need to add the post id here
+          // so our blog post template knows which blog post
+          // the current page is (when you open it in a browser)
+          id: post.id,
+
+          // We also use the next and previous id's to query them and add links!
+          previousPostId: previous ? previous.id : null,
+          nextPostId: next ? next.id : null,
+        },
+      })
+    )
+  )
+
+const createIndividualCandidatePages = async ({
+  candidates,
+  gatsbyUtilities,
+}) =>
+  Promise.all(
+    candidates.map(({ previous, post, next }) =>
+      // createPage is an action passed to createPages
+      // See https://www.gatsbyjs.com/docs/actions#createPage for more info
+      gatsbyUtilities.actions.createPage({
+        // Use the WordPress uri as the Gatsby page path
+        // This is a good idea so that internal links and menus work 👍
+        path: post.uri,
+
+        // use the blog post template as the page component
+        component: path.resolve(`./src/templates/candidate.js`),
 
         // `context` is available in the template as a prop and
         // as a variable in GraphQL.
@@ -304,6 +376,78 @@ async function getServices({ graphql, reporter }) {
   }
 
   return graphqlResult.data.allWpService.edges
+}
+
+async function getEmployers({ graphql, reporter }) {
+  const graphqlResult = await graphql(/* GraphQL */ `
+    query WpEmployer {
+      # Query all WordPress blog posts sorted by date
+      allWpEmployer(sort: { fields: menuOrder, order: ASC }) {
+        edges {
+          previous {
+            id
+          }
+
+          # note: this is a GraphQL alias. It renames "node" to "post" for this query
+          # We're doing this because this "node" is a post! It makes our code more readable further down the line.
+          post: node {
+            id
+            uri
+          }
+
+          next {
+            id
+          }
+        }
+      }
+    }
+  `)
+
+  if (graphqlResult.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your blog posts`,
+      graphqlResult.errors
+    )
+    return
+  }
+
+  return graphqlResult.data.allWpEmployer.edges
+}
+
+async function getCandidates({ graphql, reporter }) {
+  const graphqlResult = await graphql(/* GraphQL */ `
+    query WpEmployers {
+      # Query all WordPress blog posts sorted by date
+      allWpCandidate(sort: { fields: menuOrder, order: ASC }) {
+        edges {
+          previous {
+            id
+          }
+
+          # note: this is a GraphQL alias. It renames "node" to "post" for this query
+          # We're doing this because this "node" is a post! It makes our code more readable further down the line.
+          post: node {
+            id
+            uri
+          }
+
+          next {
+            id
+          }
+        }
+      }
+    }
+  `)
+
+  if (graphqlResult.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your blog posts`,
+      graphqlResult.errors
+    )
+    return
+  }
+
+  return graphqlResult.data.allWpCandidate.edges
 }
 
 async function getCustomerStories({ graphql, reporter }) {
