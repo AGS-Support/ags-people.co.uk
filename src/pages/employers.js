@@ -17,7 +17,7 @@ import { HorizontalCard } from "../components/organisms/Cards"
 const EmployersPage = ({ data }) => {
   const services = data.allWpEmployer.nodes
   const pageData = data.wpPage.employersPage
-  const callToAction = pageData.servicesCallToAction
+  const callToAction = pageData.employersCallToAction
   console.log("callToAction", callToAction)
   const seo = data.wpPage.seo
   return (
