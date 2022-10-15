@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
       <Quicklinks {...pageData.quickLinks} />
       <Section background="white">
         <Title className="text-center" variant="h2">
-          {pageData.customerLogos.headline}
+          {pageData.customerLogos?.headline}
         </Title>
         <div className="grid grid-cols-3 md:grid-cols-6  gap-8 brands mb-[-40px] md:mb-[-0px]">
           <LogoGrid />
