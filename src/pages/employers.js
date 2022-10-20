@@ -1,64 +1,88 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
-import { getImage } from "gatsby-plugin-image"
+import parse from "html-react-parser"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { SparklesIcon } from "@heroicons/react/solid"
 
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Section from "../components/Section"
 
-import Title from "../components/atoms/Title"
+import Button from "../components/atoms/Button"
 
-import LogoGrid from "../components/molecules/LogoGrid"
-import PageHeading from "../components/molecules/PageHeading"
 import CallToAction from "../components/molecules/CallToAction"
 
-import { HorizontalCard } from "../components/organisms/Cards"
+import { useOptionsContactDetails } from "../hooks/use-options-contact-details"
 
 const EmployersPage = ({ data }) => {
-  const services = data.allWpEmployer.nodes
-  const pageData = data.wpPage.employersPage
-  const callToAction = pageData.employersCallToAction
-  console.log("callToAction", callToAction)
+  const service = data.wpPage.employer
   const seo = data.wpPage.seo
+  const serviceImage = getImage(service.image?.localFile)
+  const callToAction = service.employersCallToAction
+
+  const contactDetails = useOptionsContactDetails()
+
   return (
     <Layout>
       <Seo seo={seo} />
-
-      <PageHeading
-        title={pageData.title}
-        intro={pageData.content}
-        className="pb-4 text-center"
-      />
-      <Section background="tint">
-        {services.map((services, index) => {
-          const service = services.employer
-
-          const serviceImage = getImage(service.image?.localFile)
-          const uri = services.uri
-          return (
-            <HorizontalCard
-              key={`services-card-${index}`}
-              image={serviceImage}
-              title={service.title}
-              bodyText={service.excerpt}
-              linkText="Learn More"
-              url={uri}
-            />
-          )
-        })}
-      </Section>
       <section>
         <div className="container">
-          <div className="text-center content">
-            <Title className="text-center" variant="h2">
-              Who we work with
-            </Title>
-            <div className="grid grid-cols-3 gap-8 mb-10 md:grid-cols-6 brands ">
-              <LogoGrid />
+          <div className="content">
+            <h1 className="mt-10">{service.title}</h1>
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+              <div className="order-2 md:order-1">
+                <span className="text-dark">{parse(service.content)}</span>
+                <div className="hidden sm:block">
+                  <Link
+                    to="/contact-us"
+                    className="text-center text-white border-2 button bg-secondary border-secondary"
+                    style={{ paddingTop: "10px", paddingBottom: "10px" }}
+                  >
+                    Call Us Now
+                  </Link>
+                </div>
+                <div className="block sm:hidden">
+                  <a
+                    href={`tel:${contactDetails.telephone}`}
+                    className="text-center text-white border-2 button bg-secondary border-secondary"
+                    style={{ paddingTop: "10px", paddingBottom: "10px" }}
+                  >
+                    Call Us Now
+                  </a>
+                </div>
+              </div>
+              <div className="order-1 md:order-2">
+                <GatsbyImage
+                  image={serviceImage}
+                  className="max-h-[300px]"
+                  alt="service image"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <Section background="light">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap:5 md:gap-12">
+          {service.employersFeatures.map((feature, index) => {
+            return (
+              <div
+                className="flex mt-10 md:mt-0"
+                key={`service-feature-bp-${index}`}
+              >
+                <div>
+                  <SparklesIcon className="w-[32px] h-[32px] text-slate-500 mr-2 mt-1" />
+                </div>
+                <div>
+                  <h2 className="margin-reset">{feature.headline}</h2>
+                  <span className="text-dark">{parse(feature.content)}</span>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </Section>
 
       <CallToAction {...callToAction} />
     </Layout>
@@ -68,36 +92,6 @@ export default EmployersPage
 
 export const query = graphql`
   query EmployersPageQuery {
-    allWpEmployer(sort: { fields: menuOrder, order: ASC }) {
-      nodes {
-        slug
-        uri
-        employer {
-          title
-          excerpt
-          content
-
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 600
-
-                  aspectRatio: 1.9
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
-            }
-          }
-          employersFeatures {
-            headline
-            content
-          }
-        }
-      }
-    }
-
     wpPage(tags: { nodes: { elemMatch: { slug: { eq: "employers" } } } }) {
       seo {
         metaDesc
@@ -115,17 +109,13 @@ export const query = graphql`
           sourceUrl
         }
       }
-      employersPage {
+      employer {
         title
         content
-        customerLogos {
+        image {
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                height: 200
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData
             }
           }
         }
@@ -143,6 +133,10 @@ export const query = graphql`
               }
             }
           }
+        }
+        employersFeatures {
+          headline
+          content
         }
       }
     }

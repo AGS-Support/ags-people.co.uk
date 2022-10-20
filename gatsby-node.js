@@ -17,9 +17,9 @@ exports.createPages = async gatsbyUtilities => {
 
   const services = await getServices(gatsbyUtilities)
 
-  const employers = await getEmployers(gatsbyUtilities)
+  //const employers = await getEmployers(gatsbyUtilities)
 
-  const candidates = await getCandidates(gatsbyUtilities)
+  //const candidates = await getCandidates(gatsbyUtilities)
 
   const customerStories = await getCustomerStories(gatsbyUtilities)
   //dd(posts)
@@ -34,14 +34,16 @@ exports.createPages = async gatsbyUtilities => {
   await createIndividualBlogPostPages({ posts, gatsbyUtilities })
 
   await createIndividualServicePages({ services, gatsbyUtilities })
-
+  /*
   if (employers.length) {
     await createIndividualEmployerPages({ employers, gatsbyUtilities })
   }
 
+
   if (candidates.length) {
     await createIndividualCandidatePages({ candidates, gatsbyUtilities })
   }
+  */
   await createIndividualCustomerStoryPages({ customerStories, gatsbyUtilities })
 
   // And a paginated archive
