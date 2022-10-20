@@ -25,7 +25,7 @@ const CustomerStoriesPage = ({ data }) => {
       <PageHeading
         title={pageData.title}
         intro={pageData.content}
-        className="text-center pb-4"
+        className="pb-4 text-center"
       />
       <Section background="light">
         {stories.map((storyItem, index) => {
@@ -47,11 +47,11 @@ const CustomerStoriesPage = ({ data }) => {
       </Section>
       <section>
         <div className="container">
-          <div className="content text-center">
+          <div className="text-center content">
             <Title className="text-center" variant="h2">
               Who we work with
             </Title>
-            <div className="grid grid-cols-3 md:grid-cols-6  gap-8 brands mb-10 ">
+            <div className="grid grid-cols-3 gap-8 mb-10 md:grid-cols-6 brands ">
               <LogoGrid />
             </div>
           </div>

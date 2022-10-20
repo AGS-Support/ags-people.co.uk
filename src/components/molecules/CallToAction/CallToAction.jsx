@@ -25,7 +25,7 @@ const CallToAction = ({ background, headline, content, button, className }) => {
               background === "Dark" ? "white" : "primary"
             }`}
           >
-            {parse(headline)}
+            {headline && parse(headline)}
           </Title>
           <span
             className={`text-center text-${
@@ -35,7 +35,7 @@ const CallToAction = ({ background, headline, content, button, className }) => {
             {content && parse(content)}
           </span>
           {button?.link === "Calendly" ? (
-            <div className="text-center mt-16">
+            <div className="mt-16 text-center">
               <Link type="calendly">{button.text}</Link>
             </div>
           ) : null}

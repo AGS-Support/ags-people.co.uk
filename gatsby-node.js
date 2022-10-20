@@ -487,3 +487,22 @@ async function getCustomerStories({ graphql, reporter }) {
 
   return graphqlResult.data.allWpCustomerStory.edges
 }
+
+/* Alias our common imports for ease of use */
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@components": path.resolve(__dirname, "src/components"),
+        "@pages": path.resolve(__dirname, "src/pages"),
+        "@hooks": path.resolve(__dirname, "src/hooks"),
+        "@helpers": path.resolve(__dirname, "src/helpers"),
+        "@utils": path.resolve(__dirname, "src/utils"),
+        "@services": path.resolve(__dirname, "src/services"),
+        "@context": path.resolve(__dirname, "src/context"),
+        "@assets": path.resolve(__dirname, "src/assets"),
+        "@static": path.resolve(__dirname, "static"),
+      },
+    },
+  })
+}

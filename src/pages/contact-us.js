@@ -6,7 +6,8 @@ import parse from "html-react-parser"
 import { useOffices } from "../hooks/use-offices"
 import { useOptionsContactDetails } from "../hooks/use-options-contact-details"
 
-import ContactForm from "../components/ContactForm"
+import { ContactFormBasin as ContactForm } from "../components/ContactForm"
+
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 
@@ -29,7 +30,7 @@ const ContactUs = ({ data }) => {
               reCaptchaKey={process.env.GATSBY_CAPTCHA_V3_key}
             >
               <div
-                className="text-center mb-8"
+                className="mb-8 text-center"
                 style={{ borderBottom: "1px solid #f2f2f2" }}
               >
                 <h2 className="text-para margin-reset text-[1.2rem] md:text-[1.8rem]">
