@@ -13,13 +13,13 @@ const Quicklinks = ({ headline, links }) => {
         <div className="content ">
           <h2 className="pt-10 margin-reset">{parse(headline)}</h2>
           <div className="block quickLinks:flex quickLinks:justify-between">
-            <ul className="list-reset list-inline mr-10">
+            <ul className="mr-10 list-reset list-inline">
               {services.map(service => {
                 return (
                   <li key={service.slug} className="mb-4 md:mb-0">
                     <Link
                       to={`services/${service.slug}`}
-                      className="text-white underline font-normal"
+                      className="font-normal text-white underline"
                     >
                       {service.services.title}
                     </Link>
@@ -27,13 +27,13 @@ const Quicklinks = ({ headline, links }) => {
                 )
               })}
             </ul>
-            <div className="mb-5 mt-10 block md:mb-0 md:mt-0 quickLinks:flex quickLinks:justify-between pt-0 md:pt-10 quickLinks:pt-0">
+            <div className="block pt-0 mt-10 mb-5 md:mb-0 md:mt-0 quickLinks:flex quickLinks:justify-between md:pt-10 quickLinks:pt-0">
               <div className="order-3">
                 <a
                   href={`${process.env.GATSBY_CALENDLY_URL}`}
                   className="font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-brand border-white text-white block quickLinks:inline quickLinks:w-auto p-4"
                 >
-                  Book a free call
+                  Book a call
                 </a>
               </div>
               <div className="order-2 hidden md:flex">

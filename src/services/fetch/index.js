@@ -7,17 +7,11 @@ export function get(url) {
 */
 
 export function post(url, data) {
-  console.log("data", data)
   const formData = encode(data)
 
   return fetch(url, {
     method: "POST",
     body: formData,
-    /*
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-    */
   }).then(response => response.json())
 }
 const encode = data => {

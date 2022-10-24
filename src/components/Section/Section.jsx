@@ -5,7 +5,7 @@ const Section = ({ children, background }) => {
   let sectionClass = ""
   if (background === "dark") {
     sectionClass =
-      "bg-primary angle-border angle-border-top angle-border-bottom angle-border-primary py-0 md:py-10"
+      "bg-brand angle-border angle-border-top angle-border-bottom angle-border-primary py-0 md:py-10 "
   }
   if (background === "light" || background === "tint") {
     sectionClass =

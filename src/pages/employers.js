@@ -63,8 +63,8 @@ const EmployersPage = ({ data }) => {
           </div>
         </div>
       </section>
-      <Section background="light">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap:5 md:gap-12">
+      <Section background="dark">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap:5 md:gap-1">
           {service.employersFeatures.map((feature, index) => {
             return (
               <div
@@ -72,11 +72,13 @@ const EmployersPage = ({ data }) => {
                 key={`service-feature-bp-${index}`}
               >
                 <div>
-                  <SparklesIcon className="w-[32px] h-[32px] text-slate-500 mr-2 mt-1" />
+                  <SparklesIcon className="w-[32px] h-[32px] text-white mr-2 mt-1" />
                 </div>
                 <div>
-                  <h2 className="margin-reset">{feature.headline}</h2>
-                  <span className="text-dark">{parse(feature.content)}</span>
+                  <h2 className="text-white margin-reset">
+                    {feature.headline}
+                  </h2>
+                  <span className="text-white">{parse(feature.content)}</span>
                 </div>
               </div>
             )
