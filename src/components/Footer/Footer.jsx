@@ -70,15 +70,15 @@ const Footer = () => {
 
   return (
     <footer>
-      <section className="bg-header angle-border angle-border-top  angle-border-header md:py-10">
+      <section className="bg-header angle-border angle-border-top angle-border-header md:py-10">
         <div className="container content">
-          <div className="grid text-center md:text-left grid-cols-2 md:grid-cols-5">
+          <div className="grid grid-cols-2 text-center md:text-left md:grid-cols-5">
             {offices.map((office, index) => {
               const officeData = office.offices
               return (
                 <div key={`office-${index}`}>
-                  <div className="text-dark font-bold">{officeData.title}</div>
-                  <div className="text-dark font-bold">
+                  <div className="font-bold text-dark">{officeData.title}</div>
+                  <div className="font-bold text-dark">
                     {officeData.region || <br />}
                   </div>
                   <div className="text-dark">{parse(officeData.address)}</div>
@@ -119,22 +119,22 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mt-10 md:mt-20">
+          <div className="grid grid-cols-1 gap-10 mt-10 md:grid-cols-3 md:gap-20 md:mt-20">
             <div className="text-para">
-              <div className="text-dark font-bold">About Us</div>
+              <div className="font-bold text-dark">About Us</div>
               {footerData.blurb && parse(footerData.blurb)}
             </div>
 
             <div className="text-dark">
               <div className="font-bold">
                 {" "}
-                <Link to="/services">Services</Link>
+                <Link to="/services">Sectors</Link>
               </div>
               <ul>
                 {services.map(service => (
                   <li
                     key={`footer-menu-${service.uri}`}
-                    className="border-b-2 border-slate py-4"
+                    className="py-4 border-b-2 border-slate"
                   >
                     <Link to={service.uri}>{service.services.title}</Link>
                   </li>
@@ -143,14 +143,14 @@ const Footer = () => {
             </div>
             <div className="text-dark">
               <div className="font-bold">
-                <Link to="/">AGS Support</Link>
+                <Link to="/">AGS People</Link>
               </div>
               <ul>
                 {headerMenu.map((item, index) => {
                   return (
                     <li
                       key={`footer-menu-${item.uri}`}
-                      className="border-b-2 border-slate py-4"
+                      className="py-4 border-b-2 border-slate"
                     >
                       <Link to={item.uri}>{item.label}</Link>
                     </li>
