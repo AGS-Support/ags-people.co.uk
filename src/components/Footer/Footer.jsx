@@ -180,7 +180,7 @@ const Footer = () => {
             </div>
 
             <div className="text-left md:text-center mt-10 md:mt-0 text-[0.8rem]">
-              VAT No. GB {footerData.companyInfo.vatNumber} Company No.{" "}
+              {/*VAT No. GB {footerData.companyInfo.vatNumber}*/} Company No.{" "}
               {footerData.companyInfo.companyNumber}
               <br /> Registered Address:{" "}
               {footerData.companyInfo.registeredAddress}

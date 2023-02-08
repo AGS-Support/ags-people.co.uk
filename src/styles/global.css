@@ -13,8 +13,10 @@
   --colour-lightest: #ffffff;
   --colour-root: #222;
   --colour-brand: #f97236;
+  --colour-brand: #0081b4;
   --colour-brand-tint: #ebeff4;
   --colour-accent: #58575d;
+  --colour-angle-border: #39b5e0;
   --colour-header: #f2f2f2;
 
   --space-base: 0.48rem;
@@ -321,7 +323,8 @@ section.quick-links {
 
 .angle-border-top.angle-border-brand:before {
   background: var(--colour-brand);
-  border-color: var(--colour-accent);
+  /*border-color: var(--colour-accent);*/
+  border-color: var(--colour-angle-border);
   border-top-width: 4px;
   border-style: solid;
   border-left-style: hidden;

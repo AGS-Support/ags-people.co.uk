@@ -28,17 +28,17 @@ const Service = ({ data }) => {
       <section>
         <div className="container">
           <div className="content">
-            <Button to="/services" variant="tertiary" arrowPosition="none">
-              Services
+            <Button to="/our-sectors" variant="tertiary" arrowPosition="none">
+              Sectors
             </Button>
             <h1 className="mt-10">{service.title}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2  gap-12">
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
               <div className="order-2 md:order-1">
                 <span className="text-dark">{parse(service.content)}</span>
                 <div className="hidden sm:block">
                   <Link
                     to="/contact-us"
-                    className="button  text-center text-white bg-secondary border-2 border-secondary"
+                    className="text-center text-white border-2 button bg-secondary border-secondary"
                     style={{ paddingTop: "10px", paddingBottom: "10px" }}
                   >
                     Call Us Now
@@ -47,7 +47,7 @@ const Service = ({ data }) => {
                 <div className="block sm:hidden">
                   <a
                     href={`tel:${contactDetails.telephone}`}
-                    className="button  text-center text-white bg-secondary border-2 border-secondary"
+                    className="text-center text-white border-2 button bg-secondary border-secondary"
                     style={{ paddingTop: "10px", paddingBottom: "10px" }}
                   >
                     Call Us Now
@@ -66,7 +66,7 @@ const Service = ({ data }) => {
         </div>
       </section>
       <Section background="light">
-        <div className="grid grid-cols-1 md:grid-cols-2  gap:5 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap:5 md:gap-12">
           {service.serviceFeatures.map((feature, index) => {
             return (
               <div

@@ -42,7 +42,7 @@ const Quicklinks = ({ headline, links }) => {
               <div className="order-1">
                 <Link
                   to="contact-us"
-                  className="font-bold rounded rounded-lg border-2   text-center w-[100%]   mb-5 md:mb-0 bg-secondary border-secondary text-white block quickLinks:inline quickLinks:w-auto p-4"
+                  className="font-bold rounded rounded-lg border-2  border-white text-center w-[100%]   mb-5 md:mb-0 bg-secondary  text-white block quickLinks:inline quickLinks:w-auto p-4"
                 >
                   Call us now
                 </Link>
