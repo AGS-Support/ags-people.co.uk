@@ -17,11 +17,11 @@ const FoundersStoryPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Founders Story" />
-      <PageHeading title="Founders Story" className="text-center pb-4" />
+      <PageHeading title="Founders Story" className="pb-4 text-center" />
       <section>
         <div className="inner-container">
           {profileImage && (
-            <div className="text-center mb-10">
+            <div className="mb-10 text-center">
               <GatsbyImage
                 image={profileImage}
                 objectFit="contain"
@@ -43,7 +43,7 @@ const FoundersStoryPage = ({ data }) => {
             </div>
           )}
           <div className="mt-10 text-right">
-            <Button to="/services" variant="tertiary">
+            <Button to="/our-sectors" variant="tertiary">
               See our services
             </Button>
           </div>
